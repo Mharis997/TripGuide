@@ -17,6 +17,9 @@ import androidx.core.content.ContextCompat
 import androidx.core.net.toUri
 import androidx.room.Room
 import androidx.work.*
+import coil.ImageLoader
+import coil.ImageLoaderFactory
+import okhttp3.OkHttpClient
 import kotlinx.coroutines.*
 import org.json.JSONObject
 import java.io.File
@@ -24,7 +27,7 @@ import java.net.URL
 import java.util.UUID
 import java.util.concurrent.TimeUnit
 
-class App : Application() {
+class App : Application(), ImageLoaderFactory {
     override fun onCreate() {
         super.onCreate()
         Prefs.init(this)
@@ -32,6 +35,13 @@ class App : Application() {
         Notify.createChannels(this)
         CoroutineScope(Dispatchers.IO).launch { if (db.dao().placeCount() == 0) Seed.load(this@App, db.dao()) }
     }
+
+    // Wikimedia throttles generic HTTP-client user agents; identify the app.
+    override fun newImageLoader() = ImageLoader.Builder(this).okHttpClient {
+        OkHttpClient.Builder().addInterceptor { chain ->
+            chain.proceed(chain.request().newBuilder().header("User-Agent", "TripGuide/${BuildConfig.VERSION_NAME} (Android)").build())
+        }.build()
+    }.build()
 
     companion object {
         lateinit var db: AppDb

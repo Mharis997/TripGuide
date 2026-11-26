@@ -25,15 +25,16 @@ class AppFlowTest {
 
     private fun shot(name: String) {
         rule.waitForIdle()
-        Thread.sleep(1500) // let Coil finish decoding remote photos
-        rule.waitForIdle()
+        repeat(4) { Thread.sleep(1500); rule.waitForIdle() } // let Coil download and decode remote photos
         rule.onRoot().captureRoboImage("../fastlane/metadata/android/en-US/images/phoneScreenshots/$name.png")
     }
 
     private fun waitFor(text: String) = rule.waitUntil(20_000) { rule.onAllNodesWithText(text, substring = true).fetchSemanticsNodes().isNotEmpty() }
 
-    @Before fun initWorkManager() =
+    @Before fun setUp() {
         WorkManagerTestInitHelper.initializeTestWorkManager(androidx.test.core.app.ApplicationProvider.getApplicationContext())
+        Prefs.dynamicColor = false // brand colours in store screenshots
+    }
 
     @Test fun mainFlows() {
         waitFor("18 places")
