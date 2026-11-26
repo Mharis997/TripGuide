@@ -121,6 +121,11 @@ fun TripScreen(nav: NavController, id: Long) {
                 EstimateBlock(Planner.estimate(place, PlanInput(trip.departAt, trip.returnAt, trip.budget, trip.people, trip.transport,
                     trip.vibes.toSet(), Prefs.homeLat.toDouble(), Prefs.homeLng.toDouble())))
             }
+            if (place != null) item {
+                Section("Where to stay")
+                GoogleNearby(place.lat, place.lng, "${place.name}, ${place.region}", stays = true,
+                    checkIn = trip.departAt, checkOut = trip.returnAt, people = trip.people)
+            }
             if (updates.isNotEmpty()) item {
                 Section("Latest traveller updates")
                 updates.take(3).forEach { u ->

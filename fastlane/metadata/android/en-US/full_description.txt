@@ -13,6 +13,11 @@ Every place comes with photos, how to get there, a day-by-day guide, local tips,
 CONDITION UPDATES
 Log what you find on the ground – temporarily closed, road blocked, weather alert, crowded or good news. The place's status badge changes instantly, closed or blocked places are flagged in suggestions, and your upcoming trips there get an alert.
 
+GOOGLE MAPS BUILT IN
+• Nearby: top-rated sightseeing within 30 km of every destination, with Google ratings, photos and map pins
+• Stays: hotels and guesthouses nearby with ratings, photos and price range, plus one-tap live prices on Booking.com and Google Hotels for your exact trip dates and group size
+• Discover: search any attraction on Google Maps
+
 FILTER YOUR WAY
 Browse by category (mountains, valleys, lakes, beaches, historical, city…) and tick the amenities you need: parking, restrooms, hotels, camping, mobile signal, ATM, fuel, medical aid, wheelchair access, kid or pet friendly, 4x4 access and more. Sort by name, nearest or cheapest.
 

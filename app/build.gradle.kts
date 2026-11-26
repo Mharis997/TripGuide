@@ -21,8 +21,12 @@ android {
         applicationId = "com.tripguide.app"
         minSdk = 26
         targetSdk = 36
-        versionCode = 1
-        versionName = "1.0.0"
+        versionCode = 2
+        versionName = "1.1.0"
+        // Google Places API (New) key: PLACES_API_KEY in local.properties or the environment. Empty = Google features off.
+        val localProps = Properties().apply { rootProject.file("local.properties").takeIf { it.exists() }?.inputStream()?.use { load(it) } }
+        val placesKey = localProps.getProperty("PLACES_API_KEY") ?: System.getenv("PLACES_API_KEY") ?: ""
+        buildConfigField("String", "PLACES_API_KEY", "\"$placesKey\"")
     }
 
     signingConfigs {

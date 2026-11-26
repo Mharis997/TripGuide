@@ -49,6 +49,7 @@ fun ExploreScreen(nav: NavController) {
     Scaffold(
         topBar = {
             TopAppBar(title = { Text("TripGuide", fontWeight = FontWeight.Bold) }, actions = {
+                IconButton({ nav.navigate("discover") }) { Icon(Icons.Default.TravelExplore, "Discover on Google Maps") }
                 IconButton({ favOnly = !favOnly }) {
                     Icon(if (favOnly) Icons.Default.Favorite else Icons.Default.FavoriteBorder, "Favourites only")
                 }

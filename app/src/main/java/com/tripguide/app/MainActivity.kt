@@ -80,6 +80,7 @@ fun AppNav(deepLink: String?) {
             }
             composable("trips") { TripsScreen(nav) }
             composable("settings") { SettingsScreen() }
+            composable("discover") { DiscoverScreen(nav) }
             composable("place/{id}", listOf(navArgument("id") { type = NavType.LongType })) { PlaceScreen(nav, it.arguments!!.getLong("id")) }
             composable("edit?id={id}", listOf(navArgument("id") { type = NavType.LongType; defaultValue = -1L })) {
                 EditPlaceScreen(nav, it.arguments!!.getLong("id"))

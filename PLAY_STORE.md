@@ -62,13 +62,19 @@ Category: **Travel & Local**. Tags: Trip planner, Travel guide.
 - **News app:** No.
 - **Health / financial features / government app:** No.
 - **Data safety:**
-  - Does your app collect or share any of the required user data types? **No.**
-    (All data stays on the device; location is read only on request and never transmitted. Open-Meteo receives destination coordinates, not user data.)
-  - Is all data encrypted in transit? **Yes** (HTTPS only).
+  - Does your app collect or share any of the required user data types? **Yes** (only because Discover search text leaves the device):
+    - *App activity → In-app search history*: **Collected**, not shared, **processed ephemerally**, not required (user can skip Discover), purpose **App functionality**.
+    - Nothing else: location is read only on request and never transmitted; Google/Open-Meteo receive destination coordinates, not user data.
+  - Is data encrypted in transit? **Yes** (HTTPS only).
   - Can users request data deletion? **Yes** — Settings → Delete all my data / uninstall.
 
 ## 5. Release
 Testing → Closed testing → Create release → upload `app-release.aab` → release notes from `changelogs/1.txt` → review → roll out. After the 14-day / 12-tester requirement, apply for production and promote the release.
+
+## Google Maps key for release builds
+Follow README → "Google Maps setup". Before uploading, add the **Play App Signing** SHA-1 (Play Console → App integrity) to the key's Android restrictions, otherwise Google features fail in the Play-installed app while working in your own builds.
+
+Google's terms require the "Google Maps" attribution under Places results (already shown) and forbid storing Places content – the app only displays it live.
 
 ## Before adding online features
 Sharing updates between users, cloud sync or push alerts to *other* travellers needs a backend (e.g. Firebase Firestore + Cloud Messaging). When you add it, update the Data safety form (user-generated content, app activity), the content rating (users interact), the privacy policy, and add a report/block mechanism for user posts (Play's UGC policy requires moderation).

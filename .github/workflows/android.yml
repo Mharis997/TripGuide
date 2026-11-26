@@ -18,6 +18,8 @@ jobs:
         run: ./gradlew testDebugUnitTest
       - name: Build debug APK and release bundle (unsigned without keystore)
         run: ./gradlew assembleDebug bundleRelease
+        env:
+          PLACES_API_KEY: ${{ secrets.PLACES_API_KEY }}
       - uses: actions/upload-artifact@v4
         with:
           name: tripguide-builds

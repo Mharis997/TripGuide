@@ -39,7 +39,9 @@ class App : Application(), ImageLoaderFactory {
     // Wikimedia throttles generic HTTP-client user agents; identify the app.
     override fun newImageLoader() = ImageLoader.Builder(this).okHttpClient {
         OkHttpClient.Builder().addInterceptor { chain ->
-            chain.proceed(chain.request().newBuilder().header("User-Agent", "TripGuide/${BuildConfig.VERSION_NAME} (Android)").build())
+            val req = chain.request().newBuilder().header("User-Agent", "TripGuide/${BuildConfig.VERSION_NAME} (Android)")
+            if (chain.request().url.host == "places.googleapis.com") Google.headers(this).forEach { (k, v) -> req.header(k, v) }
+            chain.proceed(req.build())
         }.build()
     }.build()
 

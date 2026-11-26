@@ -5,6 +5,7 @@ import androidx.compose.ui.test.junit4.createAndroidComposeRule
 import com.github.takahirom.roborazzi.RobolectricDeviceQualifiers
 import com.github.takahirom.roborazzi.captureRoboImage
 import androidx.work.testing.WorkManagerTestInitHelper
+import org.junit.Assert.assertEquals
 import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
@@ -55,7 +56,10 @@ class AppFlowTest {
         shot("2_place")
         rule.onNodeWithText("Guide & tips").performClick()
         shot("3_guide")
-        rule.onNodeWithText("Updates (0)").performClick()
+        // Stays tab: live-price links work even before a Google key is configured
+        rule.onNodeWithText("Stays").performScrollTo().performClick()
+        rule.onNodeWithText("Booking.com").assertExists()
+        rule.onNodeWithText("Updates (0)").performScrollTo().performClick()
         rule.onNodeWithText("Post an update", substring = true).performClick()
         rule.onNodeWithText("Road blocked").performClick()
         rule.onNodeWithText("What did you find?").performTextInput("Landslide near Attabad tunnel, cleared by noon. Expect 2-3 hr delay.")
@@ -84,6 +88,10 @@ class AppFlowTest {
         waitFor("Upcoming")
         rule.onNodeWithText("Settings").performClick()
         waitFor("Home city")
-        shot("8_settings")
+        rule.onNodeWithText("Dark").performClick()
+        assertEquals("dark", Prefs.theme)
+        shot("8_settings_dark")
+        rule.onNodeWithText("Light").performClick()
+        assertEquals("light", Prefs.theme)
     }
 }

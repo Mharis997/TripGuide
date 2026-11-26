@@ -64,8 +64,8 @@ fun PlaceScreen(nav: NavController, id: Long) {
                 }
             }
             item {
-                TabRow(tab) {
-                    listOf("Overview", "Guide & tips", "Updates (${updates.size})").forEachIndexed { i, t ->
+                ScrollableTabRow(tab, edgePadding = 8.dp) {
+                    listOf("Overview", "Guide & tips", "Nearby", "Stays", "Updates (${updates.size})").forEachIndexed { i, t ->
                         Tab(tab == i, { tab = i }, text = { Text(t, maxLines = 1) })
                     }
                 }
@@ -73,6 +73,18 @@ fun PlaceScreen(nav: NavController, id: Long) {
             when (tab) {
                 0 -> item { Overview(place) }
                 1 -> item { GuideTab(place) }
+                2 -> item {
+                    Column(Modifier.padding(16.dp)) {
+                        Text("Top sightseeing within 30 km", style = MaterialTheme.typography.titleMedium)
+                        GoogleNearby(place.lat, place.lng, place.name, stays = false)
+                    }
+                }
+                3 -> item {
+                    Column(Modifier.padding(16.dp)) {
+                        Text("Places to stay nearby", style = MaterialTheme.typography.titleMedium)
+                        GoogleNearby(place.lat, place.lng, "${place.name}, ${place.region}", stays = true)
+                    }
+                }
                 else -> {
                     item {
                         Column(Modifier.padding(16.dp)) {

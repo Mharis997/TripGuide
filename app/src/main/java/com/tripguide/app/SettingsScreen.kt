@@ -56,7 +56,15 @@ fun SettingsScreen() {
             }
 
             Group("Appearance")
-            Choice(Icons.Default.DarkMode, "Theme", Prefs.theme.replaceFirstChar { it.uppercase() }, listOf("System", "Light", "Dark")) { Prefs.theme = it.lowercase() }
+            val themes = listOf("light" to "Light", "dark" to "Dark", "system" to "System")
+            SingleChoiceSegmentedButtonRow(Modifier.fillMaxWidth().padding(horizontal = 16.dp, vertical = 8.dp)) {
+                themes.forEachIndexed { i, (value, label) ->
+                    SegmentedButton(Prefs.theme == value, { Prefs.theme = value }, SegmentedButtonDefaults.itemShape(i, themes.size),
+                        icon = { SegmentedButtonDefaults.Icon(Prefs.theme == value) {
+                            Icon(listOf(Icons.Default.LightMode, Icons.Default.DarkMode, Icons.Default.BrightnessAuto)[i], null, Modifier.size(18.dp))
+                        } }) { Text(label) }
+                }
+            }
             if (android.os.Build.VERSION.SDK_INT >= 31) Toggle(Icons.Default.Palette, "Dynamic colours", "Match your wallpaper", Prefs.dynamicColor) { Prefs.dynamicColor = it }
 
             Group("Units")
