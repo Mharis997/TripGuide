@@ -96,7 +96,7 @@ fun GoogleNearby(lat: Double, lng: Double, where: String, stays: Boolean, checkI
 @Composable
 fun DiscoverScreen(nav: NavController) {
     val ctx = LocalContext.current
-    val default = "tourist attractions in ${if (Prefs.homeName == "My location") "Pakistan" else Prefs.homeName}"
+    val default = "tourist attractions in ${if (Prefs.homeName == "My location") "Kerala" else Prefs.homeName}"
     var text by rememberSaveable { mutableStateOf(default) }
     var query by rememberSaveable { mutableStateOf(default) }
     val result by produceState<Result<List<GPlace>>?>(null, query) {
@@ -107,7 +107,7 @@ fun DiscoverScreen(nav: NavController) {
         LazyColumn(Modifier.padding(pad), contentPadding = PaddingValues(horizontal = 16.dp, vertical = 8.dp)) {
             item {
                 OutlinedTextField(text, { text = it }, Modifier.fillMaxWidth(), singleLine = true,
-                    label = { Text("e.g. waterfalls near Abbottabad") }, leadingIcon = { Icon(Icons.Default.TravelExplore, null) },
+                    label = { Text("e.g. waterfalls near Thrissur") }, leadingIcon = { Icon(Icons.Default.TravelExplore, null) },
                     keyboardOptions = KeyboardOptions(imeAction = ImeAction.Search), keyboardActions = KeyboardActions { query = text.trim() },
                     trailingIcon = { IconButton({ query = text.trim() }) { Icon(Icons.Default.Search, "Search") } })
             }

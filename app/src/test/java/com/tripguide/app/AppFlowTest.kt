@@ -44,14 +44,14 @@ class AppFlowTest {
         // Filtering by amenity checkbox narrows the list
         rule.onNodeWithText("Filters", substring = true).performClick()
         rule.onNodeWithText("4x4 jeep needed").performClick()
-        waitFor("5 places")
+        waitFor("2 places")
         rule.onNodeWithText("Clear all").performClick()
         waitFor("18 places")
         androidx.test.espresso.Espresso.pressBack()
 
         // Place detail, guide, community update
-        rule.onNodeWithText("Search places, regions…").performTextInput("Hunza")
-        rule.onAllNodesWithText("Hunza Valley")[0].performClick()
+        rule.onNodeWithText("Search places, regions…").performTextInput("Munnar")
+        rule.onAllNodesWithText("Munnar")[1].performClick()
         waitFor("Quick facts")
         shot("2_place")
         rule.onNodeWithText("Guide & tips").performClick()
@@ -62,7 +62,7 @@ class AppFlowTest {
         rule.onNodeWithText("Updates (0)").performScrollTo().performClick()
         rule.onNodeWithText("Post an update", substring = true).performClick()
         rule.onNodeWithText("Road blocked").performClick()
-        rule.onNodeWithText("What did you find?").performTextInput("Landslide near Attabad tunnel, cleared by noon. Expect 2-3 hr delay.")
+        rule.onNodeWithText("What did you find?").performTextInput("Landslide on Gap Road near Devikulam, one lane open. Expect 1-2 hr delay.")
         rule.onNodeWithText("Post update").performClick()
         waitFor("Updates (1)")
         rule.onAllNodesWithText("Road blocked")[0].assertExists()

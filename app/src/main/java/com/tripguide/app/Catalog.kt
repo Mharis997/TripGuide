@@ -2,8 +2,8 @@ package com.tripguide.app
 
 /** Fixed vocabularies used for filtering, planning and the add-place form. */
 object Catalog {
-    val categories = listOf("Mountains", "Valley", "Lake", "Beach", "Desert", "Forest", "Waterfall", "Historical", "Religious", "City", "Adventure", "Theme park")
-    val vibes = listOf("Just escape", "Mountains", "Beaches", "Party", "Chill", "Nature", "Adventure", "Romantic", "Family", "Culture", "Food", "Photography", "Road trip", "Spiritual")
+    val categories = listOf("Mountains", "Backwaters", "Beach", "Waterfall", "Wildlife", "Lake", "Forest", "Valley", "Historical", "Religious", "City", "Adventure", "Theme park")
+    val vibes = listOf("Just escape", "Mountains", "Beaches", "Party", "Chill", "Nature", "Adventure", "Romantic", "Family", "Culture", "Food", "Photography", "Road trip", "Spiritual", "Wellness")
     val amenities = listOf(
         "Parking", "Restrooms", "Restaurants", "Hotels", "Camping", "Mobile signal", "Internet", "ATM", "Fuel station",
         "Medical aid", "Wheelchair access", "Kid friendly", "Pet friendly", "Local guides", "4x4 jeep needed", "Entry ticket",
@@ -13,21 +13,26 @@ object Catalog {
     /** Update types that change a place's visible status badge. */
     val statusTypes = setOf("Open", "Temporarily closed", "Road blocked")
     val months = listOf("Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec")
-    val currencies = listOf("PKR", "INR", "USD", "EUR", "GBP", "AED", "SAR")
+    val currencies = listOf("INR", "USD", "EUR", "GBP", "AED", "SAR")
 
     data class City(val name: String, val lat: Double, val lng: Double)
     val cities = listOf(
-        City("Islamabad", 33.6844, 73.0479), City("Rawalpindi", 33.5651, 73.0169), City("Lahore", 31.5204, 74.3587),
-        City("Karachi", 24.8607, 67.0011), City("Peshawar", 34.0151, 71.5249), City("Quetta", 30.1798, 66.9750),
-        City("Multan", 30.1575, 71.5249), City("Faisalabad", 31.4504, 73.1350), City("Hyderabad", 25.3960, 68.3578),
-        City("Sialkot", 32.4945, 74.5229), City("Gujranwala", 32.1877, 74.1945), City("Abbottabad", 34.1688, 73.2215),
+        City("Kochi", 9.9312, 76.2673), City("Thiruvananthapuram", 8.5241, 76.9366), City("Kozhikode", 11.2588, 75.7804),
+        City("Thrissur", 10.5276, 76.2144), City("Kollam", 8.8932, 76.6141), City("Kannur", 11.8745, 75.3704),
+        City("Kottayam", 9.5916, 76.5222), City("Alappuzha", 9.4981, 76.3388), City("Palakkad", 10.7867, 76.6548),
+        City("Malappuram", 11.0510, 76.0711), City("Kasaragod", 12.4996, 74.9869), City("Pathanamthitta", 9.2648, 76.7870),
+        // Common origins for visitors from neighbouring states
+        City("Bengaluru", 12.9716, 77.5946), City("Chennai", 13.0827, 80.2707), City("Coimbatore", 11.0168, 76.9558), City("Mangaluru", 12.9141, 74.8560),
     )
 
     fun packingList(p: Place, transport: String): List<String> = buildList {
-        addAll(listOf("ID card / passport", "Phone charger & power bank", "Cash", "First-aid kit", "Personal medicines", "Water bottle", "Toiletries"))
+        addAll(listOf("ID card / passport", "Phone charger & power bank", "Cash / UPI app", "First-aid kit", "Personal medicines", "Water bottle", "Toiletries", "Umbrella / raincoat", "Mosquito repellent"))
         when (p.category) {
-            "Mountains", "Valley", "Lake", "Adventure", "Forest", "Waterfall" -> addAll(listOf("Warm jacket", "Hiking shoes", "Sunglasses", "Sunscreen", "Rain shell"))
+            "Mountains", "Valley", "Lake", "Adventure", "Forest", "Waterfall" -> addAll(listOf("Warm jacket", "Hiking shoes", "Sunglasses", "Sunscreen"))
             "Beach" -> addAll(listOf("Swimwear", "Sunscreen", "Hat", "Flip-flops", "Towel"))
+            "Backwaters" -> addAll(listOf("Light cotton clothes", "Sunscreen", "Hat", "Dry bag for phone"))
+            "Wildlife" -> addAll(listOf("Binoculars", "Earth-tone clothes", "Leech socks (monsoon)", "Trekking shoes"))
+            "Religious" -> addAll(listOf("Temple dress (mundu / saree)", "Bag for footwear"))
             "Desert" -> addAll(listOf("Hat", "Extra water", "Sunscreen", "Scarf"))
             else -> add("Comfortable walking shoes")
         }

@@ -1,4 +1,4 @@
-# TripGuide – Trip Planner (Android)
+# TripGuide Kerala – Trip Planner (Android)
 
 Tell the app about your trip (dates and times from home, budget, group size, transport, vibes) and it ranks destinations that fit, with cost and travel-time estimates. Every place has photos, a guide, tips, safety info, amenities, best season and live weather.
 
@@ -12,7 +12,7 @@ Tell the app about your trip (dates and times from home, budget, group size, tra
 - **Google Maps** – *Nearby* tab (top sightseeing within 30 km), *Stays* tab and trip "Where to stay" (hotels with Google rating, photos, price level, map pin, live-price links), *Discover* search for any attraction on Google Maps.
 - **Settings** – display name, home city or current location, Light / Dark / System theme buttons, dynamic colour, currency, km/miles, notification toggles and reminder lead time, restore built-in places, delete all data, rate, privacy policy.
 
-Built-in content: 18 Pakistani destinations in `app/src/main/assets/places.json` (photos from Wikimedia Commons with credits).
+Built-in content: 18 Kerala destinations in `app/src/main/assets/places.json` (photos from Wikimedia Commons with credits).
 
 ## Stack
 Kotlin · Jetpack Compose (Material 3) · Room · Navigation Compose · WorkManager · Coil. Offline-first, no account, no backend.

@@ -17,7 +17,7 @@ data class Suggestion(
 /** Pure ranking logic: no Android dependencies so it is unit-tested on the JVM. */
 object Planner {
     private const val DAY = 86_400_000.0
-    private val hilly = setOf("Mountains", "Valley", "Lake", "Adventure", "Forest", "Waterfall")
+    private val hilly = setOf("Mountains", "Valley", "Lake", "Adventure", "Forest", "Waterfall", "Wildlife")
 
     fun km(lat1: Double, lng1: Double, lat2: Double, lng2: Double): Double {
         val dLat = Math.toRadians(lat2 - lat1); val dLng = Math.toRadians(lng2 - lng1)
@@ -31,16 +31,16 @@ object Planner {
         val straight = km(i.homeLat, i.homeLng, p.lat, p.lng)
         val flight = i.transport == "Flight"
         val dist = if (flight) straight else straight * 1.4
-        // shortcut: fixed average speeds and PKR per-km rates; upgrade to routing + live fares when a backend exists.
-        val speed = mapOf("Car" to 60.0, "Bus" to 50.0, "Train" to 55.0, "Motorbike" to 50.0, "Flight" to 500.0)[i.transport] ?: 55.0
-        val hours = if (dist < 1) 0.0 else if (flight) dist / speed + 3 else dist / (if (p.category in hilly) speed * 0.6 else speed)
+        // shortcut: fixed Kerala average speeds and INR per-km rates; upgrade to routing + live fares when a backend exists.
+        val speed = mapOf("Car" to 45.0, "Bus" to 35.0, "Train" to 50.0, "Motorbike" to 40.0, "Flight" to 500.0)[i.transport] ?: 45.0
+        val hours = if (dist < 1) 0.0 else if (flight) dist / speed + 3 else dist / (if (p.category in hilly) speed * 0.8 else speed)
         val rt = dist * 2
         val transportCost = when (i.transport) {
-            "Car" -> rt * 30 * ceil(i.people / 4.0)
-            "Motorbike" -> rt * 8 * ceil(i.people / 2.0)
-            "Bus" -> rt * 5 * i.people
-            "Train" -> rt * 4 * i.people
-            "Flight" -> (10_000 + rt * 30) * i.people
+            "Car" -> rt * 12 * ceil(i.people / 4.0) // fuel + wear per car
+            "Motorbike" -> rt * 4 * ceil(i.people / 2.0)
+            "Bus" -> rt * 1.5 * i.people // KSRTC fast passenger
+            "Train" -> rt * 1.2 * i.people // sleeper / 2S class
+            "Flight" -> (3_000 + rt * 6) * i.people
             else -> 0.0
         }.roundToInt()
         val days = days(i)

@@ -39,7 +39,7 @@ For every update: bump `versionCode` (+1) and `versionName` in `app/build.gradle
 
 1. Create a developer account (one-time US$25) at play.google.com/console. Complete identity verification.
 2. **Personal accounts created after Nov 2023 must run a closed test with at least 12 testers opted in for 14 continuous days before production access is granted.** Plan for this: upload the AAB to *Closed testing* first.
-3. Create app → name "TripGuide: Trip Planner", default language English, App, Free.
+3. Create app → name "TripGuide Kerala: Trip Planner", default language English, App, Free.
 
 ### Store listing (text is ready in `fastlane/metadata/android/en-US/`)
 | Field | File / asset |

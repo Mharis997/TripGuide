@@ -1,78 +1,19 @@
 [
  {
-  "name": "Hunza Valley",
-  "region": "Gilgit-Baltistan",
-  "lat": 36.3236,
-  "lng": 74.6633,
-  "category": "Valley",
-  "vibes": [
-   "Mountains",
-   "Nature",
-   "Just escape",
-   "Photography",
-   "Culture",
-   "Road trip",
-   "Romantic"
-  ],
-  "amenities": [
-   "Parking",
-   "Restrooms",
-   "Restaurants",
-   "Hotels",
-   "Camping",
-   "Mobile signal",
-   "Internet",
-   "ATM",
-   "Fuel station",
-   "Medical aid",
-   "Kid friendly",
-   "Local guides",
-   "Entry ticket"
-  ],
-  "transport": [
-   "Car",
-   "Bus",
-   "Flight",
-   "Motorbike"
-  ],
-  "bestMonths": [
-   4,
-   5,
-   6,
-   7,
-   8,
-   9,
-   10
-  ],
-  "dailyCost": 9000,
-  "minDays": 4,
-  "description": "A high mountain valley on the Karakoram Highway ringed by Rakaposhi, Ultar Sar and Ladyfinger peaks. Ancient forts, turquoise Attabad Lake, apricot orchards and the Passu Cones make it Pakistan's most loved northern destination.",
-  "howToReach": "• By road: Islamabad → Karakoram Highway (N-35) via Abbottabad, Besham, Chilas, Gilgit → Karimabad. ~600 km, 14–18 hrs. In summer the Naran–Babusar route (N-15) is shorter and more scenic.\n• By air: Islamabad → Gilgit (≈1 hr, weather dependent), then 2 hrs by road to Karimabad.\n• Public transport: NATCO / Faisal Movers coaches from Rawalpindi to Gilgit and Aliabad.",
-  "guide": "Day 1: Arrive Karimabad, sunset at Eagle's Nest (Duikar).\nDay 2: Baltit Fort, Altit Fort, Karimabad bazaar.\nDay 3: Attabad Lake boating, Hussaini suspension bridge, Passu Cones viewpoint, Borith Lake.\nDay 4: Khunjerab Pass (China border, 4,693 m) – go early, return same day.\nWhere to stay: Karimabad and Aliabad have hotels for every budget; Passu and Gulmit for quieter stays.\nEat: Chapshuro (meat pie), Diram Fitti, apricot cake at Cafe de Hunza.",
-  "tips": "• April = apricot blossom, late October = autumn colours.\n• Khunjerab Pass usually opens 1 May and closes around 30 November.\n• Carry cash; ATMs exist in Aliabad and Karimabad but can run dry.\n• Altitude: drink water, ascend gradually, avoid alcohol.\n• Flights to Gilgit are often cancelled in bad weather – keep a buffer day.",
-  "safety": "Landslides can block the KKH after rain – check NHA / local updates before leaving. Emergency: Rescue 1122, Police 15, Edhi ambulance 115.",
-  "photos": [
-   "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/df/Baltit_Fort_Hunza_valley.jpg/1280px-Baltit_Fort_Hunza_valley.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-   "https://upload.wikimedia.org/wikipedia/commons/8/8b/Frozen_Attabad_lake_in_Winter.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
-   "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/56/Passu_Cones_%D9%BE%D8%B3%D9%88.jpg/1280px-Passu_Cones_%D9%BE%D8%B3%D9%88.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-   "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/dc/Hunza_Valley_HDR.jpg/1280px-Hunza_Valley_HDR.jpg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
-  ],
-  "photoCredits": "Baltit Fort Hunza valley.jpg – AZEEM SHERA, CC BY-SA 4.0 (Wikimedia Commons)\nFrozen Attabad lake in Winter.jpg – Harvey Sc, CC BY-SA 3.0 (Wikimedia Commons)\nPassu Cones پسو.jpg – Nature.pk, CC BY-SA 4.0 (Wikimedia Commons)\nHunza Valley HDR.jpg – FaizanAhmad, CC BY-SA 3.0 (Wikimedia Commons)"
- },
- {
-  "name": "Skardu & Shangrila",
-  "region": "Gilgit-Baltistan",
-  "lat": 35.2971,
-  "lng": 75.6333,
+  "name": "Munnar",
+  "region": "Idukki",
+  "lat": 10.0889,
+  "lng": 77.0595,
   "category": "Mountains",
   "vibes": [
    "Mountains",
    "Nature",
-   "Just escape",
-   "Adventure",
-   "Photography",
+   "Chill",
    "Romantic",
-   "Chill"
+   "Just escape",
+   "Photography",
+   "Road trip",
+   "Family"
   ],
   "amenities": [
    "Parking",
@@ -86,56 +27,6 @@
    "Fuel station",
    "Medical aid",
    "Kid friendly",
-   "Local guides",
-   "Entry ticket"
-  ],
-  "transport": [
-   "Car",
-   "Bus",
-   "Flight",
-   "Motorbike"
-  ],
-  "bestMonths": [
-   4,
-   5,
-   6,
-   7,
-   8,
-   9,
-   10
-  ],
-  "dailyCost": 9000,
-  "minDays": 4,
-  "description": "Gateway to K2 and the Baltoro, Skardu sits in a wide valley of the Indus surrounded by cold desert dunes, glacial lakes and heritage forts. Shangrila (Lower Kachura Lake) and Upper Kachura are its postcard spots.",
-  "howToReach": "• By air: Islamabad → Skardu (≈1 hr). Also flights from Karachi and Lahore in season.\n• By road: Islamabad → KKH to Jaglot → Skardu Road (S-1). ~650 km, 18–20 hrs.\n• Coaches run from Rawalpindi Pir Wadhai to Skardu.",
-  "guide": "Day 1: Arrive, Shangrila Resort and Upper Kachura Lake.\nDay 2: Shigar Fort and Sarfaranga cold desert (jeep/quad biking).\nDay 3: Khaplu Palace and Chaqchan Mosque.\nDay 4: Deosai Plains via Satpara Lake (June–September).\nOptional: Manthokha Waterfall, Basho Valley.",
-  "tips": "• Book flights early in summer; they sell out.\n• Hire a local 4x4 for Deosai and Basho.\n• Evenings are cold even in July – pack a fleece.\n• Upper Kachura is a 20-min walk down – wear proper shoes.",
-  "safety": "Skardu road has rockfall sections; avoid driving at night. Emergency: Rescue 1122, Police 15, Edhi 115.",
-  "photos": [
-   "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a1/Shangrila_Resorts%2C_Skardu_2012.jpg/1280px-Shangrila_Resorts%2C_Skardu_2012.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-   "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a9/Upper_kachura.jpg/1280px-Upper_kachura.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-   "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3d/Shigar_Fort_at_Night.jpg/1280px-Shigar_Fort_at_Night.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-   "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9f/Shangrila_resort_skardu.jpg/1280px-Shangrila_resort_skardu.jpg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
-  ],
-  "photoCredits": "Shangrila Resorts, Skardu 2012.jpg – Alirazabashirmalik, CC BY-SA 4.0 (Wikimedia Commons)\nUpper kachura.jpg – ADIL RIAZ, CC BY-SA 4.0 (Wikimedia Commons)\nShigar Fort at Night.jpg – Syed.noor.hussain88, CC BY-SA 4.0 (Wikimedia Commons)\nShangrila resort skardu.jpg – S SHER XAMAN photography, CC BY-SA 4.0 (Wikimedia Commons)"
- },
- {
-  "name": "Fairy Meadows",
-  "region": "Diamer, Gilgit-Baltistan",
-  "lat": 35.388,
-  "lng": 74.58,
-  "category": "Adventure",
-  "vibes": [
-   "Mountains",
-   "Adventure",
-   "Nature",
-   "Just escape",
-   "Photography"
-  ],
-  "amenities": [
-   "Restrooms",
-   "Restaurants",
-   "Camping",
    "Local guides",
    "4x4 jeep needed",
    "Entry ticket"
@@ -146,40 +37,316 @@
    "Motorbike"
   ],
   "bestMonths": [
-   5,
-   6,
-   7,
-   8,
-   9
+   9,
+   10,
+   11,
+   12,
+   1,
+   2,
+   3,
+   4,
+   5
   ],
-  "dailyCost": 8000,
-  "minDays": 3,
-  "description": "A lush alpine meadow at about 3,300 m facing the Rakhiot face of Nanga Parbat, the world's 9th highest peak. Reached by one of the most thrilling jeep tracks in the world followed by a forest hike.",
-  "howToReach": "• Drive the KKH to Raikot Bridge (≈ 9–10 hrs from Islamabad via Babusar in summer).\n• Jeep from Raikot Bridge to Tato/Jhel (≈1–1.5 hrs, jeeps run by a local union, fixed fare).\n• Hike 2.5–4 hrs to Fairy Meadows. Ponies/porters available.",
-  "guide": "Day 1: Raikot Bridge → jeep → hike up, sunset on Nanga Parbat.\nDay 2: Hike to Beyal Camp (2 hrs) and Nanga Parbat Base Camp viewpoint (another 2–3 hrs). Return to Fairy Meadows.\nDay 3: Sunrise, descend and drive on to Hunza or back.\nStay: wooden huts and tents at the meadow; book ahead in July–August.",
-  "tips": "• Pack light – you carry it uphill (or hire a porter).\n• No ATMs: carry all cash you need.\n• Power is solar/limited – bring a power bank.\n• Phone signal is weak to none.",
-  "safety": "Jeep track has sheer drops – only use union jeeps, do not self-drive. Weather turns fast: carry a rain shell. Emergency: Rescue 1122, Police 15.",
+  "dailyCost": 3500,
+  "minDays": 2,
+  "description": "Kerala's best-known hill station at about 1,600 m: endless rolling tea estates, misty peaks around Anamudi (South India's highest), and Eravikulam National Park, home of the endangered Nilgiri tahr.",
+  "howToReach": "• From Kochi: NH85 via Kothamangalam and Adimali, ~130 km, 4 hrs.\n• Nearest airport: Cochin International (COK), ~110 km.\n• Nearest railheads: Aluva / Ernakulam, then KSRTC bus or taxi.\n• KSRTC buses run from Ernakulam, Kottayam and Thekkady.",
+  "guide": "Day 1: Drive up via Cheeyappara and Valara waterfalls, Tata Tea Museum, sunset at a tea-estate viewpoint.\nDay 2: Eravikulam National Park (Rajamala) in the morning, then Mattupetty Dam, Echo Point, Kundala Lake, Top Station.\nOptional: 4x4 sunrise trip to Kolukkumalai from Suryanelli; Chinnar / Marayoor sandalwood forests and dolmens.\nStay: homestays and resorts in Chithirapuram, Pallivasal and Anachal are quieter than Munnar town.",
+  "tips": "• Eravikulam closes every year for Nilgiri tahr calving (roughly February–March) – check before going.\n• Book Eravikulam tickets online; queues are long on weekends.\n• Nights drop to 5–10 °C in Dec–Jan; carry a jacket.\n• Neelakurinji blooms only once every 12 years (last 2018).",
+  "safety": "Ghat roads are narrow with heavy fog in the evenings – avoid night driving. Landslide alerts are common in the monsoon (Jun–Aug). Emergency: 112, Ambulance 108, Kerala Tourism helpline 1800 425 4747.",
   "photos": [
-   "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/29/Nanga_Parbat_The_Killer_Mountain.jpg/1280px-Nanga_Parbat_The_Killer_Mountain.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-   "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c1/Fairy_Meadows%2C_Pakistan.jpg/1280px-Fairy_Meadows%2C_Pakistan.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-   "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9a/Raikot_Bridge.jpg/1280px-Raikot_Bridge.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-   "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/29/Nanga_Parbat_The_Killer_Mountain.jpg/1280px-Nanga_Parbat_The_Killer_Mountain.jpg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+   "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b9/Munnar_Overview.jpg/1280px-Munnar_Overview.jpg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/60/Eravikulam_National_Park_%2849444006652%29.jpg/1280px-Eravikulam_National_Park_%2849444006652%29.jpg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
   ],
-  "photoCredits": "Nanga Parbat The Killer Mountain.jpg – Tahsin Anwar Ali, CC BY-SA 3.0 (Wikimedia Commons)\nFairy Meadows, Pakistan.jpg – M.Awais, CC BY-SA 4.0 (Wikimedia Commons)\nRaikot Bridge.jpg – Toofllab, CC BY-SA 4.0 (Wikimedia Commons)\nNanga Parbat The Killer Mountain.jpg – Tahsin Anwar Ali, CC BY-SA 3.0 (Wikimedia Commons)"
+  "photoCredits": "Munnar Overview.jpg – Kondephy, CC BY-SA 4.0 (Wikimedia Commons)\nEravikulam National Park (49444006652).jpg – Mike Prince from Bangalore, India, CC BY 2.0 (Wikimedia Commons)"
  },
  {
-  "name": "Naran, Kaghan & Saiful Muluk",
-  "region": "Mansehra, Khyber Pakhtunkhwa",
-  "lat": 34.9087,
-  "lng": 73.651,
-  "category": "Lake",
+  "name": "Alappuzha Backwaters",
+  "region": "Alappuzha",
+  "lat": 9.4981,
+  "lng": 76.3388,
+  "category": "Backwaters",
   "vibes": [
-   "Mountains",
+   "Chill",
+   "Romantic",
    "Nature",
+   "Just escape",
+   "Family",
+   "Photography",
+   "Food"
+  ],
+  "amenities": [
+   "Parking",
+   "Restrooms",
+   "Restaurants",
+   "Hotels",
+   "Mobile signal",
+   "Internet",
+   "ATM",
+   "Fuel station",
+   "Medical aid",
+   "Kid friendly",
+   "Local guides"
+  ],
+  "transport": [
+   "Car",
+   "Bus",
+   "Train",
+   "Motorbike"
+  ],
+  "bestMonths": [
+   9,
+   10,
+   11,
+   12,
+   1,
+   2,
+   3
+  ],
+  "dailyCost": 4500,
+  "minDays": 1,
+  "description": "The 'Venice of the East': palm-fringed canals, paddy fields below sea level and Vembanad Lake, best seen from an overnight kettuvallam houseboat with Kerala meals cooked on board.",
+  "howToReach": "• From Kochi: NH66, ~55 km, 1.5 hrs.\n• Alappuzha railway station is on the Ernakulam–Kayamkulam coastal line.\n• KSRTC buses every few minutes from Ernakulam and Thiruvananthapuram.",
+  "guide": "Overnight houseboat: board around noon at Punnamada / Finishing Point, cruise through Kuttanad, moor by evening, sunrise on the lake, disembark ~9 am.\nBudget option: State Water Transport ferry Alappuzha–Kottayam (about 2.5 hrs, very cheap) or a shikara (small covered boat) for 2–3 hours.\nAlso: Alappuzha beach & pier, Marari beach (30 min north), Champakulam church.\nEvent: Nehru Trophy Snake Boat Race – second Saturday of August on Punnamada Lake.",
+  "tips": "• Houseboats must stop cruising around 5:30 pm by rule – the overnight part is moored.\n• Agree on what's included (meals, AC hours, cruise route) before paying.\n• Prices drop sharply on weekdays and in the monsoon.\n• Try karimeen (pearl spot fish) fry and toddy-shop food.",
+  "safety": "Use operators with Kerala Tourism / Port Department registration and life jackets on board. Carry mosquito repellent. Emergency: 112, Ambulance 108, Tourism helpline 1800 425 4747.",
+  "photos": [
+   "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/13/Kerala_Houseboat_%28191490747%29.jpeg/1280px-Kerala_Houseboat_%28191490747%29.jpeg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e4/Alappuzha_Boat_Beauty_W.jpg/1280px-Alappuzha_Boat_Beauty_W.jpg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/50/Kumarkom.jpg/1280px-Kumarkom.jpg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+  ],
+  "photoCredits": "Kerala Houseboat (191490747).jpeg – Kv Gopalakrishnan, CC BY 3.0 (Wikimedia Commons)\nAlappuzha Boat Beauty W.jpg – Augustus Binu/ facebook, CC BY-SA 3.0 (Wikimedia Commons)\nKumarkom.jpg – Jigyasu, CC BY-SA 4.0 (Wikimedia Commons)"
+ },
+ {
+  "name": "Kumarakom",
+  "region": "Kottayam",
+  "lat": 9.6175,
+  "lng": 76.4301,
+  "category": "Backwaters",
+  "vibes": [
+   "Chill",
+   "Romantic",
+   "Nature",
+   "Photography",
+   "Just escape"
+  ],
+  "amenities": [
+   "Parking",
+   "Restrooms",
+   "Restaurants",
+   "Hotels",
+   "Mobile signal",
+   "Internet",
+   "ATM",
+   "Medical aid",
+   "Kid friendly",
+   "Local guides",
+   "Entry ticket"
+  ],
+  "transport": [
+   "Car",
+   "Bus",
+   "Train"
+  ],
+  "bestMonths": [
+   11,
+   12,
+   1,
+   2,
+   3
+  ],
+  "dailyCost": 5000,
+  "minDays": 1,
+  "description": "A cluster of islands on the eastern shore of Vembanad Lake with lakeside resorts, Ayurveda retreats and the Kumarakom Bird Sanctuary – quieter and more upmarket than Alappuzha.",
+  "howToReach": "• Kottayam railway station is 16 km away.\n• From Kochi: ~75 km via Vaikom, 2 hrs.\n• Ferries connect Kumarakom to Muhamma across the lake.",
+  "guide": "Early morning: Kumarakom Bird Sanctuary walk (migratory birds peak Nov–Feb).\nDay: canoe or shikara ride through village canals, Ayurveda massage.\nEvening: sunset over Vembanad from Pathiramanal island (boat from Muhamma / Kumarakom).",
+  "tips": "• Go to the sanctuary at opening time for birds.\n• Many resorts offer village-life tours (coir making, toddy tapping).\n• Kottayam town has cheaper stays if resorts are over budget.",
+  "safety": "Lakes are deep – wear life jackets on small boats. Emergency: 112, Ambulance 108.",
+  "photos": [
+   "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/50/Kumarkom.jpg/1280px-Kumarkom.jpg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "https://upload.wikimedia.org/wikipedia/commons/4/4d/Kerala_Kumarakom_Bird_Sanctuary.jpg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled"
+  ],
+  "photoCredits": "Kumarkom.jpg – Jigyasu, CC BY-SA 4.0 (Wikimedia Commons)\nKerala Kumarakom Bird Sanctuary.jpg – P.K.Niyogi (talk), Public domain (Wikimedia Commons)"
+ },
+ {
+  "name": "Fort Kochi & Mattancherry",
+  "region": "Ernakulam",
+  "lat": 9.9658,
+  "lng": 76.2421,
+  "category": "Historical",
+  "vibes": [
+   "Culture",
+   "Food",
+   "Photography",
    "Chill",
    "Family",
-   "Road trip",
+   "Party"
+  ],
+  "amenities": [
+   "Parking",
+   "Restrooms",
+   "Restaurants",
+   "Hotels",
+   "Mobile signal",
+   "Internet",
+   "ATM",
+   "Fuel station",
+   "Medical aid",
+   "Wheelchair access",
+   "Kid friendly",
+   "Pet friendly",
+   "Local guides",
+   "Entry ticket"
+  ],
+  "transport": [
+   "Car",
+   "Bus",
+   "Train",
+   "Flight",
+   "Motorbike"
+  ],
+  "bestMonths": [
+   10,
+   11,
+   12,
+   1,
+   2,
+   3
+  ],
+  "dailyCost": 3500,
+  "minDays": 1,
+  "description": "Five centuries of Portuguese, Dutch, British and Jewish history on one walkable peninsula: Chinese fishing nets, St Francis Church, the Dutch Palace, the Paradesi Synagogue, spice warehouses, art cafés and the Kochi-Muziris Biennale.",
+  "howToReach": "• Cochin International Airport, ~45 km.\n• Ernakulam Junction / Town railway stations, then ferry or Kochi Water Metro to Fort Kochi.\n• State ferry from Ernakulam boat jetty is the cheapest and most scenic way in.",
+  "guide": "Morning: Chinese fishing nets at sunrise, St Francis Church, Santa Cruz Basilica, Princess Street.\nAfternoon: Mattancherry Palace (Dutch Palace) murals, Jew Town antique shops, Paradesi Synagogue.\nEvening: Kathakali performance (make-up session from ~5 pm), seafood grilled to order by the nets.\nBiennale years: venues across Aspinwall House and Mattancherry (Dec–Mar).",
+  "tips": "• Mattancherry Palace is closed on Fridays; the synagogue closes Friday afternoons, Saturdays and Jewish holidays.\n• Rent a bicycle – the area is flat and compact.\n• Dress modestly for churches and the synagogue.",
+  "safety": "Watch for traffic on narrow lanes; avoid isolated beach stretches late at night. Emergency: 112, Ambulance 108, Tourism helpline 1800 425 4747.",
+  "photos": [
+   "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/19/Chinese_Fishing_Net_Raising_Birds_Sunrise_Ashtamudi_Kollam_Mar22_A7C_01784.jpg/1280px-Chinese_Fishing_Net_Raising_Birds_Sunrise_Ashtamudi_Kollam_Mar22_A7C_01784.jpg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6e/Kochi%2C_Fishing_nets_at_sunset%2C_Kerala%2C_India.jpg/1280px-Kochi%2C_Fishing_nets_at_sunset%2C_Kerala%2C_India.jpg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "https://upload.wikimedia.org/wikipedia/commons/b/bb/Jewish_synagouge_kochi_india.jpg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/12/Mattancherry_Palace_DSC_0899.JPG/1280px-Mattancherry_Palace_DSC_0899.JPG?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+  ],
+  "photoCredits": "Chinese Fishing Net Raising Birds Sunrise Ashtamudi Kollam Mar22 A7C 01784.jpg – This Photo was taken by Timothy A. Gonsalves. Feel free to use my photos, but please mention me as the author. I would much appreciate if you send me an email tagooty@yahoo.com or write on my talk page, for my information. Please contact me before commercial use. Please do not upload an edited image here without consulting me. I would like to make corrections only at my own source to ensure that the changes improve the image and are preserved.Otherwise you may upload an edited image with a new name. Please use one of the templates derivative or extract., CC BY-SA 4.0 (Wikimedia Commons)\nKochi, Fishing nets at sunset, Kerala, India.jpg – Vyacheslav Argenberg, CC BY 4.0 (Wikimedia Commons)\nJewish synagouge kochi india.jpg – jeem from Saint Louis, United States, CC BY 2.5 (Wikimedia Commons)\nMattancherry Palace DSC 0899.JPG – Ranjith Siji, CC BY-SA 4.0 (Wikimedia Commons)"
+ },
+ {
+  "name": "Varkala",
+  "region": "Thiruvananthapuram",
+  "lat": 8.7379,
+  "lng": 76.7163,
+  "category": "Beach",
+  "vibes": [
+   "Beaches",
+   "Chill",
+   "Party",
+   "Food",
+   "Spiritual",
+   "Just escape",
+   "Wellness"
+  ],
+  "amenities": [
+   "Parking",
+   "Restrooms",
+   "Restaurants",
+   "Hotels",
+   "Mobile signal",
+   "Internet",
+   "ATM",
+   "Medical aid",
+   "Pet friendly",
+   "Local guides"
+  ],
+  "transport": [
+   "Car",
+   "Bus",
+   "Train",
+   "Motorbike"
+  ],
+  "bestMonths": [
+   10,
+   11,
+   12,
+   1,
+   2,
+   3
+  ],
+  "dailyCost": 3000,
+  "minDays": 2,
+  "description": "Kerala's only cliff-backed beach: red laterite cliffs above Papanasam beach lined with cafés, yoga shalas and Ayurveda centres, plus the 2,000-year-old Janardanaswamy Temple.",
+  "howToReach": "• Varkala Sivagiri railway station on the Kollam–Thiruvananthapuram line, then 10 min by auto.\n• Thiruvananthapuram airport, ~50 km, 1.5 hrs.",
+  "guide": "Day 1: North Cliff walk at sunset, dinner at a cliff-top café.\nDay 2: Morning yoga, Papanasam beach, Janardanaswamy Temple, Black Beach and Odayam beach.\nNearby: Kappil beach & backwaters (15 min), Ponnumthuruthu (Golden) island by canoe.",
+  "tips": "• Season shops and cafés open Oct–Apr; many close in the monsoon.\n• Stay on North Cliff for nightlife, South Cliff for quiet.\n• Cliff edges have no railings in places – careful after dark.",
+  "safety": "Strong undertow – swim only between lifeguard flags; the sea is closed to swimming in the monsoon. Emergency: 112, Ambulance 108, Tourism helpline 1800 425 4747.",
+  "photos": [
+   "https://upload.wikimedia.org/wikipedia/commons/4/49/Varkala_Beach%2C_Varkala%2C_Kerala.jpg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled"
+  ],
+  "photoCredits": "Varkala Beach, Varkala, Kerala.jpg – Devender Goyal, CC BY-SA 4.0 (Wikimedia Commons)"
+ },
+ {
+  "name": "Kovalam",
+  "region": "Thiruvananthapuram",
+  "lat": 8.4004,
+  "lng": 76.9787,
+  "category": "Beach",
+  "vibes": [
+   "Beaches",
+   "Chill",
+   "Wellness",
    "Romantic",
+   "Family",
+   "Food"
+  ],
+  "amenities": [
+   "Parking",
+   "Restrooms",
+   "Restaurants",
+   "Hotels",
+   "Mobile signal",
+   "Internet",
+   "ATM",
+   "Medical aid",
+   "Kid friendly",
+   "Local guides"
+  ],
+  "transport": [
+   "Car",
+   "Bus",
+   "Train",
+   "Flight",
+   "Motorbike"
+  ],
+  "bestMonths": [
+   9,
+   10,
+   11,
+   12,
+   1,
+   2,
+   3
+  ],
+  "dailyCost": 3500,
+  "minDays": 2,
+  "description": "Three crescent beaches – Lighthouse, Hawa and Samudra – separated by rocky headlands just south of the capital, famous for Ayurveda resorts and the red-and-white Vizhinjam lighthouse.",
+  "howToReach": "• 16 km from Thiruvananthapuram city and ~15 km from the airport.\n• Frequent city buses and autos from Thiruvananthapuram East Fort.",
+  "guide": "Morning: climb Vizhinjam lighthouse for the view, swim at Lighthouse beach.\nAfternoon: Ayurveda massage, Hawa beach.\nEvening: seafood on the promenade.\nNearby: Poovar estuary & golden sand beach by boat (~45 min south), Vizhinjam rock-cut cave temple.",
+  "tips": "• Ayurveda: choose centres certified by Kerala Tourism (Green Leaf / Olive Leaf).\n• Prices are negotiable off-season.",
+  "safety": "Swim only in lifeguard-marked zones; rip currents are common. Emergency: 112, Ambulance 108, Tourism helpline 1800 425 4747.",
+  "photos": [
+   "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3c/Kovalam_beach_trivandrum_kerala.jpg/1280px-Kovalam_beach_trivandrum_kerala.jpg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d5/Vizhinjam_Light_House.jpg/1280px-Vizhinjam_Light_House.jpg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+  ],
+  "photoCredits": "Kovalam beach trivandrum kerala.jpg – Georgeumartin, CC BY-SA 4.0 (Wikimedia Commons)\nVizhinjam Light House.jpg – Akhilan, CC BY-SA 3.0 (Wikimedia Commons)"
+ },
+ {
+  "name": "Thekkady (Periyar)",
+  "region": "Idukki",
+  "lat": 9.6031,
+  "lng": 77.1615,
+  "category": "Wildlife",
+  "vibes": [
+   "Nature",
+   "Adventure",
+   "Family",
+   "Photography",
    "Just escape"
   ],
   "amenities": [
@@ -194,7 +361,7 @@
    "Medical aid",
    "Kid friendly",
    "Local guides",
-   "4x4 jeep needed"
+   "Entry ticket"
   ],
   "transport": [
    "Car",
@@ -202,40 +369,41 @@
    "Motorbike"
   ],
   "bestMonths": [
-   5,
-   6,
-   7,
-   8,
-   9
+   10,
+   11,
+   12,
+   1,
+   2,
+   3,
+   4
   ],
-  "dailyCost": 7000,
+  "dailyCost": 3500,
   "minDays": 2,
-  "description": "The Kaghan Valley follows the Kunhar river up to Babusar Top. Naran is its base, with legendary Lake Saiful Muluk, Lulusar Lake and Babusar Pass all a short drive away.",
-  "howToReach": "• Islamabad → Hazara Motorway (M-15) → Mansehra → Balakot → Kaghan → Naran. ~270 km, 6–8 hrs.\n• Daewoo/coaches go to Balakot or Naran in season.\n• Jeep from Naran to Saiful Muluk (≈ 45 min).",
-  "guide": "Day 1: Drive up, stop at Kiwai waterfall and Shogran, night in Naran.\nDay 2: Early jeep to Lake Saiful Muluk; afternoon Lulusar Lake and Babusar Top (4,173 m).\nOptional: Ansoo Lake trek (full day, guide required), Siri Paye meadows from Shogran.",
-  "tips": "• Babusar Top usually opens in June; the road above Naran is closed in winter.\n• Go to Saiful Muluk before 9 am to beat crowds.\n• Hotels in Naran are much cheaper on weekdays.",
-  "safety": "Kunhar river is fast and cold – no swimming. Glacier crossings on the way to Saiful Muluk can be slippery early in the season. Emergency: Rescue 1122, Police 15.",
+  "description": "Periyar Tiger Reserve around an artificial lake where elephants, gaur and sambar come to drink. Add spice plantations, bamboo rafting and Kalaripayattu shows in Kumily town.",
+  "howToReach": "• From Kochi: ~160 km via Kottayam / Kumily, 5 hrs.\n• From Munnar: ~100 km, 3 hrs.\n• Nearest airports: Madurai (~140 km) or Kochi.",
+  "guide": "Day 1: Arrive Kumily, spice plantation tour, evening Kathakali or Kalaripayattu show.\nDay 2: First Periyar lake boat (around 7:30 am) for the best wildlife sightings; afternoon nature walk or bamboo rafting run by the Forest Department eco-tourism programme.\nOptional: Chellarkovil viewpoint, Gavi eco-tourism (by KFDC package only).",
+  "tips": "• Book boat tickets online on the Periyar Tiger Reserve website – they sell out.\n• Tiger sightings are rare; elephants and birds are common.\n• Buy cardamom and pepper directly from estates.",
+  "safety": "Stay with forest guides inside the reserve; leeches in the monsoon – carry salt / leech socks. Emergency: 112, Ambulance 108.",
   "photos": [
-   "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/de/Lake_SaifulMalook.jpeg/1280px-Lake_SaifulMalook.jpeg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-   "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/de/Lake_SaifulMalook.jpeg/1280px-Lake_SaifulMalook.jpeg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-   "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ab/View_from_Babusar_top_2.jpg/1280px-View_from_Babusar_top_2.jpg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+   "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/66/Periyar_National_Park.JPG/1280px-Periyar_National_Park.JPG?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/ba/Thekkady.jpg/1280px-Thekkady.jpg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
   ],
-  "photoCredits": "Lake SaifulMalook.jpeg – Muzaffar Bukhari, FAL (Wikimedia Commons)\nLake SaifulMalook.jpeg – Muzaffar Bukhari, FAL (Wikimedia Commons)\nView from Babusar top 2.jpg – Saadzafar91, CC BY-SA 3.0 (Wikimedia Commons)"
+  "photoCredits": "Periyar National Park.JPG – Wouter Hagens, Public domain (Wikimedia Commons)\nThekkady.jpg – Jigyasu, CC BY-SA 4.0 (Wikimedia Commons)"
  },
  {
-  "name": "Swat Valley & Kalam",
-  "region": "Swat, Khyber Pakhtunkhwa",
-  "lat": 35.489,
-  "lng": 72.5797,
-  "category": "Valley",
+  "name": "Wayanad",
+  "region": "Wayanad",
+  "lat": 11.6085,
+  "lng": 76.083,
+  "category": "Mountains",
   "vibes": [
-   "Mountains",
    "Nature",
-   "Family",
-   "Chill",
+   "Adventure",
+   "Mountains",
    "Road trip",
    "Just escape",
-   "Adventure"
+   "Family",
+   "Photography"
   ],
   "amenities": [
    "Parking",
@@ -249,7 +417,7 @@
    "Medical aid",
    "Kid friendly",
    "Local guides",
-   "4x4 jeep needed"
+   "Entry ticket"
   ],
   "transport": [
    "Car",
@@ -257,43 +425,95 @@
    "Motorbike"
   ],
   "bestMonths": [
+   9,
+   10,
+   11,
+   12,
+   1,
+   2,
+   3,
    4,
-   5,
+   5
+  ],
+  "dailyCost": 3500,
+  "minDays": 2,
+  "description": "Misty plateau on the Western Ghats with coffee and spice estates, prehistoric carvings in Edakkal Caves, the heart-shaped lake on Chembra Peak, waterfalls and wildlife sanctuaries bordering Karnataka and Tamil Nadu.",
+  "howToReach": "• From Kozhikode: up the Thamarassery Ghat (9 hairpins), ~75 km to Kalpetta, 2.5 hrs.\n• Calicut International Airport, ~90 km.\n• From Bengaluru: ~280 km via Mysuru, 6 hrs (forest checkposts close at night).",
+  "guide": "Day 1: Lakkidi viewpoint, Pookode Lake, Banasura Sagar Dam (India's largest earth dam).\nDay 2: Edakkal Caves (steep climb), Soochipara or Meenmutty falls.\nDay 3: Chembra Peak trek (forest permit, limited slots) or Muthanga / Tholpetty jeep safari.",
+  "tips": "• Edakkal Caves are closed on Mondays.\n• Chembra and safaris need Forest Department permits – book early and check if open.\n• Plantation homestays are the best way to stay.",
+  "safety": "The July 2024 landslides devastated Mundakkai–Chooralmala; respect restricted zones and heed monsoon alerts. Wildlife on roads at night. Emergency: 112, Ambulance 108.",
+  "photos": [
+   "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/97/Edakkal_Cave.jpg/1280px-Edakkal_Cave.jpg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/af/Chembra.jpg/1280px-Chembra.jpg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "https://upload.wikimedia.org/wikipedia/commons/f/f0/Banasurasagar_Main_Dam.jpg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e8/Blue%2C_Green_%26_White.jpg/1280px-Blue%2C_Green_%26_White.jpg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+  ],
+  "photoCredits": "Edakkal Cave.jpg – നിരക്ഷരൻ at Malayalam Wikipedia., CC BY 3.0 (Wikimedia Commons)\nChembra.jpg – Aneesh Jose, CC BY-SA 3.0 (Wikimedia Commons)\nBanasurasagar Main Dam.jpg – KSEB, CC BY-SA 2.5 (Wikimedia Commons)\nBlue, Green & White.jpg – Karkiabhijeet, CC BY-SA 4.0 (Wikimedia Commons)"
+ },
+ {
+  "name": "Athirappilly & Vazhachal Falls",
+  "region": "Thrissur",
+  "lat": 10.2851,
+  "lng": 76.5698,
+  "category": "Waterfall",
+  "vibes": [
+   "Nature",
+   "Family",
+   "Photography",
+   "Road trip",
+   "Adventure"
+  ],
+  "amenities": [
+   "Parking",
+   "Restrooms",
+   "Restaurants",
+   "Hotels",
+   "Mobile signal",
+   "Kid friendly",
+   "Local guides",
+   "Entry ticket"
+  ],
+  "transport": [
+   "Car",
+   "Bus",
+   "Motorbike"
+  ],
+  "bestMonths": [
    6,
    7,
    8,
    9,
    10,
+   11,
    12,
-   1,
-   2
+   1
   ],
-  "dailyCost": 6500,
-  "minDays": 3,
-  "description": "Called the Switzerland of the East – green river valley, pine forests, Malam Jabba ski resort and alpine lakes like Mahodand above Kalam.",
-  "howToReach": "• Islamabad → M-1 → Swat Expressway (M-16) → Chakdara → Mingora → Kalam. ~300 km, 7–8 hrs.\n• Coaches run Rawalpindi/Peshawar → Mingora; local vans to Kalam.\n• Jeep from Kalam to Mahodand Lake (≈ 1.5 hrs).",
-  "guide": "Day 1: Mingora, Swat Museum, Butkara stupa, night at Malam Jabba or Fizagat.\nDay 2: Malam Jabba chairlift, drive to Kalam via Bahrain.\nDay 3: Ushu forest, Mahodand Lake (boating, trout).\nWinter: Malam Jabba skiing (Dec–Feb).",
-  "tips": "• Try Swat trout and chapli kebab in Bahrain.\n• Kalam roads are rough after Bahrain – keep extra time.\n• Winter: the road beyond Kalam closes with snow.",
-  "safety": "Flash floods in July–August monsoon – check forecasts and stay away from riverbanks. Emergency: Rescue 1122, Police 15.",
+  "dailyCost": 2500,
+  "minDays": 1,
+  "description": "Kerala's largest waterfall – about 25 m high and 100 m wide on the Chalakudy river – framed by rainforest. Vazhachal Falls is 5 km upstream.",
+  "howToReach": "• From Kochi: ~60 km via Angamaly and Chalakudy, 1.5–2 hrs.\n• Chalakudy railway station is 30 km away; KSRTC buses run from Chalakudy.",
+  "guide": "Morning: top view of Athirappilly, then the forest path down to the base (15–20 min).\nThen: Vazhachal Falls, Charpa Falls by the road.\nOptional: continue on the forest road towards Valparai (checkpost timings apply), or the theme parks near Chalakudy.",
+  "tips": "• Most powerful in Jun–Sep, but entry to the base can close on high flow.\n• Ticket counters close by late afternoon.\n• No plastic allowed inside the forest area.",
+  "safety": "Slippery rocks – never go near the edge or into the water. Elephants cross the Valparai road. Emergency: 112, Ambulance 108.",
   "photos": [
-   "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cc/Malam_Jaba%2C_Swat%2C_Pakistan.JPG/1280px-Malam_Jaba%2C_Swat%2C_Pakistan.JPG?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+   "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/81/The_View_of_the_Athirapally_Falls_during_the_onset_of_Monsoon.jpg/1280px-The_View_of_the_Athirapally_Falls_during_the_onset_of_Monsoon.jpg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4a/The_full_flowing_Vazhachal_Falls_on_the_upper_reaches_of_Chalakudy_River.jpg/1280px-The_full_flowing_Vazhachal_Falls_on_the_upper_reaches_of_Chalakudy_River.jpg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
   ],
-  "photoCredits": "Malam Jaba, Swat, Pakistan.JPG – Mehlab Jameel, CC BY-SA 4.0 (Wikimedia Commons)"
+  "photoCredits": "The View of the Athirapally Falls during the onset of Monsoon.jpg – Jan Joseph George, CC BY-SA 4.0 (Wikimedia Commons)\nThe full flowing Vazhachal Falls on the upper reaches of Chalakudy River.jpg – Jan Joseph George, CC BY-SA 4.0 (Wikimedia Commons)"
  },
  {
-  "name": "Neelum Valley",
-  "region": "Azad Jammu & Kashmir",
-  "lat": 34.7942,
-  "lng": 74.188,
-  "category": "Valley",
+  "name": "Vagamon",
+  "region": "Idukki / Kottayam",
+  "lat": 9.6863,
+  "lng": 76.905,
+  "category": "Mountains",
   "vibes": [
+   "Chill",
    "Nature",
+   "Adventure",
    "Mountains",
    "Just escape",
-   "Chill",
-   "Romantic",
-   "Photography",
-   "Road trip"
+   "Romantic"
   ],
   "amenities": [
    "Parking",
@@ -303,9 +523,9 @@
    "Camping",
    "Mobile signal",
    "Fuel station",
-   "Medical aid",
    "Kid friendly",
-   "Local guides"
+   "Local guides",
+   "Entry ticket"
   ],
   "transport": [
    "Car",
@@ -313,63 +533,61 @@
    "Motorbike"
   ],
   "bestMonths": [
-   4,
-   5,
-   6,
-   7,
-   8,
    9,
-   10
+   10,
+   11,
+   12,
+   1,
+   2,
+   3,
+   4,
+   5
   ],
-  "dailyCost": 6500,
-  "minDays": 3,
-  "description": "A 200 km long emerald valley along the Neelum river in Kashmir: Keran, Sharda's ancient university ruins, Kel and the fairy-tale hilltop village of Arang Kel.",
-  "howToReach": "• Islamabad → Murree → Kohala → Muzaffarabad → Neelum road to Keran, Sharda, Kel. ~250 km to Sharda, 7–9 hrs.\n• Coasters from Muzaffarabad General Bus Stand.",
-  "guide": "Day 1: Muzaffarabad, Pir Chinasi viewpoint, drive to Keran.\nDay 2: Sharda (Sharda Peeth ruins), continue to Kel.\nDay 3: Arang Kel (cable car + 45 min uphill hike), return or continue to Taobat.\nRatti Gali Lake can be added from Dowarian (see separate listing).",
-  "tips": "• Carry your CNIC (foreigners: passport + NOC may be needed beyond Kel).\n• Mobile data is limited past Sharda – download offline maps.\n• Fuel up in Muzaffarabad / Athmuqam.",
-  "safety": "Valley runs along the Line of Control – obey army check-posts and signs. Road has landslide spots in rain. Emergency: Rescue 1122, Police 15.",
+  "dailyCost": 3000,
+  "minDays": 1,
+  "description": "A cool, uncrowded hill station of rolling grass meadows, pine forest and tea, known for paragliding and the Kurisumala hill ashram.",
+  "howToReach": "• From Kottayam: ~65 km via Erattupetta, 2 hrs.\n• From Kochi: ~100 km, 3 hrs.",
+  "guide": "Morning: Vagamon meadows and pine forest, Thangal Para.\nAfternoon: Vagamon Adventure Park (paragliding in season), Marmala waterfall.\nSunset: Kurisumala viewpoint.",
+  "tips": "• Weekdays are much quieter.\n• Paragliding depends on the wind – book with licensed operators.",
+  "safety": "Fog cuts visibility to a few metres in the evening. Emergency: 112, Ambulance 108.",
   "photos": [
-   "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/aa/Neelum_Valley%2C_Azad_Jammu_%26_Kashmir%2C_Pakistan.jpg/1280px-Neelum_Valley%2C_Azad_Jammu_%26_Kashmir%2C_Pakistan.jpg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-   "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/40/Arang_Kel_Morning.jpg/1280px-Arang_Kel_Morning.jpg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+   "https://upload.wikimedia.org/wikipedia/commons/e/eb/Vagamon_meadows.JPG?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled"
   ],
-  "photoCredits": "Neelum Valley, Azad Jammu & Kashmir, Pakistan.jpg – Umar Jamshaid 03457611024, CC BY-SA 3.0 (Wikimedia Commons)\nArang Kel Morning.jpg – Kashifrehan1805, CC BY-SA 4.0 (Wikimedia Commons)"
+  "photoCredits": "Vagamon meadows.JPG – Visakh wiki, CC BY-SA 3.0 (Wikimedia Commons)"
  },
  {
-  "name": "Murree & Galiyat",
-  "region": "Punjab / Khyber Pakhtunkhwa",
-  "lat": 33.907,
-  "lng": 73.3943,
-  "category": "Mountains",
+  "name": "Guruvayur",
+  "region": "Thrissur",
+  "lat": 10.5946,
+  "lng": 76.0411,
+  "category": "Religious",
   "vibes": [
-   "Chill",
-   "Family",
-   "Mountains",
-   "Just escape",
-   "Nature",
-   "Romantic",
-   "Food"
+   "Spiritual",
+   "Culture",
+   "Family"
   ],
   "amenities": [
    "Parking",
    "Restrooms",
    "Restaurants",
    "Hotels",
-   "Camping",
    "Mobile signal",
    "Internet",
    "ATM",
    "Fuel station",
    "Medical aid",
-   "Kid friendly",
-   "Pet friendly",
-   "Wheelchair access"
+   "Wheelchair access",
+   "Kid friendly"
   ],
   "transport": [
    "Car",
    "Bus",
+   "Train",
    "Motorbike"
   ],
   "bestMonths": [
+   1,
+   2,
    3,
    4,
    5,
@@ -379,80 +597,33 @@
    9,
    10,
    11,
-   12,
-   1,
-   2
+   12
   ],
-  "dailyCost": 7000,
+  "dailyCost": 2500,
   "minDays": 1,
-  "description": "The classic hill station an hour from Islamabad. Pine-covered Galiyat – Nathia Gali, Dunga Gali, Ayubia – offer cool summers, snowy winters and easy hikes.",
-  "howToReach": "• Islamabad → Murree Expressway. 60 km, 1.5 hrs to Mall Road; Nathia Gali another 1 hr.\n• Daily buses and vans from Faizabad, Rawalpindi.",
-  "guide": "Day trip: Mall Road & Kashmir Point → Patriata chairlift → lunch → Pipeline Track walk (Dunga Gali–Ayubia, 4 km flat).\nWeekend: stay in Nathia Gali, hike Mushkpuri Top (2 hrs up) at sunrise, Ayubia chairlift.",
-  "tips": "• Avoid Mall Road on Sunday afternoons and Eid – traffic jams are huge.\n• Snow season (Dec–Feb): carry chains, full tank and food.\n• Nathia Gali is quieter and greener than Murree town.",
-  "safety": "During heavy snowfall the government may restrict entry – check Murree police / NHMP updates before going. Emergency: Rescue 1122, Police 15, Motorway Police 130.",
+  "description": "One of India's most important Krishna temples, plus Punnathur Kotta, the temple's elephant sanctuary. Nearby Thrissur hosts the spectacular Thrissur Pooram festival every April–May.",
+  "howToReach": "• Guruvayur railway station (branch line from Thrissur).\n• Thrissur is 28 km; Kochi airport ~80 km.",
+  "guide": "Early morning darshan (queues are shortest at opening), Punnathur Kotta elephant sanctuary, Mammiyoor temple.\nCombine with Thrissur: Vadakkunnathan temple, Shakthan Thampuran palace; time the trip with Thrissur Pooram if you can.",
+  "tips": "• Only Hindus may enter the main temple.\n• Dress code: men in mundu, no shirt; women in saree, set-mundu or salwar.\n• Weekends and wedding seasons are very crowded.",
+  "safety": "Keep a safe distance from elephants at Punnathur Kotta. Emergency: 112, Ambulance 108.",
   "photos": [
-   "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/67/Church_near_Murree.JPG/1280px-Church_near_Murree.JPG?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-   "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e5/Sunset_in_hills_-_Holy_Trinity_Church%2C_Murree.jpg/1280px-Sunset_in_hills_-_Holy_Trinity_Church%2C_Murree.jpg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+   "https://upload.wikimedia.org/wikipedia/commons/1/17/Guruvayoor_Temple_1.jpg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/04/009392022_Guruvayur_temple%2C_Kerala_004.jpg/1280px-009392022_Guruvayur_temple%2C_Kerala_004.jpg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
   ],
-  "photoCredits": "Church near Murree.JPG – Nahgamra.roosnam, CC BY-SA 3.0 (Wikimedia Commons)\nSunset in hills - Holy Trinity Church, Murree.jpg – Usamashahid433, CC BY-SA 4.0 (Wikimedia Commons)"
+  "photoCredits": "Guruvayoor Temple 1.jpg – Susmitanair, CC BY-SA 4.0 (Wikimedia Commons)\n009392022 Guruvayur temple, Kerala 004.jpg – Ms Sarah Welch, CC0 (Wikimedia Commons)"
  },
  {
-  "name": "Kund Malir Beach",
-  "region": "Lasbela, Balochistan",
-  "lat": 25.4337,
-  "lng": 65.4686,
-  "category": "Beach",
+  "name": "Bekal Fort",
+  "region": "Kasaragod",
+  "lat": 12.3922,
+  "lng": 75.0331,
+  "category": "Historical",
   "vibes": [
+   "Culture",
    "Beaches",
-   "Just escape",
-   "Road trip",
-   "Adventure",
    "Photography",
-   "Nature"
-  ],
-  "amenities": [
-   "Parking",
-   "Camping",
-   "Restrooms"
-  ],
-  "transport": [
-   "Car",
-   "Motorbike",
-   "Bus"
-  ],
-  "bestMonths": [
-   10,
-   11,
-   12,
-   1,
-   2,
-   3
-  ],
-  "dailyCost": 4000,
-  "minDays": 1,
-  "description": "A wild, almost empty golden beach on the Makran Coastal Highway inside Hingol National Park, with blue water and desert mountains behind it. The drive itself – past the Princess of Hope and Sphinx rock formations – is the highlight.",
-  "howToReach": "• Karachi → Hub → Makran Coastal Highway (N-10). ~240 km, 4 hrs.\n• Few buses stop here – private car is best.",
-  "guide": "Day trip from Karachi: leave by 6 am, beach by 10 am, lunch at a dhaba, Princess of Hope & Sphinx viewpoints, back by night.\nOvernight: camp at Kund Malir (bring all gear) or continue to Ormara.\nNearby: Hinglaj Mata temple, Chandragup mud volcano.",
-  "tips": "• Fuel up in Hub/Zero Point – stations are rare after that.\n• Carry water, food, sun protection; facilities are very basic.\n• Take all trash back with you.",
-  "safety": "Rip currents: do not swim far out, and stay out of the sea May–August (monsoon). Carry CNIC for check-posts. Mobile signal is patchy. Emergency: Police 15, Edhi 115.",
-  "photos": [
-   "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6b/Kund_Malir_Beach_Pakistan.jpg/1280px-Kund_Malir_Beach_Pakistan.jpg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-   "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a0/Hingool_Nationa_Park_and_Makran_Coastal_Highway.jpg/1280px-Hingool_Nationa_Park_and_Makran_Coastal_Highway.jpg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
-  ],
-  "photoCredits": "Kund Malir Beach Pakistan.jpg – RashidN1981, CC BY-SA 4.0 (Wikimedia Commons)\nHingool Nationa Park and Makran Coastal Highway.jpg – Asad.aman83, CC BY-SA 4.0 (Wikimedia Commons)"
- },
- {
-  "name": "Gwadar",
-  "region": "Makran, Balochistan",
-  "lat": 25.1216,
-  "lng": 62.3254,
-  "category": "Beach",
-  "vibes": [
-   "Beaches",
-   "Just escape",
-   "Road trip",
-   "Photography",
-   "Chill"
+   "Romantic",
+   "Road trip"
   ],
   "amenities": [
    "Parking",
@@ -460,14 +631,14 @@
    "Restaurants",
    "Hotels",
    "Mobile signal",
-   "ATM",
-   "Fuel station",
-   "Medical aid"
+   "Kid friendly",
+   "Entry ticket"
   ],
   "transport": [
    "Car",
-   "Flight",
-   "Bus"
+   "Bus",
+   "Train",
+   "Motorbike"
   ],
   "bestMonths": [
    10,
@@ -477,29 +648,29 @@
    2,
    3
   ],
-  "dailyCost": 6000,
-  "minDays": 2,
-  "description": "A port city on a hammerhead peninsula with two bays, deep-blue sea and the Koh-e-Batil hill overlooking it. Long, uncrowded beaches and fresh seafood.",
-  "howToReach": "• By air: Karachi → New Gwadar International Airport.\n• By road: Karachi → N-10 Makran Coastal Highway via Ormara and Pasni. ~650 km, 9–10 hrs.",
-  "guide": "Day 1: Drive the coastal highway, stop at Kund Malir & Ormara.\nDay 2: Koh-e-Batil (Hammerhead) sunset, Marine Drive, fish harbour at dawn.\nDay 3: Ganz/Jiwani beaches or return.",
-  "tips": "• Carry CNIC/passport – multiple security checks.\n• Seafood is best at the fish harbour restaurants.\n• Winter afternoons are perfect; summer is humid.",
-  "safety": "Follow local security advisories and travel in daylight. Emergency: Police 15, Edhi 115.",
+  "dailyCost": 3000,
+  "minDays": 1,
+  "description": "Kerala's largest fort – a 17th-century keyhole-shaped laterite fortress jutting into the Arabian Sea – with a beach park below and quiet Valiyaparamba backwaters nearby.",
+  "howToReach": "• Bekal Fort / Kanhangad railway stations, 5–10 min away.\n• Mangaluru airport ~70 km; Kannur airport ~95 km.",
+  "guide": "Morning: walk the fort ramparts and observation tower, Bekal beach park.\nAfternoon: houseboat or kayak on Valiyaparamba backwaters.\nOptional: Ranipuram hill trek, Chandragiri fort.",
+  "tips": "• Sunset from the ramparts is the highlight.\n• The north is far less touristy – stays are good value.",
+  "safety": "Waves are strong below the fort walls. Emergency: 112, Ambulance 108.",
   "photos": [
-   "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f7/Gwadar_city%2C_the_doors_of_Air.jpg/1280px-Gwadar_city%2C_the_doors_of_Air.jpg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+   "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d1/Bakel_Fort_Beach_Kasaragod7.jpg/1280px-Bakel_Fort_Beach_Kasaragod7.jpg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/96/Valiyaparamba_Madakkal_suspension_bridge.JPG/1280px-Valiyaparamba_Madakkal_suspension_bridge.JPG?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
   ],
-  "photoCredits": "Gwadar city, the doors of Air.jpg – Shayhaq Baloch, CC BY-SA 4.0 (Wikimedia Commons)"
+  "photoCredits": "Bakel Fort Beach Kasaragod7.jpg – Vinayaraj, CC BY-SA 3.0 (Wikimedia Commons)\nValiyaparamba Madakkal suspension bridge.JPG – Alertedlevel2, CC BY 3.0 (Wikimedia Commons)"
  },
  {
-  "name": "Karachi Coast & Food Streets",
-  "region": "Karachi, Sindh",
-  "lat": 24.812,
-  "lng": 67.031,
+  "name": "Kozhikode",
+  "region": "Kozhikode",
+  "lat": 11.2588,
+  "lng": 75.7804,
   "category": "City",
   "vibes": [
-   "Party",
    "Food",
-   "Beaches",
    "Culture",
+   "Beaches",
    "Family",
    "Chill"
   ],
@@ -525,37 +696,39 @@
    "Motorbike"
   ],
   "bestMonths": [
+   10,
    11,
    12,
    1,
    2,
    3
   ],
-  "dailyCost": 6000,
-  "minDays": 2,
-  "description": "Pakistan's biggest city: Clifton & Sea View beach, Do Darya seafront dining, Burns Road food street, colonial Frere Hall, Mazar-e-Quaid and boat trips from Keamari. Beach huts at Hawksbay, French Beach and Sandspit.",
-  "howToReach": "• Flights from every major city to Jinnah International.\n• Green Line / Karakoram Express trains from Lahore and Rawalpindi.\n• Daewoo / Faisal Movers coaches.",
-  "guide": "Day 1: Mazar-e-Quaid, Frere Hall, Empress Market, dinner on Burns Road (nihari, rabri).\nDay 2: Boat ride from Keamari (crabbing at night), Manora, sunset at Sea View, dinner at Do Darya.\nDay 3: Rent a hut at French Beach or Hawksbay; turtle watching at Sandspit (Sep–Jan, WWF centre).",
-  "tips": "• Book beach huts a week ahead on weekends.\n• Use ride-hailing apps; avoid displaying phones at traffic signals.\n• Sea is closed for swimming in monsoon (June–August).",
-  "safety": "Street crime exists – keep valuables out of sight. Emergency: Police 15, Rescue 1122, Edhi 115, Chhipa 1020.",
+  "dailyCost": 2500,
+  "minDays": 1,
+  "description": "Calicut, the old spice port where Vasco da Gama landed in 1498, now Kerala's food capital – Malabar biryani, halwa, and snacks on SM Street, with a lively seafront.",
+  "howToReach": "• Calicut International Airport (Karipur), ~25 km.\n• Kozhikode railway station on the main west-coast line.",
+  "guide": "Morning: Kappad beach (da Gama landing monument), Beypore – watch traditional wooden urus being built.\nAfternoon: Mananchira Square, Tali temple, Mishkal Mosque.\nEvening: SM Street (Mittai Theruvu) for halwa and banana chips, Kozhikode beach sunset, Malabar biryani dinner.",
+  "tips": "• Try kallummakkaya (mussels), pathiri and sulaimani tea.\n• SM Street is busiest in the evening.",
+  "safety": "Busy traffic; use licensed autos with meters. Emergency: 112, Ambulance 108.",
   "photos": [
-   "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/34/PK_Karachi_asv2020-02_img62_Frere_Hall.jpg/1280px-PK_Karachi_asv2020-02_img62_Frere_Hall.jpg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-   "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/47/PK_Karachi_asv2020-02_img52_Mazar-e-Quaid.jpg/1280px-PK_Karachi_asv2020-02_img52_Mazar-e-Quaid.jpg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+   "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/dc/Kozhikode_Beach_Coastline.jpg/1280px-Kozhikode_Beach_Coastline.jpg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7b/Kappad_Beach.jpg/1280px-Kappad_Beach.jpg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/45/Kozhikode_beach_kites.jpg/1280px-Kozhikode_beach_kites.jpg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
   ],
-  "photoCredits": "PK Karachi asv2020-02 img62 Frere Hall.jpg – A.Savin, FAL (Wikimedia Commons)\nPK Karachi asv2020-02 img52 Mazar-e-Quaid.jpg – A.Savin, FAL (Wikimedia Commons)"
+  "photoCredits": "Kozhikode Beach Coastline.jpg – Sulyab Thottungal, CC BY-SA 4.0 (Wikimedia Commons)\nKappad Beach.jpg – SidhardhRamesh, CC BY-SA 4.0 (Wikimedia Commons)\nKozhikode beach kites.jpg – Mr 037, CC BY-SA 4.0 (Wikimedia Commons)"
  },
  {
-  "name": "Lahore Walled City",
-  "region": "Lahore, Punjab",
-  "lat": 31.588,
-  "lng": 74.315,
-  "category": "Historical",
+  "name": "Kannur",
+  "region": "Kannur",
+  "lat": 11.8745,
+  "lng": 75.3704,
+  "category": "Beach",
   "vibes": [
    "Culture",
-   "Food",
-   "Party",
-   "Family",
-   "Photography"
+   "Beaches",
+   "Road trip",
+   "Photography",
+   "Just escape"
   ],
   "amenities": [
    "Parking",
@@ -563,14 +736,11 @@
    "Restaurants",
    "Hotels",
    "Mobile signal",
-   "Internet",
    "ATM",
    "Fuel station",
    "Medical aid",
-   "Wheelchair access",
    "Kid friendly",
-   "Local guides",
-   "Entry ticket"
+   "Local guides"
   ],
   "transport": [
    "Car",
@@ -580,39 +750,39 @@
    "Motorbike"
   ],
   "bestMonths": [
-   10,
    11,
    12,
    1,
    2,
-   3
+   3,
+   4
   ],
-  "dailyCost": 6000,
+  "dailyCost": 2500,
   "minDays": 2,
-  "description": "Mughal Lahore: Badshahi Mosque, Lahore Fort (UNESCO), Wazir Khan Mosque's tile work, Shalimar Gardens and the legendary food of Gawalmandi and Fort Road. End with the Wagah border ceremony.",
-  "howToReach": "• Islamabad → M-2 motorway, 375 km, 4.5 hrs. Daewoo every hour.\n• Trains from Rawalpindi (Green Line, Subak Raftar) and Karachi.\n• Allama Iqbal International Airport.",
-  "guide": "Day 1: Lahore Fort, Sheesh Mahal, Badshahi Mosque, dinner at Fort Road Food Street facing the mosque.\nDay 2: Walled City Lahore tour (Delhi Gate, Shahi Hammam, Wazir Khan Mosque), Anarkali bazaar.\nDay 3: Shalimar Gardens morning, Wagah border flag ceremony (arrive 2 hrs early).\nEat: Phajja paye, Butt karahi, Gawalmandi halwa puri breakfast.",
-  "tips": "• Walled City Lahore Authority runs guided walks and double-decker bus tours.\n• Dress modestly for mosques; shoes off.\n• Smog season (Nov–Jan) – check AQI and carry masks.",
-  "safety": "Crowded bazaars – watch pockets. Emergency: Rescue 1122, Police 15.",
+  "description": "The heartland of Theyyam, an ancient ritual dance performed in village shrines through the night, plus Muzhappilangad, a 4 km beach you can drive on, and the Portuguese-built St Angelo Fort.",
+  "howToReach": "• Kannur International Airport, ~30 km.\n• Kannur railway station on the main west-coast line.",
+  "guide": "Day 1: St Angelo Fort, Arakkal Museum, Payyambalam beach.\nDay 2: Drive Muzhappilangad beach, Dharmadam island at low tide.\nNight: attend a Theyyam performance at a local kavu (shrine) – ask your homestay for the schedule.",
+  "tips": "• Theyyam season runs roughly November to May; performances are free – be respectful, no flash.\n• Kannur is famous for handloom – buy at weavers' cooperatives.",
+  "safety": "Drive slowly on the beach and stay above the tide line. Emergency: 112, Ambulance 108.",
   "photos": [
-   "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c8/Badshahi_Mosque_front_picture.jpg/1280px-Badshahi_Mosque_front_picture.jpg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-   "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4f/Lahore_Fort_view_from_Baradari.jpg/1280px-Lahore_Fort_view_from_Baradari.jpg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-   "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e7/Wazir_Khan_Mosque_by_Moiz.jpg/1280px-Wazir_Khan_Mosque_by_Moiz.jpg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+   "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/38/Kathivanoor_Veeran_Chemmarathi_Thara-Eripuram.jpg/1280px-Kathivanoor_Veeran_Chemmarathi_Thara-Eripuram.jpg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d9/Muzhappilangad_Drive-in_Beach_2.jpg/1280px-Muzhappilangad_Drive-in_Beach_2.jpg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/40/Kannurfort3.JPG/1280px-Kannurfort3.JPG?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
   ],
-  "photoCredits": "Badshahi Mosque front picture.jpg – Romero Maia, CC BY-SA 4.0 (Wikimedia Commons)\nLahore Fort view from Baradari.jpg – Rohaan Bhatti, CC BY-SA 3.0 (Wikimedia Commons)\nWazir Khan Mosque by Moiz.jpg – Moiz Ismaili, CC BY-SA 4.0 (Wikimedia Commons)"
+  "photoCredits": "Kathivanoor Veeran Chemmarathi Thara-Eripuram.jpg – Uajith, CC BY-SA 4.0 (Wikimedia Commons)\nMuzhappilangad Drive-in Beach 2.jpg – Shagil Kannur, CC BY 3.0 (Wikimedia Commons)\nKannurfort3.JPG – MANOJTV at en.wikipedia, CC BY-SA 3.0 (Wikimedia Commons)"
  },
  {
-  "name": "Islamabad & Margalla Hills",
-  "region": "Islamabad Capital Territory",
-  "lat": 33.7299,
-  "lng": 73.0372,
+  "name": "Thiruvananthapuram",
+  "region": "Thiruvananthapuram",
+  "lat": 8.4828,
+  "lng": 76.9436,
   "category": "City",
   "vibes": [
-   "Chill",
-   "Nature",
+   "Culture",
+   "Spiritual",
    "Family",
    "Food",
-   "Culture"
+   "Beaches"
   ],
   "amenities": [
    "Parking",
@@ -637,283 +807,6 @@
    "Motorbike"
   ],
   "bestMonths": [
-   2,
-   3,
-   4,
-   10,
-   11,
-   12
-  ],
-  "dailyCost": 6000,
-  "minDays": 1,
-  "description": "A green capital at the foot of the Margalla Hills: Faisal Mosque, Daman-e-Koh viewpoint, hiking trails, Saidpur village, Lok Virsa heritage museum and Rawal Lake.",
-  "howToReach": "• Islamabad International Airport (IIAP).\n• Trains to Rawalpindi station, Daewoo terminal at I-11 / Peshawar Mor.\n• M-2 from Lahore, M-1 from Peshawar.",
-  "guide": "Morning: hike Trail 5 or Trail 3 (2–3 hrs), breakfast at Saidpur Village.\nAfternoon: Pakistan Monument & museum, Lok Virsa.\nSunset: Faisal Mosque, then Daman-e-Koh city lights.\nEvening: F-6 / F-7 Jinnah Super food scene.",
-  "tips": "• Start trails early in summer; carry water.\n• Faisal Mosque closes to tourists during prayer times.\n• Spring (March–April) is the most beautiful season.",
-  "safety": "Leopards and wild boar live in the Margallas – stay on marked trails, hike in groups. Emergency: Rescue 1122, Police 15.",
-  "photos": [
-   "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e0/Ali_Mujtaba_WLM2017_FAISAL_MOSQUE_019.jpg/1280px-Ali_Mujtaba_WLM2017_FAISAL_MOSQUE_019.jpg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-   "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cf/Blue_Hour_at_Pakistan_Monument.jpg/1280px-Blue_Hour_at_Pakistan_Monument.jpg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
-  ],
-  "photoCredits": "Ali Mujtaba WLM2017 FAISAL MOSQUE 019.jpg – Ali Mujtaba, CC BY-SA 4.0 (Wikimedia Commons)\nBlue Hour at Pakistan Monument.jpg – Muhammad Ashar, CC BY-SA 4.0 (Wikimedia Commons)"
- },
- {
-  "name": "Deosai National Park",
-  "region": "Skardu / Astore, Gilgit-Baltistan",
-  "lat": 34.9833,
-  "lng": 75.4,
-  "category": "Adventure",
-  "vibes": [
-   "Nature",
-   "Adventure",
-   "Just escape",
-   "Photography",
-   "Mountains",
-   "Road trip"
-  ],
-  "amenities": [
-   "Camping",
-   "Local guides",
-   "4x4 jeep needed",
-   "Entry ticket"
-  ],
-  "transport": [
-   "Car",
-   "Flight",
-   "Motorbike"
-  ],
-  "bestMonths": [
-   6,
-   7,
-   8,
-   9
-  ],
-  "dailyCost": 8000,
-  "minDays": 2,
-  "description": "The 'Land of Giants' – one of the highest plateaus on Earth (≈4,100 m). Endless wildflower meadows, Sheosar Lake and a protected population of Himalayan brown bears.",
-  "howToReach": "• From Skardu via Satpara Lake (≈ 2 hrs by jeep to Bara Pani).\n• From Astore via Chilam (crossing the whole plateau ≈ 5–6 hrs).\n• 4x4 required; jeeps can be hired in Skardu.",
-  "guide": "Day 1: Skardu → Satpara → Ali Malik Mar → Bara Pani (camp, bear spotting at dusk).\nDay 2: Kala Pani, Sheosar Lake, exit via Chilam to Astore or return to Skardu.\nBest flowers: mid-July to mid-August.",
-  "tips": "• No shops or hotels inside – carry food, water, fuel.\n• Night temperatures drop near freezing even in August.\n• Keep 100+ m away from bears; never feed wildlife.",
-  "safety": "Altitude sickness risk – sleep lower if headaches start. No mobile signal. Emergency: Rescue 1122 (Skardu).",
-  "photos": [
-   "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7b/Deosai_pic_hd.jpg/1280px-Deosai_pic_hd.jpg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-   "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4e/Sheoser_lake_deosai_national_park.jpg/1280px-Sheoser_lake_deosai_national_park.jpg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
-  ],
-  "photoCredits": "Deosai pic hd.jpg – Hunzagrapher, CC BY-SA 4.0 (Wikimedia Commons)\nSheoser lake deosai national park.jpg – Jehan Sher, CC BY-SA 4.0 (Wikimedia Commons)"
- },
- {
-  "name": "Ratti Gali Lake",
-  "region": "Neelum, Azad Jammu & Kashmir",
-  "lat": 34.8306,
-  "lng": 74.0628,
-  "category": "Lake",
-  "vibes": [
-   "Adventure",
-   "Nature",
-   "Just escape",
-   "Mountains",
-   "Photography"
-  ],
-  "amenities": [
-   "Camping",
-   "Restrooms",
-   "Local guides",
-   "4x4 jeep needed"
-  ],
-  "transport": [
-   "Car",
-   "Bus",
-   "Motorbike"
-  ],
-  "bestMonths": [
-   7,
-   8
-  ],
-  "dailyCost": 6000,
-  "minDays": 2,
-  "description": "A glacial lake at about 3,700 m in upper Neelum, surrounded by snow-streaked peaks and flower meadows. One of the most photographed alpine lakes in Pakistan.",
-  "howToReach": "• Drive to Dowarian (Neelum Valley, ~7 hrs from Islamabad).\n• Jeep from Dowarian to base camp (≈ 2 hrs on a rough track).\n• Hike 1–1.5 hrs to the lake.",
-  "guide": "Day 1: Islamabad → Dowarian, overnight.\nDay 2: Jeep to base camp, hike to lake, camp at base camp.\nDay 3: Sunrise at the lake, descend to Kel/Sharda.",
-  "tips": "• Snow blocks the track until late June; July–August is the window.\n• Tents and food are available at base camp in season, but bring layers.\n• Leave no trash – the lake ecosystem is fragile.",
-  "safety": "Weather changes quickly; start the hike early. No signal. Emergency: Rescue 1122 (Muzaffarabad).",
-  "photos": [
-   "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/30/Ratti_Gali_Lake_.jpg/1280px-Ratti_Gali_Lake_.jpg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
-  ],
-  "photoCredits": "Ratti Gali Lake .jpg – Shahzeb Baig, CC BY-SA 4.0 (Wikimedia Commons)"
- },
- {
-  "name": "Mohenjo-daro",
-  "region": "Larkana, Sindh",
-  "lat": 27.3292,
-  "lng": 68.1389,
-  "category": "Historical",
-  "vibes": [
-   "Culture",
-   "Photography",
-   "Family"
-  ],
-  "amenities": [
-   "Parking",
-   "Restrooms",
-   "Restaurants",
-   "Local guides",
-   "Entry ticket",
-   "Kid friendly"
-  ],
-  "transport": [
-   "Car",
-   "Bus",
-   "Train",
-   "Flight"
-  ],
-  "bestMonths": [
-   11,
-   12,
-   1,
-   2
-  ],
-  "dailyCost": 4500,
-  "minDays": 1,
-  "description": "A 4,500-year-old Indus Valley city and UNESCO World Heritage Site: the Great Bath, the Stupa mound, planned streets and drains, plus an on-site museum.",
-  "howToReach": "• Train to Larkana, then 30 min by road.\n• Karachi → N-55 Indus Highway, ~430 km, 7 hrs.\n• Fly to Sukkur and drive 1.5 hrs.",
-  "guide": "Start at the museum (copies of the Priest-King and Dancing Girl), then walk the Stupa mound and Great Bath, then the Lower City.\nCombine with Sukkur (Lansdowne Bridge, Sadhu Bela) or Larkana.",
-  "tips": "• Visit November–February; summer exceeds 45 °C.\n• Hire a licensed guide at the gate.\n• Don't climb on the ruins.",
-  "safety": "Carry water and sun protection. Emergency: Rescue 1122, Police 15, Edhi 115.",
-  "photos": [
-   "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/03/Mohenjodaro_-_view_of_the_stupa_mound.JPG/1280px-Mohenjodaro_-_view_of_the_stupa_mound.JPG?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
-  ],
-  "photoCredits": "Mohenjodaro - view of the stupa mound.JPG – Saqib Qayyum, CC BY-SA 3.0 (Wikimedia Commons)"
- },
- {
-  "name": "Khewra Salt Mine",
-  "region": "Jhelum, Punjab",
-  "lat": 32.6475,
-  "lng": 73.0086,
-  "category": "Historical",
-  "vibes": [
-   "Family",
-   "Culture",
-   "Photography",
-   "Road trip"
-  ],
-  "amenities": [
-   "Parking",
-   "Restrooms",
-   "Restaurants",
-   "Mobile signal",
-   "Kid friendly",
-   "Local guides",
-   "Entry ticket",
-   "Wheelchair access"
-  ],
-  "transport": [
-   "Car",
-   "Bus",
-   "Motorbike"
-  ],
-  "bestMonths": [
-   1,
-   2,
-   3,
-   4,
-   5,
-   6,
-   7,
-   8,
-   9,
-   10,
-   11,
-   12
-  ],
-  "dailyCost": 4000,
-  "minDays": 1,
-  "description": "The world's second-largest salt mine, worked since Mughal times. Glowing pink salt tunnels, a mosque built of salt bricks, a salt-crystal Assembly Hall and a mini train ride.",
-  "howToReach": "• Islamabad → M-2 → Lillah interchange → Pind Dadan Khan → Khewra. ~170 km, 2.5 hrs.\n• From Lahore ~250 km, 3.5 hrs.",
-  "guide": "2-hour guided mine tour, then drive 30 min to Katas Raj Temples and Kallar Kahar lake for lunch. A perfect day trip.",
-  "tips": "• Inside temperature is ~18 °C all year – nice in summer.\n• Buy salt lamps at the mine shop.\n• Weekends are crowded; arrive at opening.",
-  "safety": "Stay with the group inside the tunnels. Emergency: Rescue 1122, Police 15.",
-  "photos": [
-   "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/72/Khewra_Salt_Mine_-_Crystal_Deposits_on_the_mine_walls.jpg/1280px-Khewra_Salt_Mine_-_Crystal_Deposits_on_the_mine_walls.jpg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
-  ],
-  "photoCredits": "Khewra Salt Mine - Crystal Deposits on the mine walls.jpg – Shikari7, CC BY-SA 3.0 (Wikimedia Commons)"
- },
- {
-  "name": "Kalash Valleys",
-  "region": "Chitral, Khyber Pakhtunkhwa",
-  "lat": 35.7333,
-  "lng": 71.7167,
-  "category": "Valley",
-  "vibes": [
-   "Culture",
-   "Party",
-   "Mountains",
-   "Photography",
-   "Just escape",
-   "Road trip"
-  ],
-  "amenities": [
-   "Parking",
-   "Restaurants",
-   "Hotels",
-   "Camping",
-   "Local guides",
-   "Entry ticket"
-  ],
-  "transport": [
-   "Car",
-   "Flight",
-   "Motorbike"
-  ],
-  "bestMonths": [
-   5,
-   6,
-   7,
-   8,
-   9,
-   10,
-   12
-  ],
-  "dailyCost": 6500,
-  "minDays": 3,
-  "description": "Bumburet, Rumbur and Birir are home to the Kalash people, with their own ancient religion, colourful dress and festivals – Chilam Joshi in May, Uchal in August and Chaumos in December.",
-  "howToReach": "• Islamabad → Swat Expressway → Dir → Lowari Tunnel → Chitral → Ayun → Bumburet. ~420 km, 10–11 hrs.\n• Flights Islamabad → Chitral (weather dependent), then 1.5 hrs by jeep.",
-  "guide": "Day 1: Drive to Chitral (Shahi Mosque, Chitral Fort).\nDay 2: Bumburet – Kalasha Dur museum, villages, walnut orchards.\nDay 3: Rumbur valley walk; festival dates if you planned around them.",
-  "tips": "• Ask before photographing people, especially women.\n• Plan around festival dates (Chilam Joshi ≈ 13–16 May).\n• Foreign visitors register at Chitral check-post.",
-  "safety": "Respect sacred places (no entry into restricted areas). Emergency: Rescue 1122 Chitral, Police 15.",
-  "photos": [
-   "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5e/Bomboret_River.jpg/1280px-Bomboret_River.jpg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
-  ],
-  "photoCredits": "Bomboret River.jpg – Hassan Ali, CC BY-SA 3.0 (Wikimedia Commons)"
- },
- {
-  "name": "Taxila",
-  "region": "Rawalpindi, Punjab",
-  "lat": 33.746,
-  "lng": 72.8397,
-  "category": "Historical",
-  "vibes": [
-   "Culture",
-   "Family",
-   "Photography",
-   "Chill"
-  ],
-  "amenities": [
-   "Parking",
-   "Restrooms",
-   "Restaurants",
-   "Mobile signal",
-   "Kid friendly",
-   "Local guides",
-   "Entry ticket",
-   "Wheelchair access"
-  ],
-  "transport": [
-   "Car",
-   "Bus",
-   "Train",
-   "Motorbike"
-  ],
-  "bestMonths": [
    10,
    11,
    12,
@@ -921,17 +814,161 @@
    2,
    3
   ],
-  "dailyCost": 4000,
+  "dailyCost": 3000,
   "minDays": 1,
-  "description": "A UNESCO site of the Gandhara civilisation: the Dharmarajika stupa, Jaulian monastery on a hilltop, the Greek-planned city of Sirkap and a superb museum of Buddhist sculpture.",
-  "howToReach": "• Islamabad/Rawalpindi → GT Road / Margalla Avenue, 35 km, 45 min.\n• Trains stop at Taxila Cantt.",
-  "guide": "Taxila Museum (1.5 hrs) → Sirkap → Jaulian monastery (short uphill walk) → Dharmarajika. Half-day trip; add Khanpur Dam for water sports in summer.",
-  "tips": "• Museum is closed on some public holidays – check before going.\n• Stone-carving workshops in town sell Gandhara replicas.",
-  "safety": "Carry water; little shade at the sites. Emergency: Rescue 1122, Police 15.",
+  "description": "The capital: the gold-adorned Sree Padmanabhaswamy Temple, Kuthiramalika palace, the Indo-Saracenic Napier Museum, Shanghumukham beach and the Veli lagoon.",
+  "howToReach": "• Thiruvananthapuram International Airport (TRV).\n• Thiruvananthapuram Central railway station.",
+  "guide": "Morning: Padmanabhaswamy Temple (Hindus only), Kuthiramalika palace museum next door.\nAfternoon: Napier Museum, Sree Chitra Art Gallery, zoo.\nEvening: Shanghumukham beach sunset, Veli tourist village.\nDay trips: Kovalam, Poovar, Ponmudi, Neyyar Dam.",
+  "tips": "• Temple dress code is strict: men mundu and bare-chested, women saree or long skirt; dhotis can be hired at the gate.\n• Phones and cameras are not allowed inside the temple – use the cloakroom.",
+  "safety": "Heavy traffic on MG Road; use metered autos or ride-hailing. Emergency: 112, Ambulance 108, Tourism helpline 1800 425 4747.",
   "photos": [
-   "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/79/Dharmarajika_stupa%2CTaxila.jpg/1280px-Dharmarajika_stupa%2CTaxila.jpg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-   "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3f/Taxila_Museum_Entrance.jpg/1280px-Taxila_Museum_Entrance.jpg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+   "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d2/Sree_Padmanabhaswamy_temple_01.jpg/1280px-Sree_Padmanabhaswamy_temple_01.jpg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/31/Napier_Museum_South_side_15_45_45_372000.jpeg/1280px-Napier_Museum_South_side_15_45_45_372000.jpeg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "https://upload.wikimedia.org/wikipedia/commons/7/71/0507-KuthiraMalika-Dinakarr.jpg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled"
   ],
-  "photoCredits": "Dharmarajika stupa,Taxila.jpg – Sasha Isachenko, CC BY-SA 3.0 (Wikimedia Commons)\nTaxila Museum Entrance.jpg – Khalid Mahmood, CC BY-SA 3.0 (Wikimedia Commons)"
+  "photoCredits": "Sree Padmanabhaswamy temple 01.jpg – Rahulrnath001, CC BY-SA 4.0 (Wikimedia Commons)\nNapier Museum South side 15 45 45 372000.jpeg – Shagil Muzhappilangad, CC BY-SA 4.0 (Wikimedia Commons)\n0507-KuthiraMalika-Dinakarr.jpg – Dinakarr at English Wikipedia, Public domain (Wikimedia Commons)"
+ },
+ {
+  "name": "Ponmudi",
+  "region": "Thiruvananthapuram",
+  "lat": 8.7598,
+  "lng": 77.1167,
+  "category": "Mountains",
+  "vibes": [
+   "Mountains",
+   "Road trip",
+   "Chill",
+   "Nature",
+   "Just escape"
+  ],
+  "amenities": [
+   "Parking",
+   "Restrooms",
+   "Restaurants",
+   "Hotels",
+   "Kid friendly"
+  ],
+  "transport": [
+   "Car",
+   "Bus",
+   "Motorbike"
+  ],
+  "bestMonths": [
+   9,
+   10,
+   11,
+   12,
+   1,
+   2,
+   3,
+   4,
+   5
+  ],
+  "dailyCost": 2500,
+  "minDays": 1,
+  "description": "A compact hill station 1,100 m up, reached by a road of 22 hairpin bends through rainforest – a favourite day trip from the capital with misty views and streams.",
+  "howToReach": "• From Thiruvananthapuram: ~55 km, 1.5–2 hrs.\n• KSRTC buses from Thiruvananthapuram Central.",
+  "guide": "Drive up early, stop at Kallar river and Golden Valley, walk to the Ponmudi top viewpoint, deer park.\nCombine with Peppara Dam or Meenmutty falls hike (forest guide).",
+  "tips": "• The forest checkpost closes in the evening – plan to be down before then.\n• The road can close after heavy rain; check before leaving.",
+  "safety": "Monkeys snatch food – keep bags closed. Hairpins are tight; bikers should go slowly. Emergency: 112, Ambulance 108.",
+  "photos": [
+   "https://upload.wikimedia.org/wikipedia/commons/d/d7/Morning_at_Ponmudi.jpg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled"
+  ],
+  "photoCredits": "Morning at Ponmudi.jpg – Arunelectra, CC BY-SA 3.0 (Wikimedia Commons)"
+ },
+ {
+  "name": "Jatayu Earth's Center",
+  "region": "Kollam",
+  "lat": 8.871,
+  "lng": 76.8676,
+  "category": "Adventure",
+  "vibes": [
+   "Adventure",
+   "Family",
+   "Photography",
+   "Culture"
+  ],
+  "amenities": [
+   "Parking",
+   "Restrooms",
+   "Restaurants",
+   "Mobile signal",
+   "Kid friendly",
+   "Wheelchair access",
+   "Entry ticket"
+  ],
+  "transport": [
+   "Car",
+   "Bus",
+   "Motorbike"
+  ],
+  "bestMonths": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6,
+   7,
+   8,
+   9,
+   10,
+   11,
+   12
+  ],
+  "dailyCost": 3000,
+  "minDays": 1,
+  "description": "A giant sculpture of the mythical bird Jatayu on a granite hilltop at Chadayamangalam – billed as the world's largest bird sculpture – reached by cable car, with an adventure park and wide views.",
+  "howToReach": "• From Thiruvananthapuram: ~50 km on MC Road, 1.5 hrs.\n• From Kollam: ~38 km.",
+  "guide": "Cable car up, sculpture and museum inside, sunset viewpoint. Add the adventure centre (rock climbing, zip line) if booked in advance.",
+  "tips": "• Book tickets online; cable car slots fill up on holidays.\n• Climb up by the steps only if you're fit – it's steep.",
+  "safety": "Rock surfaces get hot and slippery – wear proper shoes. Emergency: 112, Ambulance 108.",
+  "photos": [],
+  "photoCredits": ""
+ },
+ {
+  "name": "Silent Valley National Park",
+  "region": "Palakkad",
+  "lat": 11.13,
+  "lng": 76.45,
+  "category": "Wildlife",
+  "vibes": [
+   "Nature",
+   "Adventure",
+   "Photography",
+   "Just escape"
+  ],
+  "amenities": [
+   "Parking",
+   "Restrooms",
+   "Local guides",
+   "4x4 jeep needed",
+   "Entry ticket"
+  ],
+  "transport": [
+   "Car",
+   "Bus",
+   "Motorbike"
+  ],
+  "bestMonths": [
+   12,
+   1,
+   2,
+   3,
+   4,
+   5
+  ],
+  "dailyCost": 2500,
+  "minDays": 1,
+  "description": "One of India's last undisturbed tropical evergreen rainforests, home to the lion-tailed macaque. Visits are only by Forest Department jeep to the Sairandhri watchtower.",
+  "howToReach": "• Drive to Mukkali via Mannarkkad (Palakkad district) – ~70 km from Palakkad, ~100 km from Coimbatore.\n• Forest Department jeep from Mukkali to Sairandhri (~23 km).",
+  "guide": "Reach Mukkali by 8 am, book the jeep safari at the information centre, Sairandhri watchtower and walk to the Kunthi river. Stay in Forest Department dormitories at Mukkali if available.",
+  "tips": "• Strictly no plastic and no private vehicles inside.\n• Entry is restricted / closed in the peak monsoon – confirm with the Forest Department.",
+  "safety": "Leeches in wet months; follow your guide. No mobile signal inside. Emergency: 112, Ambulance 108.",
+  "photos": [
+   "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/91/SAN_BIRDS_48.jpg/1280px-SAN_BIRDS_48.jpg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c3/Lion-tailed_Macaque_in_Bristol_Zoo.jpg/1280px-Lion-tailed_Macaque_in_Bristol_Zoo.jpg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+  ],
+  "photoCredits": "SAN BIRDS 48.jpg – Sancia Morris, CC BY-SA 4.0 (Wikimedia Commons)\nLion-tailed Macaque in Bristol Zoo.jpg – Chris huh, CC BY-SA 3.0 (Wikimedia Commons)"
  }
 ]
