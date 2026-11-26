@@ -38,15 +38,15 @@ class AppFlowTest {
     }
 
     @Test fun mainFlows() {
-        waitFor("18 places")
+        waitFor("36 places")
         shot("1_explore")
 
         // Filtering by amenity checkbox narrows the list
         rule.onNodeWithText("Filters", substring = true).performClick()
         rule.onNodeWithText("4x4 jeep needed").performClick()
-        waitFor("2 places")
+        waitFor("4 places")
         rule.onNodeWithText("Clear all").performClick()
-        waitFor("18 places")
+        waitFor("36 places")
         androidx.test.espresso.Espresso.pressBack()
 
         // Place detail, guide, community update

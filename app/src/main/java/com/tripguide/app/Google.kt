@@ -37,7 +37,8 @@ object Google {
         .put("locationRestriction", JSONObject().put("circle", JSONObject().put("radius", 30_000.0)
             .put("center", JSONObject().put("latitude", lat).put("longitude", lng)))))
 
-    suspend fun search(ctx: Context, query: String) = post(ctx, "searchText", JSONObject().put("textQuery", query).put("pageSize", 10))
+    suspend fun search(ctx: Context, query: String, limit: Int = 10) =
+        post(ctx, "searchText", JSONObject().put("textQuery", query).put("pageSize", limit))
 
     fun photoUrl(name: String) = "https://places.googleapis.com/v1/$name/media?maxWidthPx=800&key=${BuildConfig.PLACES_API_KEY}"
 

@@ -59,7 +59,7 @@ fun GoogleAttribution() = Text("Data and photos: Google Maps", Modifier.padding(
     style = MaterialTheme.typography.labelSmall, color = MaterialTheme.colorScheme.onSurfaceVariant)
 
 @Composable
-private fun Results(result: Result<List<GPlace>>?, empty: String, fromLat: Double?, fromLng: Double?) {
+fun Results(result: Result<List<GPlace>>?, empty: String, fromLat: Double?, fromLng: Double?) {
     when {
         !Google.enabled -> Text("Google Maps results need a Places API key (see README → Google Maps setup).",
             style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.outline)

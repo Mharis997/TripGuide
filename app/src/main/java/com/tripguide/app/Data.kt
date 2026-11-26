@@ -76,7 +76,6 @@ abstract class Dao {
     @Query("SELECT * FROM places") abstract suspend fun allPlaces(): List<Place>
     @Query("SELECT * FROM places WHERE id = :id") abstract fun place(id: Long): Flow<Place?>
     @Query("SELECT * FROM places WHERE id = :id") abstract suspend fun getPlace(id: Long): Place?
-    @Query("SELECT COUNT(*) FROM places") abstract suspend fun placeCount(): Int
     @Upsert abstract suspend fun upsert(p: Place): Long
     @Insert abstract suspend fun insertPlaces(p: List<Place>)
     @Query("DELETE FROM places WHERE userAdded = 0") abstract suspend fun deleteSeedPlaces()
@@ -123,9 +122,10 @@ abstract class AppDb : RoomDatabase() {
     abstract fun dao(): Dao
 }
 
-/** Built-in places shipped in assets/places.json. */
+/** Built-in places shipped in assets/places.json. Inserts only names not already in the DB, so app updates add new places. */
 object Seed {
     suspend fun load(ctx: Context, dao: Dao) {
+        val have = dao.allPlaces().map { it.name }.toSet()
         val arr = JSONArray(ctx.assets.open("places.json").bufferedReader().use { it.readText() })
         fun JSONArray.strings() = List(length()) { getString(it) }
         dao.insertPlaces(List(arr.length()) { i ->
@@ -141,6 +141,6 @@ object Seed {
                 dailyCost = o.getInt("dailyCost"), minDays = o.getInt("minDays"),
                 photos = o.getJSONArray("photos").strings(), photoCredits = o.optString("photoCredits"),
             )
-        })
+        }.filter { it.name !in have })
     }
 }

@@ -115,6 +115,12 @@ private fun Overview(p: Place) = Column(Modifier.padding(16.dp)) {
     FlowRow(Modifier.padding(top = 8.dp), horizontalArrangement = Arrangement.spacedBy(6.dp)) {
         p.vibes.forEach { AssistChip({}, { Text(it) }) }
     }
+    if (Google.enabled) {
+        val ctx = LocalContext.current
+        val g by produceState<Result<List<GPlace>>?>(null, p.id) { value = Google.search(ctx, "${p.name}, ${p.region}, Kerala", limit = 1) }
+        Section("On Google Maps")
+        Results(g, "Not found on Google Maps.", null, null)
+    }
     Section("Quick facts")
     val km = Planner.km(Prefs.homeLat.toDouble(), Prefs.homeLng.toDouble(), p.lat, p.lng).toInt()
     InfoRow("Distance from ${Prefs.homeName}", "${Prefs.distance(km)} (straight line)")

@@ -33,7 +33,7 @@ class App : Application(), ImageLoaderFactory {
         Prefs.init(this)
         db = Room.databaseBuilder(this, AppDb::class.java, "tripguide.db").build()
         Notify.createChannels(this)
-        CoroutineScope(Dispatchers.IO).launch { if (db.dao().placeCount() == 0) Seed.load(this@App, db.dao()) }
+        CoroutineScope(Dispatchers.IO).launch { Seed.load(this@App, db.dao()) }
     }
 
     // Wikimedia throttles generic HTTP-client user agents; identify the app.

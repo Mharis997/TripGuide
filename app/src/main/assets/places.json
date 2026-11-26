@@ -970,5 +970,867 @@
    "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c3/Lion-tailed_Macaque_in_Bristol_Zoo.jpg/1280px-Lion-tailed_Macaque_in_Bristol_Zoo.jpg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
   ],
   "photoCredits": "SAN BIRDS 48.jpg – Sancia Morris, CC BY-SA 4.0 (Wikimedia Commons)\nLion-tailed Macaque in Bristol Zoo.jpg – Chris huh, CC BY-SA 3.0 (Wikimedia Commons)"
+ },
+ {
+  "name": "Marari Beach",
+  "region": "Alappuzha",
+  "lat": 9.6006,
+  "lng": 76.2986,
+  "category": "Beach",
+  "vibes": [
+   "Beaches",
+   "Chill",
+   "Romantic",
+   "Wellness",
+   "Just escape"
+  ],
+  "amenities": [
+   "Parking",
+   "Restrooms",
+   "Restaurants",
+   "Hotels",
+   "Mobile signal",
+   "Internet",
+   "Kid friendly",
+   "Local guides"
+  ],
+  "transport": [
+   "Car",
+   "Bus",
+   "Train",
+   "Motorbike"
+  ],
+  "bestMonths": [
+   10,
+   11,
+   12,
+   1,
+   2,
+   3
+  ],
+  "dailyCost": 4000,
+  "minDays": 1,
+  "description": "A quiet fishing-village beach 11 km north of Alappuzha with clean sand, casuarina groves and boutique homestays – the calm alternative to busier Kovalam and Varkala.",
+  "howToReach": "• Mararikulam railway station, 3 km.\n• From Alappuzha: 20 min by car/auto.\n• From Kochi: ~60 km on NH66, 1.5 hrs.",
+  "guide": "Morning: walk with the fishermen bringing in nets, swim in the calm early sea.\nAfternoon: cycle the village lanes, coir-making units.\nEvening: sunset on the beach; combine with an Alappuzha houseboat day.",
+  "tips": "• Few shops on the beach itself – most food is at homestays and resorts.\n• Ask your host about fresh-catch dinners.",
+  "safety": "No lifeguards on most stretches – swim close to shore; sea is rough in the monsoon. Emergency: 112, Ambulance 108.",
+  "photos": [
+   "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/29/Marari_Beach_Sunset_01.JPG/1280px-Marari_Beach_Sunset_01.JPG?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/47/Sunset_from_Mararikulam_beach%2C_Kerala%2C_India.jpg/1280px-Sunset_from_Mararikulam_beach%2C_Kerala%2C_India.jpg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+  ],
+  "photoCredits": "Marari Beach Sunset 01.JPG – Mahendra M, CC BY-SA 3.0 (Wikimedia Commons)\nSunset from Mararikulam beach, Kerala, India.jpg – Almost90's, CC BY-SA 4.0 (Wikimedia Commons)"
+ },
+ {
+  "name": "Cherai Beach",
+  "region": "Ernakulam",
+  "lat": 10.1416,
+  "lng": 76.1783,
+  "category": "Beach",
+  "vibes": [
+   "Beaches",
+   "Family",
+   "Chill",
+   "Food",
+   "Photography"
+  ],
+  "amenities": [
+   "Parking",
+   "Restrooms",
+   "Restaurants",
+   "Hotels",
+   "Mobile signal",
+   "Internet",
+   "ATM",
+   "Kid friendly"
+  ],
+  "transport": [
+   "Car",
+   "Bus",
+   "Motorbike"
+  ],
+  "bestMonths": [
+   10,
+   11,
+   12,
+   1,
+   2,
+   3
+  ],
+  "dailyCost": 3000,
+  "minDays": 1,
+  "description": "A long, gently shelving beach on Vypin island with the sea on one side and backwaters on the other, close to Kochi. Dolphins are sometimes spotted offshore.",
+  "howToReach": "• From Kochi: Goshree bridges to Vypin, ~25 km, 1 hr.\n• Buses from Ernakulam High Court junction to Cherai.",
+  "guide": "Beach in the morning, lunch at a backwater-side seafood shack, then Pallipuram fort (Ayikotta, built 1503) and Munambam fishing harbour for sunset.",
+  "tips": "• Weekdays are much quieter.\n• Combine with Fort Kochi by taking the Vypin ferry.",
+  "safety": "Swim only in flagged areas. Emergency: 112, Ambulance 108.",
+  "photos": [
+   "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/13/Sunrise_at_Cherai_Beach.jpg/1280px-Sunrise_at_Cherai_Beach.jpg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/81/Pallipuram_Fort_2.jpg/1280px-Pallipuram_Fort_2.jpg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+  ],
+  "photoCredits": "Sunrise at Cherai Beach.jpg – Jan J George, CC BY-SA 4.0 (Wikimedia Commons)\nPallipuram Fort 2.jpg – KannanVM, CC BY-SA 4.0 (Wikimedia Commons)"
+ },
+ {
+  "name": "Poovar Island",
+  "region": "Thiruvananthapuram",
+  "lat": 8.317,
+  "lng": 77.066,
+  "category": "Backwaters",
+  "vibes": [
+   "Romantic",
+   "Chill",
+   "Beaches",
+   "Nature",
+   "Photography"
+  ],
+  "amenities": [
+   "Parking",
+   "Restrooms",
+   "Restaurants",
+   "Hotels",
+   "Mobile signal",
+   "Local guides"
+  ],
+  "transport": [
+   "Car",
+   "Bus",
+   "Motorbike"
+  ],
+  "bestMonths": [
+   10,
+   11,
+   12,
+   1,
+   2,
+   3
+  ],
+  "dailyCost": 4500,
+  "minDays": 1,
+  "description": "Where the Neyyar river meets the sea near the Tamil Nadu border: mangrove channels, floating cottages and a golden sandbar beach reachable only by boat.",
+  "howToReach": "• From Thiruvananthapuram: ~30 km, 1 hr (via Kovalam).\n• Boats leave from jetties at Poovar village.",
+  "guide": "1.5–2 hr boat ride through the mangroves to the golden sand beach and estuary; add a night in a floating cottage.",
+  "tips": "• Fix the boat fare and duration before boarding.\n• Late afternoon light is best for photos.",
+  "safety": "Don't swim at the estuary mouth – currents are strong. Wear life jackets. Emergency: 112, Ambulance 108.",
+  "photos": [
+   "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7e/Poovar_Kerala.jpg/1280px-Poovar_Kerala.jpg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+  ],
+  "photoCredits": "Poovar Kerala.jpg – Midhun Subhash, CC0 (Wikimedia Commons)"
+ },
+ {
+  "name": "Munroe Island",
+  "region": "Kollam",
+  "lat": 8.9946,
+  "lng": 76.6237,
+  "category": "Backwaters",
+  "vibes": [
+   "Nature",
+   "Chill",
+   "Photography",
+   "Culture",
+   "Just escape"
+  ],
+  "amenities": [
+   "Parking",
+   "Restrooms",
+   "Restaurants",
+   "Hotels",
+   "Local guides"
+  ],
+  "transport": [
+   "Car",
+   "Bus",
+   "Train",
+   "Motorbike"
+  ],
+  "bestMonths": [
+   9,
+   10,
+   11,
+   12,
+   1,
+   2,
+   3
+  ],
+  "dailyCost": 2500,
+  "minDays": 1,
+  "description": "A cluster of islands where Ashtamudi Lake meets the Kallada river. Narrow canals, coir and prawn farming and everyday village life – best explored in a small country canoe.",
+  "howToReach": "• Mundrothuruthu railway station is on the island (Kollam–Kottayam line).\n• From Kollam: ~25 km by road, 45 min.",
+  "guide": "Early-morning canoe tour (around 3 hrs) through the canals, sunrise over Ashtamudi, toddy-shop lunch. Kollam town: Thangassery lighthouse and Kollam beach.",
+  "tips": "• Book the canoe with a homestay; start before 7 am.\n• Carry a hat and water – canoes have no roof.",
+  "safety": "Parts of the island are slowly sinking – stay on marked paths. Emergency: 112, Ambulance 108.",
+  "photos": [
+   "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5e/Beautiful_Munroe_Island_%2C_kollam_district_%2C_kerala.jpg/1280px-Beautiful_Munroe_Island_%2C_kollam_district_%2C_kerala.jpg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f0/Ashtamudi_Kerala.jpg/1280px-Ashtamudi_Kerala.jpg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+  ],
+  "photoCredits": "Beautiful Munroe Island , kollam district , kerala.jpg – Kkkriku, CC BY-SA 4.0 (Wikimedia Commons)\nAshtamudi Kerala.jpg – The Raviz, CC BY-SA 4.0 (Wikimedia Commons)"
+ },
+ {
+  "name": "Thenmala Eco-tourism",
+  "region": "Kollam",
+  "lat": 8.9619,
+  "lng": 77.0645,
+  "category": "Forest",
+  "vibes": [
+   "Nature",
+   "Family",
+   "Adventure",
+   "Road trip"
+  ],
+  "amenities": [
+   "Parking",
+   "Restrooms",
+   "Restaurants",
+   "Hotels",
+   "Mobile signal",
+   "Kid friendly",
+   "Local guides",
+   "Entry ticket"
+  ],
+  "transport": [
+   "Car",
+   "Bus",
+   "Train",
+   "Motorbike"
+  ],
+  "bestMonths": [
+   9,
+   10,
+   11,
+   12,
+   1,
+   2,
+   3,
+   4,
+   5
+  ],
+  "dailyCost": 2500,
+  "minDays": 1,
+  "description": "India's first planned eco-tourism destination, in the forests of the Western Ghats: suspension bridge, nature trails, deer rehabilitation centre, boating on the Parappar reservoir and the Palaruvi waterfall nearby.",
+  "howToReach": "• On the Kollam–Shencottah road, ~70 km from Kollam, 2 hrs.\n• Thenmala railway station on the Kollam–Sengottai line (scenic ghat section).",
+  "guide": "Leisure zone (bridge, sculpture garden, musical fountain in the evening), adventure zone (rock climbing, rope walk), deer centre, then Palaruvi falls.",
+  "tips": "• Activities are sold as zone tickets at the entrance.\n• The Punalur–Sengottai train ride through the hills is worth doing.",
+  "safety": "Follow guides on forest trails; leeches in the wet season. Emergency: 112, Ambulance 108.",
+  "photos": [
+   "https://upload.wikimedia.org/wikipedia/commons/8/82/13_kannara_bridge_near_shencottah.jpeg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f7/Palaruvi_Waterfalls%2C_thenmala_-_panoramio_%281%29.jpg/1280px-Palaruvi_Waterfalls%2C_thenmala_-_panoramio_%281%29.jpg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+  ],
+  "photoCredits": "13 kannara bridge near shencottah.jpeg – Tonymshaji6, CC BY-SA 4.0 (Wikimedia Commons)\nPalaruvi Waterfalls, thenmala - panoramio (1).jpg – Jaseem Hamza, CC BY 3.0 (Wikimedia Commons)"
+ },
+ {
+  "name": "Gavi",
+  "region": "Pathanamthitta",
+  "lat": 9.437,
+  "lng": 77.165,
+  "category": "Wildlife",
+  "vibes": [
+   "Nature",
+   "Adventure",
+   "Just escape",
+   "Photography"
+  ],
+  "amenities": [
+   "Restrooms",
+   "Restaurants",
+   "Hotels",
+   "Camping",
+   "Local guides",
+   "Entry ticket"
+  ],
+  "transport": [
+   "Car",
+   "Bus"
+  ],
+  "bestMonths": [
+   9,
+   10,
+   11,
+   12,
+   1,
+   2,
+   3,
+   4,
+   5
+  ],
+  "dailyCost": 4000,
+  "minDays": 1,
+  "description": "A remote forest and lake area inside the Periyar landscape with cardamom hills, elephants, gaur and Nilgiri tahr. Vehicle numbers are restricted, which keeps it pristine.",
+  "howToReach": "• Entry through the Vallakkadavu checkpost near Vandiperiyar (from Kumily/Thekkady side), with limited daily vehicle permits.\n• KSRTC runs a daily bus from Pathanamthitta to Kumily via Gavi.",
+  "guide": "Book a KFDC (Kerala Forest Development Corporation) package: trekking, boating on Gavi lake, wildlife spotting and an overnight stay in tents or the Green Mansion.",
+  "tips": "• Permits are limited – book days ahead and carry ID.\n• No shops inside; fuel and cash before entering.",
+  "safety": "Wild elephants on the road – never get out of the vehicle for photos. No mobile signal. Emergency: 112, Ambulance 108.",
+  "photos": [
+   "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b9/Gavi_Eco_tourism_center_kochupamba.jpg/1280px-Gavi_Eco_tourism_center_kochupamba.jpg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+  ],
+  "photoCredits": "Gavi Eco tourism center kochupamba.jpg – Prasanth C7, CC0 (Wikimedia Commons)"
+ },
+ {
+  "name": "Ilaveezhapoonchira",
+  "region": "Kottayam",
+  "lat": 9.819,
+  "lng": 76.783,
+  "category": "Mountains",
+  "vibes": [
+   "Mountains",
+   "Nature",
+   "Just escape",
+   "Photography",
+   "Road trip"
+  ],
+  "amenities": [
+   "Parking",
+   "4x4 jeep needed"
+  ],
+  "transport": [
+   "Car",
+   "Motorbike"
+  ],
+  "bestMonths": [
+   9,
+   10,
+   11,
+   12,
+   1,
+   2,
+   3,
+   4
+  ],
+  "dailyCost": 2000,
+  "minDays": 1,
+  "description": "A treeless bowl of grassy hills at about 3,200 ft – the name means 'valley where leaves don't fall'. Sweeping 360° views, best at sunrise and sunset.",
+  "howToReach": "• From Kottayam: ~55 km via Erattupetta and Melukavu, 2 hrs.\n• Last stretch is steep and rough; local jeeps run from the base.",
+  "guide": "Sunrise or sunset on the ridge; add Illikkal Kallu rock (~10 km) for a short climb.",
+  "tips": "• Very windy – carry a light jacket.\n• Few facilities: bring water and snacks.",
+  "safety": "Thunderstorms in the afternoon in Apr–May and the monsoon – avoid the exposed ridge during lightning. Emergency: 112, Ambulance 108.",
+  "photos": [
+   "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d1/Illikkal_Kallu_%28%E0%B4%87%E0%B4%B2%E0%B5%8D%E0%B4%B2%E0%B4%BF%E0%B4%95%E0%B5%8D%E0%B4%95%E0%B5%BD_%E0%B4%95%E0%B4%B2%E0%B5%8D%E0%B4%B2%E0%B5%8D_%29.jpg/1280px-Illikkal_Kallu_%28%E0%B4%87%E0%B4%B2%E0%B5%8D%E0%B4%B2%E0%B4%BF%E0%B4%95%E0%B5%8D%E0%B4%95%E0%B5%BD_%E0%B4%95%E0%B4%B2%E0%B5%8D%E0%B4%B2%E0%B5%8D_%29.jpg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+  ],
+  "photoCredits": "Illikkal Kallu (ഇല്ലിക്കൽ കല്ല് ).jpg – Hciteam1, CC BY-SA 4.0 (Wikimedia Commons)"
+ },
+ {
+  "name": "Ramakkalmedu",
+  "region": "Idukki",
+  "lat": 9.81,
+  "lng": 77.239,
+  "category": "Mountains",
+  "vibes": [
+   "Mountains",
+   "Road trip",
+   "Photography",
+   "Just escape"
+  ],
+  "amenities": [
+   "Parking",
+   "Restrooms",
+   "Entry ticket"
+  ],
+  "transport": [
+   "Car",
+   "Bus",
+   "Motorbike"
+  ],
+  "bestMonths": [
+   9,
+   10,
+   11,
+   12,
+   1,
+   2,
+   3,
+   4,
+   5
+  ],
+  "dailyCost": 2500,
+  "minDays": 1,
+  "description": "One of the windiest spots in India, on the Kerala–Tamil Nadu border, with wind turbines, a giant Kuravan–Kurathi sculpture and views down onto the plains of Tamil Nadu.",
+  "howToReach": "• About 15 km from Nedumkandam; ~40 km from Kumily/Thekkady.\n• Easy add-on to a Thekkady or Munnar trip.",
+  "guide": "Viewpoint and sculpture, short walk to the wind-farm ridge, sunset over Bodinayakanur plains.",
+  "tips": "• Hold on to hats and phones – gusts are strong.\n• Combine with the Kalvari Mount viewpoint (Idukki reservoir).",
+  "safety": "Stay behind railings near cliff edges. Emergency: 112, Ambulance 108.",
+  "photos": [
+   "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4c/Statue_of_Kuruvan_%26_Kuruthi.jpg/1280px-Statue_of_Kuruvan_%26_Kuruthi.jpg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+  ],
+  "photoCredits": "Statue of Kuruvan & Kuruthi.jpg – Augustus Binu : flickr, CC BY-SA 3.0 (Wikimedia Commons)"
+ },
+ {
+  "name": "Marayoor",
+  "region": "Idukki",
+  "lat": 10.276,
+  "lng": 77.16,
+  "category": "Forest",
+  "vibes": [
+   "Nature",
+   "Culture",
+   "Road trip",
+   "Photography"
+  ],
+  "amenities": [
+   "Parking",
+   "Restaurants",
+   "Hotels",
+   "Local guides",
+   "Entry ticket"
+  ],
+  "transport": [
+   "Car",
+   "Bus",
+   "Motorbike"
+  ],
+  "bestMonths": [
+   9,
+   10,
+   11,
+   12,
+   1,
+   2,
+   3,
+   4,
+   5
+  ],
+  "dailyCost": 2500,
+  "minDays": 1,
+  "description": "In the rain shadow of Munnar: Kerala's only natural sandalwood forest, prehistoric dolmens (muniyaras), traditional jaggery-making and the Chinnar wildlife sanctuary.",
+  "howToReach": "• From Munnar: ~40 km via Eravikulam/Rajamala road, 1.5 hrs.\n• Buses from Munnar to Marayoor and Udumalpet.",
+  "guide": "Sandalwood forest and government sandalwood outlet, Muniyara dolmens, a jaggery unit; afternoon Chinnar trek to Thoovanam waterfall (Forest Department guided).",
+  "tips": "• Buy jaggery and sandalwood only from government outlets.\n• Chinnar treks need advance booking.",
+  "safety": "Elephants in Chinnar – trek only with forest guides. Emergency: 112, Ambulance 108.",
+  "photos": [
+   "https://upload.wikimedia.org/wikipedia/commons/9/93/Kovilkadavu.jpg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5c/Chinnar_Wildlife_Sanctuary.jpg/1280px-Chinnar_Wildlife_Sanctuary.jpg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+  ],
+  "photoCredits": "Kovilkadavu.jpg – {{subst:usernamexpand:Cyrillic}}, Public domain (Wikimedia Commons)\nChinnar Wildlife Sanctuary.jpg – Matthieu Aubry, CC BY-SA 3.0 (Wikimedia Commons)"
+ },
+ {
+  "name": "Nelliyampathy",
+  "region": "Palakkad",
+  "lat": 10.535,
+  "lng": 76.693,
+  "category": "Mountains",
+  "vibes": [
+   "Mountains",
+   "Nature",
+   "Road trip",
+   "Chill",
+   "Just escape"
+  ],
+  "amenities": [
+   "Parking",
+   "Restaurants",
+   "Hotels",
+   "Camping",
+   "Local guides",
+   "4x4 jeep needed"
+  ],
+  "transport": [
+   "Car",
+   "Bus",
+   "Motorbike"
+  ],
+  "bestMonths": [
+   9,
+   10,
+   11,
+   12,
+   1,
+   2,
+   3,
+   4,
+   5
+  ],
+  "dailyCost": 3000,
+  "minDays": 1,
+  "description": "A cool plateau of orange, coffee and tea estates above the Palakkad plains, reached by a road with ten hairpin bends past Pothundy Dam.",
+  "howToReach": "• From Palakkad: ~60 km via Nenmara, 2 hrs.\n• KSRTC buses from Nenmara.",
+  "guide": "Pothundy Dam at the foot, drive up the ghat, Seetharkundu viewpoint, Kesavanpara, a plantation walk; jeep trip to Minnampara.",
+  "tips": "• Forest checkpost timings apply – start early, return before dark.\n• Plantation bungalows are the main stays.",
+  "safety": "Wildlife on roads after dusk; no fuel on top. Emergency: 112, Ambulance 108.",
+  "photos": [
+   "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/14/The_Western_Ghats003.jpg/1280px-The_Western_Ghats003.jpg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/49/Pothundi_dam_palakkad.jpg/1280px-Pothundi_dam_palakkad.jpg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+  ],
+  "photoCredits": "The Western Ghats003.jpg – Shagil Kannur, CC BY-SA 4.0 (Wikimedia Commons)\nPothundi dam palakkad.jpg – LIC Habeeb at Malayalam Wikipedia, CC BY-SA 3.0 (Wikimedia Commons)"
+ },
+ {
+  "name": "Malampuzha Dam & Gardens",
+  "region": "Palakkad",
+  "lat": 10.829,
+  "lng": 76.686,
+  "category": "Lake",
+  "vibes": [
+   "Family",
+   "Chill",
+   "Photography"
+  ],
+  "amenities": [
+   "Parking",
+   "Restrooms",
+   "Restaurants",
+   "Hotels",
+   "Mobile signal",
+   "ATM",
+   "Kid friendly",
+   "Wheelchair access",
+   "Entry ticket"
+  ],
+  "transport": [
+   "Car",
+   "Bus",
+   "Train",
+   "Motorbike"
+  ],
+  "bestMonths": [
+   9,
+   10,
+   11,
+   12,
+   1,
+   2,
+   3
+  ],
+  "dailyCost": 2500,
+  "minDays": 1,
+  "description": "Kerala's classic family day out: landscaped gardens below a large irrigation dam, a ropeway over the gardens, a snake park and Kanayi Kunhiraman's famous Yakshi sculpture.",
+  "howToReach": "• About 10 km from Palakkad town; Palakkad Junction railway station.\n• Frequent town buses.",
+  "guide": "Gardens and Yakshi sculpture, ropeway, boating, snake park, evening illumination. Add Palakkad Fort (Tipu's Fort) in town.",
+  "tips": "• Weekends and holidays are crowded.\n• Evening lights are the highlight.",
+  "safety": "Keep children away from the dam edges. Emergency: 112, Ambulance 108.",
+  "photos": [
+   "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d4/Malampuzha_Dam_Navas_10.jpg/1280px-Malampuzha_Dam_Navas_10.jpg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/02/Malampuzha_Dam_Area.jpg/1280px-Malampuzha_Dam_Area.jpg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+  ],
+  "photoCredits": "Malampuzha Dam Navas 10.jpg – Navas Puthanazhi, CC BY-SA 4.0 (Wikimedia Commons)\nMalampuzha Dam Area.jpg – Wikicd24, CC BY-SA 4.0 (Wikimedia Commons)"
+ },
+ {
+  "name": "Thusharagiri Falls",
+  "region": "Kozhikode",
+  "lat": 11.472,
+  "lng": 76.053,
+  "category": "Waterfall",
+  "vibes": [
+   "Nature",
+   "Adventure",
+   "Family",
+   "Photography"
+  ],
+  "amenities": [
+   "Parking",
+   "Restrooms",
+   "Local guides",
+   "Entry ticket"
+  ],
+  "transport": [
+   "Car",
+   "Bus",
+   "Motorbike"
+  ],
+  "bestMonths": [
+   6,
+   7,
+   8,
+   9,
+   10,
+   11,
+   12,
+   1
+  ],
+  "dailyCost": 2000,
+  "minDays": 1,
+  "description": "Three waterfalls on the Chalippuzha river in the Western Ghats foothills, with a forest trek to the highest, Thenpara, and good trekking to Vythiri beyond.",
+  "howToReach": "• From Kozhikode: ~50 km via Thamarassery and Kodenchery, 1.5–2 hrs.\n• Buses from Kozhikode to Kodenchery, then local jeep.",
+  "guide": "First falls near the entrance, forest trail to the second and Thenpara (allow 2–3 hrs). Combine with Wayanad via the Thamarassery ghat.",
+  "tips": "• Wear shoes with grip; trails are slippery after rain.\n• Entry closes in the afternoon.",
+  "safety": "Never bathe above the falls or in high flow. Emergency: 112, Ambulance 108.",
+  "photos": [
+   "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7d/Thusharagiri_Waterfalls_-_%E0%B4%A4%E0%B5%81%E0%B4%B7%E0%B4%BE%E0%B4%B0%E0%B4%97%E0%B4%BF%E0%B4%B0%E0%B4%BF_%E0%B4%B5%E0%B5%86%E0%B4%B3%E0%B5%8D%E0%B4%B3%E0%B4%9A%E0%B5%8D%E0%B4%9A%E0%B4%BE%E0%B4%9F%E0%B5%8D%E0%B4%9F%E0%B4%82_09.jpg/1280px-Thusharagiri_Waterfalls_-_%E0%B4%A4%E0%B5%81%E0%B4%B7%E0%B4%BE%E0%B4%B0%E0%B4%97%E0%B4%BF%E0%B4%B0%E0%B4%BF_%E0%B4%B5%E0%B5%86%E0%B4%B3%E0%B5%8D%E0%B4%B3%E0%B4%9A%E0%B5%8D%E0%B4%9A%E0%B4%BE%E0%B4%9F%E0%B5%8D%E0%B4%9F%E0%B4%82_09.jpg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+  ],
+  "photoCredits": "Thusharagiri Waterfalls - തുഷാരഗിരി വെള്ളച്ചാട്ടം 09.jpg – Shijan Kaakkara, CC BY-SA 4.0 (Wikimedia Commons)"
+ },
+ {
+  "name": "Hill Palace Museum",
+  "region": "Ernakulam",
+  "lat": 9.952,
+  "lng": 76.364,
+  "category": "Historical",
+  "vibes": [
+   "Culture",
+   "Family",
+   "Photography"
+  ],
+  "amenities": [
+   "Parking",
+   "Restrooms",
+   "Mobile signal",
+   "Kid friendly",
+   "Wheelchair access",
+   "Entry ticket"
+  ],
+  "transport": [
+   "Car",
+   "Bus",
+   "Train",
+   "Flight",
+   "Motorbike"
+  ],
+  "bestMonths": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6,
+   7,
+   8,
+   9,
+   10,
+   11,
+   12
+  ],
+  "dailyCost": 2500,
+  "minDays": 1,
+  "description": "The former seat of the Cochin royal family at Tripunithura, now Kerala's largest archaeological museum: royal regalia, the crown, oil paintings, manuscripts and a deer park on 52 acres.",
+  "howToReach": "• Tripunithura, ~12 km from Ernakulam; Kochi Metro to Tripunithura terminal, then auto.\n• Tripunithura railway station.",
+  "guide": "2 hours for the galleries, then the deer park and heritage grounds. Combine with Fort Kochi on the same day.",
+  "tips": "• Kerala state museums are usually closed on Mondays.\n• Photography rules vary by gallery.",
+  "safety": "Low-risk; mind the steps between buildings. Emergency: 112, Ambulance 108.",
+  "photos": [
+   "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2d/Hill_Palace_by_GV-1.JPG/1280px-Hill_Palace_by_GV-1.JPG?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+  ],
+  "photoCredits": "Hill Palace by GV-1.JPG – Gokulvarmank, CC BY 3.0 (Wikimedia Commons)"
+ },
+ {
+  "name": "Kuruva Island",
+  "region": "Wayanad",
+  "lat": 11.816,
+  "lng": 76.091,
+  "category": "Forest",
+  "vibes": [
+   "Nature",
+   "Adventure",
+   "Family",
+   "Photography"
+  ],
+  "amenities": [
+   "Parking",
+   "Restrooms",
+   "Local guides",
+   "Entry ticket"
+  ],
+  "transport": [
+   "Car",
+   "Bus",
+   "Motorbike"
+  ],
+  "bestMonths": [
+   10,
+   11,
+   12,
+   1,
+   2,
+   3,
+   4,
+   5
+  ],
+  "dailyCost": 2500,
+  "minDays": 1,
+  "description": "Uninhabited river islands in the Kabini covered in evergreen forest, crossed on bamboo rafts and stepping stones – a rare protected river ecosystem.",
+  "howToReach": "• About 17 km from Mananthavady; ~40 km from Kalpetta.\n• Entry points at Pakkam and Palvelicham.",
+  "guide": "Raft across, walk the forest trails between streams for 2–3 hrs. Combine with Thirunelli temple and Tholpetty safari.",
+  "tips": "• Daily visitor numbers are capped and access has been suspended at times – confirm it is open before going.\n• Wear shoes you can get wet.",
+  "safety": "Closed in the monsoon; stay on marked trails. Emergency: 112, Ambulance 108.",
+  "photos": [
+   "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b1/Kuruva_Island_Wayanad.JPG/1280px-Kuruva_Island_Wayanad.JPG?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+  ],
+  "photoCredits": "Kuruva Island Wayanad.JPG – Mrriyad, CC BY-SA 3.0 (Wikimedia Commons)"
+ },
+ {
+  "name": "Paithalmala",
+  "region": "Kannur",
+  "lat": 12.105,
+  "lng": 75.585,
+  "category": "Mountains",
+  "vibes": [
+   "Adventure",
+   "Mountains",
+   "Nature",
+   "Just escape"
+  ],
+  "amenities": [
+   "Parking",
+   "Camping",
+   "Local guides",
+   "Entry ticket"
+  ],
+  "transport": [
+   "Car",
+   "Bus",
+   "Motorbike"
+  ],
+  "bestMonths": [
+   9,
+   10,
+   11,
+   12,
+   1,
+   2,
+   3
+  ],
+  "dailyCost": 2000,
+  "minDays": 1,
+  "description": "Kannur's highest peak (about 1,370 m) near the Karnataka border, reached by a forest trek through shola grassland to a watchtower with views over the Coorg hills.",
+  "howToReach": "• From Kannur: ~65 km via Taliparamba and Alakode, 2 hrs, to Pottanplavu at the base.\n• Buses from Taliparamba to Pottanplavu.",
+  "guide": "About 2 hrs up from Pottanplavu, watchtower and summit meadow, 1.5 hrs down.",
+  "tips": "• Start early to avoid afternoon mist.\n• Carry water – none on the trail.",
+  "safety": "Trek in a group; turn back in heavy fog. Emergency: 112, Ambulance 108.",
+  "photos": [
+   "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d7/Paithalmala.jpg/1280px-Paithalmala.jpg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+  ],
+  "photoCredits": "Paithalmala.jpg – Rawbin, CC BY-SA 3.0 (Wikimedia Commons)"
+ },
+ {
+  "name": "Thattekad Bird Sanctuary",
+  "region": "Ernakulam",
+  "lat": 10.13,
+  "lng": 76.69,
+  "category": "Wildlife",
+  "vibes": [
+   "Nature",
+   "Photography",
+   "Just escape"
+  ],
+  "amenities": [
+   "Parking",
+   "Restrooms",
+   "Hotels",
+   "Local guides",
+   "Entry ticket"
+  ],
+  "transport": [
+   "Car",
+   "Bus",
+   "Motorbike"
+  ],
+  "bestMonths": [
+   11,
+   12,
+   1,
+   2,
+   3
+  ],
+  "dailyCost": 3000,
+  "minDays": 1,
+  "description": "Dr Salim Ali Bird Sanctuary on the Periyar river – lowland evergreen forest famous for the Sri Lanka frogmouth, Malabar trogon and over 300 bird species.",
+  "howToReach": "• Near Kothamangalam, ~60 km from Kochi, 1.5–2 hrs.\n• Buses to Kothamangalam, then local bus or auto.",
+  "guide": "Dawn birding walk with a local guide (frogmouths roost by day), boat on the Periyar, Bhoothathankettu dam nearby.",
+  "tips": "• Local bird guides find species you'd never spot alone.\n• Bring binoculars and neutral clothing.",
+  "safety": "Elephants move through the area – go with a guide. Emergency: 112, Ambulance 108.",
+  "photos": [
+   "https://upload.wikimedia.org/wikipedia/commons/4/4d/Ocyceros_griseus_-India-8a.jpg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0d/SriLankaFrogmouths.jpg/1280px-SriLankaFrogmouths.jpg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+  ],
+  "photoCredits": "Ocyceros griseus -India-8a.jpg – Lip Kee Yap, CC BY-SA 2.0 (Wikimedia Commons)\nSriLankaFrogmouths.jpg – Shanthanu Bhardwaj, CC BY-SA 3.0 (Wikimedia Commons)"
+ },
+ {
+  "name": "Kerala Kalamandalam",
+  "region": "Thrissur",
+  "lat": 10.738,
+  "lng": 76.29,
+  "category": "Historical",
+  "vibes": [
+   "Culture",
+   "Photography",
+   "Family"
+  ],
+  "amenities": [
+   "Parking",
+   "Restrooms",
+   "Local guides",
+   "Entry ticket"
+  ],
+  "transport": [
+   "Car",
+   "Bus",
+   "Train",
+   "Motorbike"
+  ],
+  "bestMonths": [
+   6,
+   7,
+   8,
+   9,
+   10,
+   11,
+   12,
+   1,
+   2,
+   3
+  ],
+  "dailyCost": 2500,
+  "minDays": 1,
+  "description": "The famous school of Kerala's classical arts at Cheruthuruthy on the Bharathapuzha – watch students train in Kathakali, Mohiniyattam, Koodiyattam and percussion in traditional kalaris.",
+  "howToReach": "• About 30 km north of Thrissur; Vallathol Nagar railway station is next to the campus.\n• Shoranur Junction is 5 km away.",
+  "guide": "Morning: book the 'A Day with the Masters' visitor programme or watch classes, Koothambalam theatre. Afternoon: walk the Bharathapuzha riverbank.",
+  "tips": "• Classes run on working days during the academic year; vacations have no training to see.\n• Ask before photographing students.",
+  "safety": "Low-risk. Emergency: 112, Ambulance 108.",
+  "photos": [
+   "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/48/Koothambalam_at_Kerala_Kalamandalam.jpg/1280px-Koothambalam_at_Kerala_Kalamandalam.jpg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2c/Kathakali_-Play_with_Kaurava.jpg/1280px-Kathakali_-Play_with_Kaurava.jpg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+  ],
+  "photoCredits": "Koothambalam at Kerala Kalamandalam.jpg – Arayilpdas at Malayalam Wikipedia, CC BY 3.0 (Wikimedia Commons)\nKathakali -Play with Kaurava.jpg – Bhoomi at Malayalam Wikipedia, CC BY-SA 3.0 (Wikimedia Commons)"
+ },
+ {
+  "name": "Thrissur",
+  "region": "Thrissur",
+  "lat": 10.5246,
+  "lng": 76.214,
+  "category": "Religious",
+  "vibes": [
+   "Culture",
+   "Spiritual",
+   "Party",
+   "Food",
+   "Family"
+  ],
+  "amenities": [
+   "Parking",
+   "Restrooms",
+   "Restaurants",
+   "Hotels",
+   "Mobile signal",
+   "Internet",
+   "ATM",
+   "Fuel station",
+   "Medical aid",
+   "Kid friendly"
+  ],
+  "transport": [
+   "Car",
+   "Bus",
+   "Train",
+   "Motorbike"
+  ],
+  "bestMonths": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   8,
+   9,
+   10,
+   11,
+   12
+  ],
+  "dailyCost": 2500,
+  "minDays": 1,
+  "description": "Kerala's cultural capital, centred on the Vadakkunnathan temple and Thekkinkadu Maidan, home of Thrissur Pooram – caparisoned elephants, percussion ensembles and fireworks every April–May.",
+  "howToReach": "• Thrissur railway station on the main line; Kochi airport ~55 km.\n• KSRTC buses from all major towns.",
+  "guide": "Vadakkunnathan temple (Hindus only inside), Thekkinkadu Maidan walk, Shakthan Thampuran palace, Archaeological museum; Puli Kali (tiger dance) parade during Onam.",
+  "tips": "• Book stays months ahead for Pooram.\n• Pooram crowds are enormous – pick a viewing spot early.",
+  "safety": "During Pooram, keep clear of elephants and fireworks zones and follow police barricades. Emergency: 112, Ambulance 108.",
+  "photos": [
+   "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0f/%E0%B4%B5%E0%B4%9F%E0%B4%95%E0%B5%8D%E0%B4%95%E0%B5%81%E0%B4%82%E0%B4%A8%E0%B4%BE%E0%B4%A5%E0%B4%95%E0%B5%8D%E0%B4%B7%E0%B5%87%E0%B4%A4%E0%B5%8D%E0%B4%B0%E0%B4%82-%E0%B4%A4%E0%B5%86%E0%B4%95%E0%B5%8D%E0%B4%95%E0%B5%87%E0%B4%97%E0%B5%8B%E0%B4%AA%E0%B5%81%E0%B4%B0%E0%B4%82.jpg/1280px-%E0%B4%B5%E0%B4%9F%E0%B4%95%E0%B5%8D%E0%B4%95%E0%B5%81%E0%B4%82%E0%B4%A8%E0%B4%BE%E0%B4%A5%E0%B4%95%E0%B5%8D%E0%B4%B7%E0%B5%87%E0%B4%A4%E0%B5%8D%E0%B4%B0%E0%B4%82-%E0%B4%A4%E0%B5%86%E0%B4%95%E0%B5%8D%E0%B4%95%E0%B5%87%E0%B4%97%E0%B5%8B%E0%B4%AA%E0%B5%81%E0%B4%B0%E0%B4%82.jpg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9b/Kudamatom_at_thrissur_pooram_2013_7618.JPG/1280px-Kudamatom_at_thrissur_pooram_2013_7618.JPG?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/04/JJP_112.jpg/1280px-JJP_112.jpg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+  ],
+  "photoCredits": "വടക്കുംനാഥക്ഷേത്രം-തെക്കേഗോപുരം.jpg – Challiyan at Malayalam Wikipedia, CC BY-SA 3.0 (Wikimedia Commons)\nKudamatom at thrissur pooram 2013 7618.JPG – Rameshng, CC BY-SA 3.0 (Wikimedia Commons)\nJJP 112.jpg – Jpullokaran, CC BY-SA 3.0 (Wikimedia Commons)"
  }
 ]
