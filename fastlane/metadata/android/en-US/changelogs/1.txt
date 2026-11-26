@@ -1,0 +1,1 @@
+First release: smart trip suggestions, detailed place guides, traveller updates, trip budget tracker and packing lists.

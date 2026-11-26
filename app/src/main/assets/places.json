@@ -1,0 +1,881 @@
+[
+ {
+  "name": "Hunza Valley",
+  "region": "Gilgit-Baltistan",
+  "lat": 36.3236,
+  "lng": 74.6633,
+  "category": "Valley",
+  "vibes": [
+   "Mountains",
+   "Nature",
+   "Just escape",
+   "Photography",
+   "Culture",
+   "Road trip",
+   "Romantic"
+  ],
+  "amenities": [
+   "Parking",
+   "Restrooms",
+   "Restaurants",
+   "Hotels",
+   "Camping",
+   "Mobile signal",
+   "Internet",
+   "ATM",
+   "Fuel station",
+   "Medical aid",
+   "Kid friendly",
+   "Local guides",
+   "Entry ticket"
+  ],
+  "transport": [
+   "Car",
+   "Bus",
+   "Flight",
+   "Motorbike"
+  ],
+  "bestMonths": [
+   4,
+   5,
+   6,
+   7,
+   8,
+   9,
+   10
+  ],
+  "dailyCost": 9000,
+  "minDays": 4,
+  "description": "A high mountain valley on the Karakoram Highway ringed by Rakaposhi, Ultar Sar and Ladyfinger peaks. Ancient forts, turquoise Attabad Lake, apricot orchards and the Passu Cones make it Pakistan's most loved northern destination.",
+  "howToReach": "• By road: Islamabad → Karakoram Highway (N-35) via Abbottabad, Besham, Chilas, Gilgit → Karimabad. ~600 km, 14–18 hrs. In summer the Naran–Babusar route (N-15) is shorter and more scenic.\n• By air: Islamabad → Gilgit (≈1 hr, weather dependent), then 2 hrs by road to Karimabad.\n• Public transport: NATCO / Faisal Movers coaches from Rawalpindi to Gilgit and Aliabad.",
+  "guide": "Day 1: Arrive Karimabad, sunset at Eagle's Nest (Duikar).\nDay 2: Baltit Fort, Altit Fort, Karimabad bazaar.\nDay 3: Attabad Lake boating, Hussaini suspension bridge, Passu Cones viewpoint, Borith Lake.\nDay 4: Khunjerab Pass (China border, 4,693 m) – go early, return same day.\nWhere to stay: Karimabad and Aliabad have hotels for every budget; Passu and Gulmit for quieter stays.\nEat: Chapshuro (meat pie), Diram Fitti, apricot cake at Cafe de Hunza.",
+  "tips": "• April = apricot blossom, late October = autumn colours.\n• Khunjerab Pass usually opens 1 May and closes around 30 November.\n• Carry cash; ATMs exist in Aliabad and Karimabad but can run dry.\n• Altitude: drink water, ascend gradually, avoid alcohol.\n• Flights to Gilgit are often cancelled in bad weather – keep a buffer day.",
+  "safety": "Landslides can block the KKH after rain – check NHA / local updates before leaving. Emergency: Rescue 1122, Police 15, Edhi ambulance 115.",
+  "photos": [],
+  "photoCredits": ""
+ },
+ {
+  "name": "Skardu & Shangrila",
+  "region": "Gilgit-Baltistan",
+  "lat": 35.2971,
+  "lng": 75.6333,
+  "category": "Mountains",
+  "vibes": [
+   "Mountains",
+   "Nature",
+   "Just escape",
+   "Adventure",
+   "Photography",
+   "Romantic",
+   "Chill"
+  ],
+  "amenities": [
+   "Parking",
+   "Restrooms",
+   "Restaurants",
+   "Hotels",
+   "Camping",
+   "Mobile signal",
+   "Internet",
+   "ATM",
+   "Fuel station",
+   "Medical aid",
+   "Kid friendly",
+   "Local guides",
+   "Entry ticket"
+  ],
+  "transport": [
+   "Car",
+   "Bus",
+   "Flight",
+   "Motorbike"
+  ],
+  "bestMonths": [
+   4,
+   5,
+   6,
+   7,
+   8,
+   9,
+   10
+  ],
+  "dailyCost": 9000,
+  "minDays": 4,
+  "description": "Gateway to K2 and the Baltoro, Skardu sits in a wide valley of the Indus surrounded by cold desert dunes, glacial lakes and heritage forts. Shangrila (Lower Kachura Lake) and Upper Kachura are its postcard spots.",
+  "howToReach": "• By air: Islamabad → Skardu (≈1 hr). Also flights from Karachi and Lahore in season.\n• By road: Islamabad → KKH to Jaglot → Skardu Road (S-1). ~650 km, 18–20 hrs.\n• Coaches run from Rawalpindi Pir Wadhai to Skardu.",
+  "guide": "Day 1: Arrive, Shangrila Resort and Upper Kachura Lake.\nDay 2: Shigar Fort and Sarfaranga cold desert (jeep/quad biking).\nDay 3: Khaplu Palace and Chaqchan Mosque.\nDay 4: Deosai Plains via Satpara Lake (June–September).\nOptional: Manthokha Waterfall, Basho Valley.",
+  "tips": "• Book flights early in summer; they sell out.\n• Hire a local 4x4 for Deosai and Basho.\n• Evenings are cold even in July – pack a fleece.\n• Upper Kachura is a 20-min walk down – wear proper shoes.",
+  "safety": "Skardu road has rockfall sections; avoid driving at night. Emergency: Rescue 1122, Police 15, Edhi 115.",
+  "photos": [],
+  "photoCredits": ""
+ },
+ {
+  "name": "Fairy Meadows",
+  "region": "Diamer, Gilgit-Baltistan",
+  "lat": 35.388,
+  "lng": 74.58,
+  "category": "Adventure",
+  "vibes": [
+   "Mountains",
+   "Adventure",
+   "Nature",
+   "Just escape",
+   "Photography"
+  ],
+  "amenities": [
+   "Restrooms",
+   "Restaurants",
+   "Camping",
+   "Local guides",
+   "4x4 jeep needed",
+   "Entry ticket"
+  ],
+  "transport": [
+   "Car",
+   "Bus",
+   "Motorbike"
+  ],
+  "bestMonths": [
+   5,
+   6,
+   7,
+   8,
+   9
+  ],
+  "dailyCost": 8000,
+  "minDays": 3,
+  "description": "A lush alpine meadow at about 3,300 m facing the Rakhiot face of Nanga Parbat, the world's 9th highest peak. Reached by one of the most thrilling jeep tracks in the world followed by a forest hike.",
+  "howToReach": "• Drive the KKH to Raikot Bridge (≈ 9–10 hrs from Islamabad via Babusar in summer).\n• Jeep from Raikot Bridge to Tato/Jhel (≈1–1.5 hrs, jeeps run by a local union, fixed fare).\n• Hike 2.5–4 hrs to Fairy Meadows. Ponies/porters available.",
+  "guide": "Day 1: Raikot Bridge → jeep → hike up, sunset on Nanga Parbat.\nDay 2: Hike to Beyal Camp (2 hrs) and Nanga Parbat Base Camp viewpoint (another 2–3 hrs). Return to Fairy Meadows.\nDay 3: Sunrise, descend and drive on to Hunza or back.\nStay: wooden huts and tents at the meadow; book ahead in July–August.",
+  "tips": "• Pack light – you carry it uphill (or hire a porter).\n• No ATMs: carry all cash you need.\n• Power is solar/limited – bring a power bank.\n• Phone signal is weak to none.",
+  "safety": "Jeep track has sheer drops – only use union jeeps, do not self-drive. Weather turns fast: carry a rain shell. Emergency: Rescue 1122, Police 15.",
+  "photos": [],
+  "photoCredits": ""
+ },
+ {
+  "name": "Naran, Kaghan & Saiful Muluk",
+  "region": "Mansehra, Khyber Pakhtunkhwa",
+  "lat": 34.9087,
+  "lng": 73.651,
+  "category": "Lake",
+  "vibes": [
+   "Mountains",
+   "Nature",
+   "Chill",
+   "Family",
+   "Road trip",
+   "Romantic",
+   "Just escape"
+  ],
+  "amenities": [
+   "Parking",
+   "Restrooms",
+   "Restaurants",
+   "Hotels",
+   "Camping",
+   "Mobile signal",
+   "ATM",
+   "Fuel station",
+   "Medical aid",
+   "Kid friendly",
+   "Local guides",
+   "4x4 jeep needed"
+  ],
+  "transport": [
+   "Car",
+   "Bus",
+   "Motorbike"
+  ],
+  "bestMonths": [
+   5,
+   6,
+   7,
+   8,
+   9
+  ],
+  "dailyCost": 7000,
+  "minDays": 2,
+  "description": "The Kaghan Valley follows the Kunhar river up to Babusar Top. Naran is its base, with legendary Lake Saiful Muluk, Lulusar Lake and Babusar Pass all a short drive away.",
+  "howToReach": "• Islamabad → Hazara Motorway (M-15) → Mansehra → Balakot → Kaghan → Naran. ~270 km, 6–8 hrs.\n• Daewoo/coaches go to Balakot or Naran in season.\n• Jeep from Naran to Saiful Muluk (≈ 45 min).",
+  "guide": "Day 1: Drive up, stop at Kiwai waterfall and Shogran, night in Naran.\nDay 2: Early jeep to Lake Saiful Muluk; afternoon Lulusar Lake and Babusar Top (4,173 m).\nOptional: Ansoo Lake trek (full day, guide required), Siri Paye meadows from Shogran.",
+  "tips": "• Babusar Top usually opens in June; the road above Naran is closed in winter.\n• Go to Saiful Muluk before 9 am to beat crowds.\n• Hotels in Naran are much cheaper on weekdays.",
+  "safety": "Kunhar river is fast and cold – no swimming. Glacier crossings on the way to Saiful Muluk can be slippery early in the season. Emergency: Rescue 1122, Police 15.",
+  "photos": [],
+  "photoCredits": ""
+ },
+ {
+  "name": "Swat Valley & Kalam",
+  "region": "Swat, Khyber Pakhtunkhwa",
+  "lat": 35.489,
+  "lng": 72.5797,
+  "category": "Valley",
+  "vibes": [
+   "Mountains",
+   "Nature",
+   "Family",
+   "Chill",
+   "Road trip",
+   "Just escape",
+   "Adventure"
+  ],
+  "amenities": [
+   "Parking",
+   "Restrooms",
+   "Restaurants",
+   "Hotels",
+   "Camping",
+   "Mobile signal",
+   "ATM",
+   "Fuel station",
+   "Medical aid",
+   "Kid friendly",
+   "Local guides",
+   "4x4 jeep needed"
+  ],
+  "transport": [
+   "Car",
+   "Bus",
+   "Motorbike"
+  ],
+  "bestMonths": [
+   4,
+   5,
+   6,
+   7,
+   8,
+   9,
+   10,
+   12,
+   1,
+   2
+  ],
+  "dailyCost": 6500,
+  "minDays": 3,
+  "description": "Called the Switzerland of the East – green river valley, pine forests, Malam Jabba ski resort and alpine lakes like Mahodand above Kalam.",
+  "howToReach": "• Islamabad → M-1 → Swat Expressway (M-16) → Chakdara → Mingora → Kalam. ~300 km, 7–8 hrs.\n• Coaches run Rawalpindi/Peshawar → Mingora; local vans to Kalam.\n• Jeep from Kalam to Mahodand Lake (≈ 1.5 hrs).",
+  "guide": "Day 1: Mingora, Swat Museum, Butkara stupa, night at Malam Jabba or Fizagat.\nDay 2: Malam Jabba chairlift, drive to Kalam via Bahrain.\nDay 3: Ushu forest, Mahodand Lake (boating, trout).\nWinter: Malam Jabba skiing (Dec–Feb).",
+  "tips": "• Try Swat trout and chapli kebab in Bahrain.\n• Kalam roads are rough after Bahrain – keep extra time.\n• Winter: the road beyond Kalam closes with snow.",
+  "safety": "Flash floods in July–August monsoon – check forecasts and stay away from riverbanks. Emergency: Rescue 1122, Police 15.",
+  "photos": [],
+  "photoCredits": ""
+ },
+ {
+  "name": "Neelum Valley",
+  "region": "Azad Jammu & Kashmir",
+  "lat": 34.7942,
+  "lng": 74.188,
+  "category": "Valley",
+  "vibes": [
+   "Nature",
+   "Mountains",
+   "Just escape",
+   "Chill",
+   "Romantic",
+   "Photography",
+   "Road trip"
+  ],
+  "amenities": [
+   "Parking",
+   "Restrooms",
+   "Restaurants",
+   "Hotels",
+   "Camping",
+   "Mobile signal",
+   "Fuel station",
+   "Medical aid",
+   "Kid friendly",
+   "Local guides"
+  ],
+  "transport": [
+   "Car",
+   "Bus",
+   "Motorbike"
+  ],
+  "bestMonths": [
+   4,
+   5,
+   6,
+   7,
+   8,
+   9,
+   10
+  ],
+  "dailyCost": 6500,
+  "minDays": 3,
+  "description": "A 200 km long emerald valley along the Neelum river in Kashmir: Keran, Sharda's ancient university ruins, Kel and the fairy-tale hilltop village of Arang Kel.",
+  "howToReach": "• Islamabad → Murree → Kohala → Muzaffarabad → Neelum road to Keran, Sharda, Kel. ~250 km to Sharda, 7–9 hrs.\n• Coasters from Muzaffarabad General Bus Stand.",
+  "guide": "Day 1: Muzaffarabad, Pir Chinasi viewpoint, drive to Keran.\nDay 2: Sharda (Sharda Peeth ruins), continue to Kel.\nDay 3: Arang Kel (cable car + 45 min uphill hike), return or continue to Taobat.\nRatti Gali Lake can be added from Dowarian (see separate listing).",
+  "tips": "• Carry your CNIC (foreigners: passport + NOC may be needed beyond Kel).\n• Mobile data is limited past Sharda – download offline maps.\n• Fuel up in Muzaffarabad / Athmuqam.",
+  "safety": "Valley runs along the Line of Control – obey army check-posts and signs. Road has landslide spots in rain. Emergency: Rescue 1122, Police 15.",
+  "photos": [],
+  "photoCredits": ""
+ },
+ {
+  "name": "Murree & Galiyat",
+  "region": "Punjab / Khyber Pakhtunkhwa",
+  "lat": 33.907,
+  "lng": 73.3943,
+  "category": "Mountains",
+  "vibes": [
+   "Chill",
+   "Family",
+   "Mountains",
+   "Just escape",
+   "Nature",
+   "Romantic",
+   "Food"
+  ],
+  "amenities": [
+   "Parking",
+   "Restrooms",
+   "Restaurants",
+   "Hotels",
+   "Camping",
+   "Mobile signal",
+   "Internet",
+   "ATM",
+   "Fuel station",
+   "Medical aid",
+   "Kid friendly",
+   "Pet friendly",
+   "Wheelchair access"
+  ],
+  "transport": [
+   "Car",
+   "Bus",
+   "Motorbike"
+  ],
+  "bestMonths": [
+   3,
+   4,
+   5,
+   6,
+   7,
+   8,
+   9,
+   10,
+   11,
+   12,
+   1,
+   2
+  ],
+  "dailyCost": 7000,
+  "minDays": 1,
+  "description": "The classic hill station an hour from Islamabad. Pine-covered Galiyat – Nathia Gali, Dunga Gali, Ayubia – offer cool summers, snowy winters and easy hikes.",
+  "howToReach": "• Islamabad → Murree Expressway. 60 km, 1.5 hrs to Mall Road; Nathia Gali another 1 hr.\n• Daily buses and vans from Faizabad, Rawalpindi.",
+  "guide": "Day trip: Mall Road & Kashmir Point → Patriata chairlift → lunch → Pipeline Track walk (Dunga Gali–Ayubia, 4 km flat).\nWeekend: stay in Nathia Gali, hike Mushkpuri Top (2 hrs up) at sunrise, Ayubia chairlift.",
+  "tips": "• Avoid Mall Road on Sunday afternoons and Eid – traffic jams are huge.\n• Snow season (Dec–Feb): carry chains, full tank and food.\n• Nathia Gali is quieter and greener than Murree town.",
+  "safety": "During heavy snowfall the government may restrict entry – check Murree police / NHMP updates before going. Emergency: Rescue 1122, Police 15, Motorway Police 130.",
+  "photos": [],
+  "photoCredits": ""
+ },
+ {
+  "name": "Kund Malir Beach",
+  "region": "Lasbela, Balochistan",
+  "lat": 25.4337,
+  "lng": 65.4686,
+  "category": "Beach",
+  "vibes": [
+   "Beaches",
+   "Just escape",
+   "Road trip",
+   "Adventure",
+   "Photography",
+   "Nature"
+  ],
+  "amenities": [
+   "Parking",
+   "Camping",
+   "Restrooms"
+  ],
+  "transport": [
+   "Car",
+   "Motorbike",
+   "Bus"
+  ],
+  "bestMonths": [
+   10,
+   11,
+   12,
+   1,
+   2,
+   3
+  ],
+  "dailyCost": 4000,
+  "minDays": 1,
+  "description": "A wild, almost empty golden beach on the Makran Coastal Highway inside Hingol National Park, with blue water and desert mountains behind it. The drive itself – past the Princess of Hope and Sphinx rock formations – is the highlight.",
+  "howToReach": "• Karachi → Hub → Makran Coastal Highway (N-10). ~240 km, 4 hrs.\n• Few buses stop here – private car is best.",
+  "guide": "Day trip from Karachi: leave by 6 am, beach by 10 am, lunch at a dhaba, Princess of Hope & Sphinx viewpoints, back by night.\nOvernight: camp at Kund Malir (bring all gear) or continue to Ormara.\nNearby: Hinglaj Mata temple, Chandragup mud volcano.",
+  "tips": "• Fuel up in Hub/Zero Point – stations are rare after that.\n• Carry water, food, sun protection; facilities are very basic.\n• Take all trash back with you.",
+  "safety": "Rip currents: do not swim far out, and stay out of the sea May–August (monsoon). Carry CNIC for check-posts. Mobile signal is patchy. Emergency: Police 15, Edhi 115.",
+  "photos": [],
+  "photoCredits": ""
+ },
+ {
+  "name": "Gwadar",
+  "region": "Makran, Balochistan",
+  "lat": 25.1216,
+  "lng": 62.3254,
+  "category": "Beach",
+  "vibes": [
+   "Beaches",
+   "Just escape",
+   "Road trip",
+   "Photography",
+   "Chill"
+  ],
+  "amenities": [
+   "Parking",
+   "Restrooms",
+   "Restaurants",
+   "Hotels",
+   "Mobile signal",
+   "ATM",
+   "Fuel station",
+   "Medical aid"
+  ],
+  "transport": [
+   "Car",
+   "Flight",
+   "Bus"
+  ],
+  "bestMonths": [
+   10,
+   11,
+   12,
+   1,
+   2,
+   3
+  ],
+  "dailyCost": 6000,
+  "minDays": 2,
+  "description": "A port city on a hammerhead peninsula with two bays, deep-blue sea and the Koh-e-Batil hill overlooking it. Long, uncrowded beaches and fresh seafood.",
+  "howToReach": "• By air: Karachi → New Gwadar International Airport.\n• By road: Karachi → N-10 Makran Coastal Highway via Ormara and Pasni. ~650 km, 9–10 hrs.",
+  "guide": "Day 1: Drive the coastal highway, stop at Kund Malir & Ormara.\nDay 2: Koh-e-Batil (Hammerhead) sunset, Marine Drive, fish harbour at dawn.\nDay 3: Ganz/Jiwani beaches or return.",
+  "tips": "• Carry CNIC/passport – multiple security checks.\n• Seafood is best at the fish harbour restaurants.\n• Winter afternoons are perfect; summer is humid.",
+  "safety": "Follow local security advisories and travel in daylight. Emergency: Police 15, Edhi 115.",
+  "photos": [],
+  "photoCredits": ""
+ },
+ {
+  "name": "Karachi Coast & Food Streets",
+  "region": "Karachi, Sindh",
+  "lat": 24.812,
+  "lng": 67.031,
+  "category": "City",
+  "vibes": [
+   "Party",
+   "Food",
+   "Beaches",
+   "Culture",
+   "Family",
+   "Chill"
+  ],
+  "amenities": [
+   "Parking",
+   "Restrooms",
+   "Restaurants",
+   "Hotels",
+   "Mobile signal",
+   "Internet",
+   "ATM",
+   "Fuel station",
+   "Medical aid",
+   "Wheelchair access",
+   "Kid friendly",
+   "Pet friendly"
+  ],
+  "transport": [
+   "Car",
+   "Bus",
+   "Train",
+   "Flight",
+   "Motorbike"
+  ],
+  "bestMonths": [
+   11,
+   12,
+   1,
+   2,
+   3
+  ],
+  "dailyCost": 6000,
+  "minDays": 2,
+  "description": "Pakistan's biggest city: Clifton & Sea View beach, Do Darya seafront dining, Burns Road food street, colonial Frere Hall, Mazar-e-Quaid and boat trips from Keamari. Beach huts at Hawksbay, French Beach and Sandspit.",
+  "howToReach": "• Flights from every major city to Jinnah International.\n• Green Line / Karakoram Express trains from Lahore and Rawalpindi.\n• Daewoo / Faisal Movers coaches.",
+  "guide": "Day 1: Mazar-e-Quaid, Frere Hall, Empress Market, dinner on Burns Road (nihari, rabri).\nDay 2: Boat ride from Keamari (crabbing at night), Manora, sunset at Sea View, dinner at Do Darya.\nDay 3: Rent a hut at French Beach or Hawksbay; turtle watching at Sandspit (Sep–Jan, WWF centre).",
+  "tips": "• Book beach huts a week ahead on weekends.\n• Use ride-hailing apps; avoid displaying phones at traffic signals.\n• Sea is closed for swimming in monsoon (June–August).",
+  "safety": "Street crime exists – keep valuables out of sight. Emergency: Police 15, Rescue 1122, Edhi 115, Chhipa 1020.",
+  "photos": [],
+  "photoCredits": ""
+ },
+ {
+  "name": "Lahore Walled City",
+  "region": "Lahore, Punjab",
+  "lat": 31.588,
+  "lng": 74.315,
+  "category": "Historical",
+  "vibes": [
+   "Culture",
+   "Food",
+   "Party",
+   "Family",
+   "Photography"
+  ],
+  "amenities": [
+   "Parking",
+   "Restrooms",
+   "Restaurants",
+   "Hotels",
+   "Mobile signal",
+   "Internet",
+   "ATM",
+   "Fuel station",
+   "Medical aid",
+   "Wheelchair access",
+   "Kid friendly",
+   "Local guides",
+   "Entry ticket"
+  ],
+  "transport": [
+   "Car",
+   "Bus",
+   "Train",
+   "Flight",
+   "Motorbike"
+  ],
+  "bestMonths": [
+   10,
+   11,
+   12,
+   1,
+   2,
+   3
+  ],
+  "dailyCost": 6000,
+  "minDays": 2,
+  "description": "Mughal Lahore: Badshahi Mosque, Lahore Fort (UNESCO), Wazir Khan Mosque's tile work, Shalimar Gardens and the legendary food of Gawalmandi and Fort Road. End with the Wagah border ceremony.",
+  "howToReach": "• Islamabad → M-2 motorway, 375 km, 4.5 hrs. Daewoo every hour.\n• Trains from Rawalpindi (Green Line, Subak Raftar) and Karachi.\n• Allama Iqbal International Airport.",
+  "guide": "Day 1: Lahore Fort, Sheesh Mahal, Badshahi Mosque, dinner at Fort Road Food Street facing the mosque.\nDay 2: Walled City Lahore tour (Delhi Gate, Shahi Hammam, Wazir Khan Mosque), Anarkali bazaar.\nDay 3: Shalimar Gardens morning, Wagah border flag ceremony (arrive 2 hrs early).\nEat: Phajja paye, Butt karahi, Gawalmandi halwa puri breakfast.",
+  "tips": "• Walled City Lahore Authority runs guided walks and double-decker bus tours.\n• Dress modestly for mosques; shoes off.\n• Smog season (Nov–Jan) – check AQI and carry masks.",
+  "safety": "Crowded bazaars – watch pockets. Emergency: Rescue 1122, Police 15.",
+  "photos": [],
+  "photoCredits": ""
+ },
+ {
+  "name": "Islamabad & Margalla Hills",
+  "region": "Islamabad Capital Territory",
+  "lat": 33.7299,
+  "lng": 73.0372,
+  "category": "City",
+  "vibes": [
+   "Chill",
+   "Nature",
+   "Family",
+   "Food",
+   "Culture"
+  ],
+  "amenities": [
+   "Parking",
+   "Restrooms",
+   "Restaurants",
+   "Hotels",
+   "Mobile signal",
+   "Internet",
+   "ATM",
+   "Fuel station",
+   "Medical aid",
+   "Wheelchair access",
+   "Kid friendly",
+   "Pet friendly",
+   "Entry ticket"
+  ],
+  "transport": [
+   "Car",
+   "Bus",
+   "Train",
+   "Flight",
+   "Motorbike"
+  ],
+  "bestMonths": [
+   2,
+   3,
+   4,
+   10,
+   11,
+   12
+  ],
+  "dailyCost": 6000,
+  "minDays": 1,
+  "description": "A green capital at the foot of the Margalla Hills: Faisal Mosque, Daman-e-Koh viewpoint, hiking trails, Saidpur village, Lok Virsa heritage museum and Rawal Lake.",
+  "howToReach": "• Islamabad International Airport (IIAP).\n• Trains to Rawalpindi station, Daewoo terminal at I-11 / Peshawar Mor.\n• M-2 from Lahore, M-1 from Peshawar.",
+  "guide": "Morning: hike Trail 5 or Trail 3 (2–3 hrs), breakfast at Saidpur Village.\nAfternoon: Pakistan Monument & museum, Lok Virsa.\nSunset: Faisal Mosque, then Daman-e-Koh city lights.\nEvening: F-6 / F-7 Jinnah Super food scene.",
+  "tips": "• Start trails early in summer; carry water.\n• Faisal Mosque closes to tourists during prayer times.\n• Spring (March–April) is the most beautiful season.",
+  "safety": "Leopards and wild boar live in the Margallas – stay on marked trails, hike in groups. Emergency: Rescue 1122, Police 15.",
+  "photos": [],
+  "photoCredits": ""
+ },
+ {
+  "name": "Deosai National Park",
+  "region": "Skardu / Astore, Gilgit-Baltistan",
+  "lat": 34.9833,
+  "lng": 75.4,
+  "category": "Adventure",
+  "vibes": [
+   "Nature",
+   "Adventure",
+   "Just escape",
+   "Photography",
+   "Mountains",
+   "Road trip"
+  ],
+  "amenities": [
+   "Camping",
+   "Local guides",
+   "4x4 jeep needed",
+   "Entry ticket"
+  ],
+  "transport": [
+   "Car",
+   "Flight",
+   "Motorbike"
+  ],
+  "bestMonths": [
+   6,
+   7,
+   8,
+   9
+  ],
+  "dailyCost": 8000,
+  "minDays": 2,
+  "description": "The 'Land of Giants' – one of the highest plateaus on Earth (≈4,100 m). Endless wildflower meadows, Sheosar Lake and a protected population of Himalayan brown bears.",
+  "howToReach": "• From Skardu via Satpara Lake (≈ 2 hrs by jeep to Bara Pani).\n• From Astore via Chilam (crossing the whole plateau ≈ 5–6 hrs).\n• 4x4 required; jeeps can be hired in Skardu.",
+  "guide": "Day 1: Skardu → Satpara → Ali Malik Mar → Bara Pani (camp, bear spotting at dusk).\nDay 2: Kala Pani, Sheosar Lake, exit via Chilam to Astore or return to Skardu.\nBest flowers: mid-July to mid-August.",
+  "tips": "• No shops or hotels inside – carry food, water, fuel.\n• Night temperatures drop near freezing even in August.\n• Keep 100+ m away from bears; never feed wildlife.",
+  "safety": "Altitude sickness risk – sleep lower if headaches start. No mobile signal. Emergency: Rescue 1122 (Skardu).",
+  "photos": [],
+  "photoCredits": ""
+ },
+ {
+  "name": "Ratti Gali Lake",
+  "region": "Neelum, Azad Jammu & Kashmir",
+  "lat": 34.8306,
+  "lng": 74.0628,
+  "category": "Lake",
+  "vibes": [
+   "Adventure",
+   "Nature",
+   "Just escape",
+   "Mountains",
+   "Photography"
+  ],
+  "amenities": [
+   "Camping",
+   "Restrooms",
+   "Local guides",
+   "4x4 jeep needed"
+  ],
+  "transport": [
+   "Car",
+   "Bus",
+   "Motorbike"
+  ],
+  "bestMonths": [
+   7,
+   8
+  ],
+  "dailyCost": 6000,
+  "minDays": 2,
+  "description": "A glacial lake at about 3,700 m in upper Neelum, surrounded by snow-streaked peaks and flower meadows. One of the most photographed alpine lakes in Pakistan.",
+  "howToReach": "• Drive to Dowarian (Neelum Valley, ~7 hrs from Islamabad).\n• Jeep from Dowarian to base camp (≈ 2 hrs on a rough track).\n• Hike 1–1.5 hrs to the lake.",
+  "guide": "Day 1: Islamabad → Dowarian, overnight.\nDay 2: Jeep to base camp, hike to lake, camp at base camp.\nDay 3: Sunrise at the lake, descend to Kel/Sharda.",
+  "tips": "• Snow blocks the track until late June; July–August is the window.\n• Tents and food are available at base camp in season, but bring layers.\n• Leave no trash – the lake ecosystem is fragile.",
+  "safety": "Weather changes quickly; start the hike early. No signal. Emergency: Rescue 1122 (Muzaffarabad).",
+  "photos": [],
+  "photoCredits": ""
+ },
+ {
+  "name": "Mohenjo-daro",
+  "region": "Larkana, Sindh",
+  "lat": 27.3292,
+  "lng": 68.1389,
+  "category": "Historical",
+  "vibes": [
+   "Culture",
+   "Photography",
+   "Family"
+  ],
+  "amenities": [
+   "Parking",
+   "Restrooms",
+   "Restaurants",
+   "Local guides",
+   "Entry ticket",
+   "Kid friendly"
+  ],
+  "transport": [
+   "Car",
+   "Bus",
+   "Train",
+   "Flight"
+  ],
+  "bestMonths": [
+   11,
+   12,
+   1,
+   2
+  ],
+  "dailyCost": 4500,
+  "minDays": 1,
+  "description": "A 4,500-year-old Indus Valley city and UNESCO World Heritage Site: the Great Bath, the Stupa mound, planned streets and drains, plus an on-site museum.",
+  "howToReach": "• Train to Larkana, then 30 min by road.\n• Karachi → N-55 Indus Highway, ~430 km, 7 hrs.\n• Fly to Sukkur and drive 1.5 hrs.",
+  "guide": "Start at the museum (copies of the Priest-King and Dancing Girl), then walk the Stupa mound and Great Bath, then the Lower City.\nCombine with Sukkur (Lansdowne Bridge, Sadhu Bela) or Larkana.",
+  "tips": "• Visit November–February; summer exceeds 45 °C.\n• Hire a licensed guide at the gate.\n• Don't climb on the ruins.",
+  "safety": "Carry water and sun protection. Emergency: Rescue 1122, Police 15, Edhi 115.",
+  "photos": [],
+  "photoCredits": ""
+ },
+ {
+  "name": "Khewra Salt Mine",
+  "region": "Jhelum, Punjab",
+  "lat": 32.6475,
+  "lng": 73.0086,
+  "category": "Historical",
+  "vibes": [
+   "Family",
+   "Culture",
+   "Photography",
+   "Road trip"
+  ],
+  "amenities": [
+   "Parking",
+   "Restrooms",
+   "Restaurants",
+   "Mobile signal",
+   "Kid friendly",
+   "Local guides",
+   "Entry ticket",
+   "Wheelchair access"
+  ],
+  "transport": [
+   "Car",
+   "Bus",
+   "Motorbike"
+  ],
+  "bestMonths": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6,
+   7,
+   8,
+   9,
+   10,
+   11,
+   12
+  ],
+  "dailyCost": 4000,
+  "minDays": 1,
+  "description": "The world's second-largest salt mine, worked since Mughal times. Glowing pink salt tunnels, a mosque built of salt bricks, a salt-crystal Assembly Hall and a mini train ride.",
+  "howToReach": "• Islamabad → M-2 → Lillah interchange → Pind Dadan Khan → Khewra. ~170 km, 2.5 hrs.\n• From Lahore ~250 km, 3.5 hrs.",
+  "guide": "2-hour guided mine tour, then drive 30 min to Katas Raj Temples and Kallar Kahar lake for lunch. A perfect day trip.",
+  "tips": "• Inside temperature is ~18 °C all year – nice in summer.\n• Buy salt lamps at the mine shop.\n• Weekends are crowded; arrive at opening.",
+  "safety": "Stay with the group inside the tunnels. Emergency: Rescue 1122, Police 15.",
+  "photos": [],
+  "photoCredits": ""
+ },
+ {
+  "name": "Kalash Valleys",
+  "region": "Chitral, Khyber Pakhtunkhwa",
+  "lat": 35.7333,
+  "lng": 71.7167,
+  "category": "Valley",
+  "vibes": [
+   "Culture",
+   "Party",
+   "Mountains",
+   "Photography",
+   "Just escape",
+   "Road trip"
+  ],
+  "amenities": [
+   "Parking",
+   "Restaurants",
+   "Hotels",
+   "Camping",
+   "Local guides",
+   "Entry ticket"
+  ],
+  "transport": [
+   "Car",
+   "Flight",
+   "Motorbike"
+  ],
+  "bestMonths": [
+   5,
+   6,
+   7,
+   8,
+   9,
+   10,
+   12
+  ],
+  "dailyCost": 6500,
+  "minDays": 3,
+  "description": "Bumburet, Rumbur and Birir are home to the Kalash people, with their own ancient religion, colourful dress and festivals – Chilam Joshi in May, Uchal in August and Chaumos in December.",
+  "howToReach": "• Islamabad → Swat Expressway → Dir → Lowari Tunnel → Chitral → Ayun → Bumburet. ~420 km, 10–11 hrs.\n• Flights Islamabad → Chitral (weather dependent), then 1.5 hrs by jeep.",
+  "guide": "Day 1: Drive to Chitral (Shahi Mosque, Chitral Fort).\nDay 2: Bumburet – Kalasha Dur museum, villages, walnut orchards.\nDay 3: Rumbur valley walk; festival dates if you planned around them.",
+  "tips": "• Ask before photographing people, especially women.\n• Plan around festival dates (Chilam Joshi ≈ 13–16 May).\n• Foreign visitors register at Chitral check-post.",
+  "safety": "Respect sacred places (no entry into restricted areas). Emergency: Rescue 1122 Chitral, Police 15.",
+  "photos": [],
+  "photoCredits": ""
+ },
+ {
+  "name": "Taxila",
+  "region": "Rawalpindi, Punjab",
+  "lat": 33.746,
+  "lng": 72.8397,
+  "category": "Historical",
+  "vibes": [
+   "Culture",
+   "Family",
+   "Photography",
+   "Chill"
+  ],
+  "amenities": [
+   "Parking",
+   "Restrooms",
+   "Restaurants",
+   "Mobile signal",
+   "Kid friendly",
+   "Local guides",
+   "Entry ticket",
+   "Wheelchair access"
+  ],
+  "transport": [
+   "Car",
+   "Bus",
+   "Train",
+   "Motorbike"
+  ],
+  "bestMonths": [
+   10,
+   11,
+   12,
+   1,
+   2,
+   3
+  ],
+  "dailyCost": 4000,
+  "minDays": 1,
+  "description": "A UNESCO site of the Gandhara civilisation: the Dharmarajika stupa, Jaulian monastery on a hilltop, the Greek-planned city of Sirkap and a superb museum of Buddhist sculpture.",
+  "howToReach": "• Islamabad/Rawalpindi → GT Road / Margalla Avenue, 35 km, 45 min.\n• Trains stop at Taxila Cantt.",
+  "guide": "Taxila Museum (1.5 hrs) → Sirkap → Jaulian monastery (short uphill walk) → Dharmarajika. Half-day trip; add Khanpur Dam for water sports in summer.",
+  "tips": "• Museum is closed on some public holidays – check before going.\n• Stone-carving workshops in town sell Gandhara replicas.",
+  "safety": "Carry water; little shade at the sites. Emergency: Rescue 1122, Police 15.",
+  "photos": [],
+  "photoCredits": ""
+ }
+]
