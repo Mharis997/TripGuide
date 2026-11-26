@@ -88,9 +88,9 @@ object Google {
         val pm = ctx.packageManager
         @Suppress("DEPRECATION")
         val sig = if (Build.VERSION.SDK_INT >= 28)
-            pm.getPackageInfo(ctx.packageName, PackageManager.GET_SIGNING_CERTIFICATES).signingInfo!!.apkContentsSigners[0]
-        else pm.getPackageInfo(ctx.packageName, PackageManager.GET_SIGNATURES).signatures!![0]
-        val sha1 = MessageDigest.getInstance("SHA-1").digest(sig.toByteArray()).joinToString("") { "%02X".format(it) }
+            pm.getPackageInfo(ctx.packageName, PackageManager.GET_SIGNING_CERTIFICATES).signingInfo?.apkContentsSigners?.firstOrNull()
+        else pm.getPackageInfo(ctx.packageName, PackageManager.GET_SIGNATURES).signatures?.firstOrNull()
+        val sha1 = sig?.let { MessageDigest.getInstance("SHA-1").digest(it.toByteArray()).joinToString("") { b -> "%02X".format(b) } } ?: "UNKNOWN"
         mapOf("X-Android-Package" to ctx.packageName, "X-Android-Cert" to sha1).also { cached = it }
     }
 

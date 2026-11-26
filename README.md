@@ -27,18 +27,35 @@ Kotlin · Jetpack Compose (Material 3) · Room · Navigation Compose · WorkMana
 
 Publishing steps: see [PLAY_STORE.md](PLAY_STORE.md).
 
-## Google Maps setup (attractions, stays, ratings, photos) – $0 configuration
-Google requires a billing account on every Places key; there is no key-free route. You stay at $0 by capping usage below the free monthly allowance, so Google refuses requests instead of charging.
+## Google Maps setup (attractions, stays, ratings, photos)
+Google only issues Places keys on projects with a billing account (card required). Usage is held to $0 by quotas below the free monthly allowance: past the cap Google refuses requests, it does not charge.
 
-1. console.cloud.google.com → new project → enable **Places API (New)**.
-2. Billing → link a billing account (card required). Billing → Budgets & alerts → budget of 1 (any currency) with email alerts.
-3. APIs & Services → Places API (New) → **Quotas**: set the per-day limits for *Search Nearby*, *Search Text* and *Get Photo Media* requests to **30/day** each (≈900/month, under the 1,000/month free tier for the Enterprise-level fields this app uses – ratings and prices). Check current free caps at developers.google.com/maps/billing-and-pricing/pricing.
-4. Credentials → Create API key → **Application restriction: Android apps** → add package `com.tripguide.app` with the SHA-1 of your debug key, your upload key and the Play App Signing key (Play Console → Test and release → App integrity). **API restriction:** Places API (New) only.
-5. Add to `local.properties` (git-ignored): `PLACES_API_KEY=your_key` and rebuild. For CI, set a `PLACES_API_KEY` repository secret/env var.
+**A. Upload key (once):** create it as in PLAY_STORE.md step 1 (`tripguide-upload.jks`). Note its SHA-1:
+`keytool -list -v -keystore tripguide-upload.jks -alias upload` → line `SHA1: AA:BB:…`
 
-Without a key the app works fully offline; the Nearby/Stays/Discover sections say a key is needed, and the Booking.com / Google Hotels live-price buttons still work.
+**B. Google Cloud:**
+1. console.cloud.google.com → project picker → **New project** "TripGuide".
+2. ☰ → **Billing** → link a billing account. Then Billing → **Budgets & alerts** → Create budget, amount 1, alerts at 50/90/100 %.
+3. ☰ → APIs & Services → **Library** → "Places API (New)" → **Enable**.
+4. APIs & Services → **Credentials** → Create credentials → **API key** → Edit it:
+   - Application restrictions: **Android apps** → Add: package `com.tripguide.app` + SHA-1 from step A. Add a second entry for the **Play App Signing** SHA-1 (Play Console → Test and release → App integrity) once the app is on Play. For a local debug build, also add the SHA-1 shown in the app at Settings → About → Google Maps.
+   - API restrictions: **Restrict key** → Places API (New) only. Save.
+5. APIs & Services → Places API (New) → **Quotas & system limits**: edit the per-day (or per-minute) limits for SearchNearby, SearchText and GetPhotoMedia so the monthly total stays under the free tier listed on developers.google.com/maps/billing-and-pricing/pricing. Ratings and prices put searches in the Enterprise tier, which has the smallest free allowance, and every result photo counts as its own request.
 
-Hotel **prices** are not available from any Google API (free or paid). The Stays lists show Google rating, photos and price level/range where Google has it, and the price buttons open Booking.com / Google Hotels pre-filled with the trip dates and group size, which show live prices.
+**C. Put the key in the build:**
+- GitHub builds (no PC needed): repo → Settings → Secrets and variables → Actions → New repository secret:
+  - `PLACES_API_KEY` = the key
+  - `KEYSTORE_BASE64` = output of `base64 -w0 tripguide-upload.jks` (macOS: `base64 -i tripguide-upload.jks`)
+  - `KEYSTORE_PASSWORD`, `KEY_ALIAS` (`upload`), `KEY_PASSWORD`
+  
+  Push or re-run the workflow. Install **`app-release.apk`** from the run's artifacts (it is signed with your upload key, so its SHA-1 matches step B4). The debug APK from CI is signed with a different throwaway key every run, so the Google features do not work in it.
+- Local builds: add `PLACES_API_KEY=…` to `local.properties` (git-ignored) and rebuild.
+
+**D. Check:** open the app → Settings → About shows "Google Maps: key installed". Open any place → **Nearby** / **Stays** tabs. A red message there quotes Google's exact reason (wrong SHA-1, API not enabled, quota hit).
+
+Without a key the app still works; Nearby/Stays/Discover say a key is needed, and the Booking.com / Google Hotels live-price buttons always work.
+
+Hotel **prices** are not available from any Google API (free or paid). Stays show Google rating, photos and price level/range where Google has it; the price buttons open Booking.com / Google Hotels pre-filled with trip dates and guests for live prices.
 
 ## Code map (`app/src/main/java/com/tripguide/app`)
 | File | What |

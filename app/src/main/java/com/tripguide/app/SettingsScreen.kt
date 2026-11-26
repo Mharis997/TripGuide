@@ -98,6 +98,14 @@ fun SettingsScreen() {
             Group("About")
             Item(Icons.Default.Star, "Rate TripGuide", null) { Util.open(ctx, "market://details?id=${ctx.packageName}") }
             Item(Icons.Default.Policy, "Privacy policy", null) { Util.open(ctx, PRIVACY_URL) }
+            // Shown so the exact fingerprint of this build can be pasted into the key's Android restriction.
+            val sha1 = remember { Google.headers(ctx).getValue("X-Android-Cert").chunked(2).joinToString(":") }
+            Item(Icons.Default.Map, "Google Maps: " + if (Google.enabled) "key installed" else "no key in this build",
+                "App SHA-1 (tap to copy): $sha1") {
+                (ctx.getSystemService(android.content.ClipboardManager::class.java))
+                    .setPrimaryClip(android.content.ClipData.newPlainText("SHA-1", sha1))
+                Toast.makeText(ctx, "SHA-1 copied", Toast.LENGTH_SHORT).show()
+            }
             Item(Icons.Default.Info, "Version $version", "Weather by Open-Meteo.com · Photos from Wikimedia Commons (credits on each place)") {}
         }
     }
