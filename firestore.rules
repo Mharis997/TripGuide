@@ -1,0 +1,51 @@
+rules_version = '2';
+// Deploy: firebase deploy --only firestore:rules   (see README → Community setup)
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function signedIn() { return request.auth != null; }
+    function str(v, max) { return v is string && v.size() <= max; }
+    // A user may add only themselves to reportedBy, once; nothing else may change.
+    function reportOnly() {
+      let before = resource.data.get('reportedBy', []);
+      let after = request.resource.data.get('reportedBy', []);
+      return request.resource.data.diff(resource.data).affectedKeys().hasOnly(['reportedBy'])
+        && after.size() == before.size() + 1
+        && request.auth.uid in after && !(request.auth.uid in before);
+    }
+    function validPlace(d) {
+      return str(d.name, 120) && d.name.size() > 0 && str(d.region, 120)
+        && d.lat is number && d.lat >= -90 && d.lat <= 90 && d.lng is number && d.lng >= -180 && d.lng <= 180
+        && d.photos is list && d.photos.size() <= 3
+        && str(d.description, 4000) && str(d.guide, 8000) && str(d.tips, 8000);
+    }
+
+    match /places/{id} {
+      allow read: if true;
+      allow create: if signedIn() && request.resource.data.addedBy == request.auth.uid
+        && request.resource.data.reportedBy == [] && validPlace(request.resource.data);
+      allow update: if signedIn() && (reportOnly() || (resource.data.addedBy == request.auth.uid
+        && request.resource.data.addedBy == request.auth.uid
+        && request.resource.data.reportedBy == resource.data.reportedBy
+        && validPlace(request.resource.data)));
+      allow delete: if signedIn() && resource.data.addedBy == request.auth.uid;
+    }
+
+    match /reels/{code} {
+      allow read: if true;
+      allow create: if signedIn() && request.resource.data.addedBy == request.auth.uid
+        && request.resource.data.reportedBy == []
+        && request.resource.data.url in ['https://www.instagram.com/reel/' + code + '/', 'https://www.instagram.com/p/' + code + '/']
+        && str(request.resource.data.caption, 5000) && str(request.resource.data.placeKey, 100);
+      allow update: if signedIn() && reportOnly();
+      allow delete: if signedIn() && resource.data.addedBy == request.auth.uid;
+    }
+
+    // AI guide per place, rebuilt by whichever signed-in user adds a reel.
+    // shortcut: any signed-in user can overwrite it; move the write into the AI server (service account) if abused.
+    match /summaries/{key} {
+      allow read: if true;
+      allow write: if signedIn() && request.resource.data.updatedBy == request.auth.uid
+        && str(request.resource.data.summary, 4000) && request.resource.data.reelCount is int;
+    }
+  }
+}

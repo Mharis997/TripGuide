@@ -33,18 +33,22 @@ fun PlaceScreen(nav: NavController, id: Long) {
     val scope = rememberCoroutineScope()
     var tab by rememberSaveable { mutableIntStateOf(0) }
     var posting by remember { mutableStateOf(false) }
+    val reels = Cloud.reels.collectAsState().value.filter { it.placeKey == place.cloudKey }
+    val summary by remember(place.cloudKey) { Cloud.summary(place.cloudKey) }.collectAsState(null)
     var confirmDelete by remember { mutableStateOf(false) }
 
     Scaffold(topBar = {
         BackBar(place.name, { nav.popBackStack() }) {
-            IconButton({ scope.launch { App.dao.upsert(place.copy(favorite = !place.favorite)) } }) {
-                Icon(if (place.favorite) Icons.Default.Favorite else Icons.Default.FavoriteBorder, "Favourite")
-            }
+            SaveButton(place)
             IconButton({ Util.share(ctx, "${place.name} (${place.region})\n\n${place.description}\n\nhttps://maps.google.com/?q=${place.lat},${place.lng}\n— shared from TripGuide") }) {
                 Icon(Icons.Default.Share, "Share")
             }
             IconButton({ nav.navigate("edit?id=${place.id}") }) { Icon(Icons.Default.Edit, "Edit") }
             if (place.userAdded) IconButton({ confirmDelete = true }) { Icon(Icons.Default.Delete, "Delete") }
+            if (place.key.isNotEmpty() && !place.userAdded) IconButton({
+                scope.launch { runCatching { Cloud.report("places", place.key) } }
+                android.widget.Toast.makeText(ctx, "Reported. Places with 3 reports are hidden.", android.widget.Toast.LENGTH_SHORT).show()
+            }) { Icon(Icons.Default.Flag, "Report this place") }
         }
     }) { pad ->
         LazyColumn(Modifier.padding(pad), contentPadding = PaddingValues(bottom = 32.dp)) {
@@ -58,33 +62,32 @@ fun PlaceScreen(nav: NavController, id: Long) {
                     Text("${place.region} · ${place.category}", color = MaterialTheme.colorScheme.onSurfaceVariant)
                     Spacer(Modifier.height(8.dp))
                     Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-                        Button({ nav.navigate("plan?place=${place.id}") }, Modifier.weight(1f)) { Icon(Icons.Default.EventAvailable, null); Text(" Plan trip") }
-                        OutlinedButton({ Util.directions(ctx, place.lat, place.lng) }, Modifier.weight(1f)) { Icon(Icons.Default.Directions, null); Text(" Directions") }
+                        OutlinedButton({ nav.navigate("plan?place=${place.id}") }, Modifier.weight(1f)) { Icon(Icons.Default.EventAvailable, null); Text(" Plan trip") }
+                        GuideButton(place, Modifier.weight(1f))
                     }
                 }
             }
             item {
                 ScrollableTabRow(tab, edgePadding = 8.dp) {
-                    listOf("Overview", "Guide & tips", "Nearby", "Stays", "Updates (${updates.size})").forEachIndexed { i, t ->
+                    listOf("Overview", "Reels (${reels.size})", "Guide & tips", "Updates (${updates.size})").forEachIndexed { i, t ->
                         Tab(tab == i, { tab = i }, text = { Text(t, maxLines = 1) })
                     }
                 }
             }
             when (tab) {
-                0 -> item { Overview(place) }
-                1 -> item { GuideTab(place) }
-                2 -> item {
-                    Column(Modifier.padding(16.dp)) {
-                        Text("Top sightseeing within 30 km", style = MaterialTheme.typography.titleMedium)
-                        GoogleNearby(place.lat, place.lng, place.name, stays = false)
+                0 -> item { Overview(place, summary) }
+                1 -> {
+                    item {
+                        Column(Modifier.padding(16.dp)) {
+                            Text("Reels travellers shared about ${place.name}. Their captions build the guide on the Overview tab.", style = MaterialTheme.typography.bodyMedium)
+                            Button({ nav.navigate("addreel?place=${place.id}") }, Modifier.padding(top = 8.dp)) { Icon(Icons.Default.AddLink, null); Text(" Add a reel") }
+                            if (!Cloud.enabled) Text("Community reels need the Firebase setup (README → Community setup).", style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.outline)
+                            else if (reels.isEmpty()) Text("No reels yet – be the first to add one.", Modifier.padding(top = 8.dp))
+                        }
                     }
+                    items(reels, key = { it.code }) { ReelCard(it) }
                 }
-                3 -> item {
-                    Column(Modifier.padding(16.dp)) {
-                        Text("Places to stay nearby", style = MaterialTheme.typography.titleMedium)
-                        GoogleNearby(place.lat, place.lng, "${place.name}, ${place.region}", stays = true)
-                    }
-                }
+                2 -> item { GuideTab(place) }
                 else -> {
                     item {
                         Column(Modifier.padding(16.dp)) {
@@ -104,23 +107,18 @@ fun PlaceScreen(nav: NavController, id: Long) {
     if (posting) PostUpdateDialog(place) { posting = false }
     if (confirmDelete) AlertDialog({ confirmDelete = false },
         title = { Text("Delete ${place.name}?") }, text = { Text("This removes the place and its updates.") },
-        confirmButton = { TextButton({ scope.launch(Dispatchers.Main) { App.dao.deletePlace(place.id); nav.popBackStack() } }) { Text("Delete") } },
+        confirmButton = { TextButton({ scope.launch(Dispatchers.Main) { Cloud.deletePlace(place.key); App.dao.deletePlace(place.id); nav.popBackStack() } }) { Text("Delete") } },
         dismissButton = { TextButton({ confirmDelete = false }) { Text("Cancel") } })
 }
 
 @OptIn(ExperimentalLayoutApi::class)
 @Composable
-private fun Overview(p: Place) = Column(Modifier.padding(16.dp)) {
+private fun Overview(p: Place, s: PlaceSummary?) = Column(Modifier.padding(16.dp)) {
     Text(p.description, style = MaterialTheme.typography.bodyLarge)
     FlowRow(Modifier.padding(top = 8.dp), horizontalArrangement = Arrangement.spacedBy(6.dp)) {
         p.vibes.forEach { AssistChip({}, { Text(it) }) }
     }
-    if (Google.enabled) {
-        val ctx = LocalContext.current
-        val g by produceState<Result<List<GPlace>>?>(null, p.id) { value = Google.search(ctx, "${p.name}, ${p.region}, Kerala", limit = 1) }
-        Section("On Google Maps")
-        Results(g, "Not found on Google Maps.", null, null)
-    }
+    if (s != null) ReelGuide(s)
     Section("Quick facts")
     val km = Planner.km(Prefs.homeLat.toDouble(), Prefs.homeLng.toDouble(), p.lat, p.lng).toInt()
     InfoRow("Distance from ${Prefs.homeName}", "${Prefs.distance(km)} (straight line)")
@@ -199,6 +197,48 @@ private fun PostUpdateDialog(place: Place, onDone: () -> Unit) {
                     onDone()
                 }
             }) { Text("Post update") }
+        }
+    }
+}
+
+/** AI guide combined from every reel linked to the place. */
+@Composable
+private fun ReelGuide(s: PlaceSummary) = ElevatedCard(Modifier.fillMaxWidth().padding(top = 12.dp)) {
+    Column(Modifier.padding(14.dp)) {
+        Text("From ${s.reelCount} traveller reel${if (s.reelCount == 1) "" else "s"}", style = MaterialTheme.typography.labelLarge, color = MaterialTheme.colorScheme.primary)
+        Text(s.summary, Modifier.padding(vertical = 6.dp), style = MaterialTheme.typography.bodyMedium)
+        s.warnings.forEach { Text("⚠ $it", color = MaterialTheme.colorScheme.error, style = MaterialTheme.typography.bodySmall) }
+        if (s.highlights.isNotEmpty()) { Section("Highlights"); s.highlights.forEach { Text("• $it") } }
+        if (s.guide.isNotBlank()) { Section("How to spend the visit"); Text(s.guide) }
+        if (s.tips.isNotEmpty()) { Section("Tips from reels"); s.tips.forEach { Text("• $it") } }
+        listOf("Getting there" to s.howToReach, "Best time" to s.bestTime, "Costs mentioned" to s.costNotes).filter { it.second.isNotBlank() }
+            .forEach { (k, v) -> InfoRow(k, v) }
+        Text("AI summary of reel captions – verify timings and prices before you go.", Modifier.padding(top = 8.dp),
+            style = MaterialTheme.typography.labelSmall, color = MaterialTheme.colorScheme.outline)
+    }
+}
+
+@Composable
+private fun ReelCard(r: Reel) {
+    val ctx = LocalContext.current
+    val scope = rememberCoroutineScope()
+    var reported by remember { mutableStateOf(false) }
+    OutlinedCard(Modifier.fillMaxWidth().padding(horizontal = 16.dp, vertical = 6.dp)) {
+        ReelEmbed(r.url, Modifier.fillMaxWidth().height(560.dp))
+        Column(Modifier.padding(12.dp)) {
+            if (r.author.isNotBlank()) Text("@${r.author}", style = MaterialTheme.typography.labelLarge)
+            if (r.summary.isNotBlank()) Text(r.summary, style = MaterialTheme.typography.bodyMedium)
+            r.tips.take(3).forEach { Text("• $it", style = MaterialTheme.typography.bodySmall) }
+            Row {
+                TextButton({ Util.open(ctx, r.url) }) { Text("Open in Instagram") }
+                TextButton(enabled = !reported, onClick = {
+                    scope.launch {
+                        runCatching { Cloud.report("reels", r.code) }
+                        reported = true
+                        android.widget.Toast.makeText(ctx, "Reported. Reels with 3 reports are hidden.", android.widget.Toast.LENGTH_SHORT).show()
+                    }
+                }) { Text(if (reported) "Reported" else "Report") }
+            }
         }
     }
 }

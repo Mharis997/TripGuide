@@ -1,0 +1,9 @@
+name = "tripguide-api"
+main = "src/index.ts"
+compatibility_date = "2026-11-01"
+compatibility_flags = ["nodejs_compat"]
+
+[vars]
+# Your Firebase project ID (Firebase console → Project settings).
+FIREBASE_PROJECT_ID = "your-firebase-project-id"
+# Optional: CLAUDE_MODEL = "claude-haiku-5-5"  (cheaper; default is claude-opus-5-5)

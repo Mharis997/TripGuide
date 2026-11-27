@@ -110,8 +110,8 @@ fun TripScreen(nav: NavController, id: Long) {
                         InfoRow("Return home", fmt(trip.returnAt))
                         InfoRow("Group", "${trip.people} · ${trip.transport}")
                         if (place != null) Row(horizontalArrangement = Arrangement.spacedBy(8.dp), modifier = Modifier.padding(top = 8.dp)) {
-                            OutlinedButton({ nav.navigate("place/${place.id}") }, Modifier.weight(1f)) { Text("Guide") }
-                            OutlinedButton({ Util.directions(ctx, place.lat, place.lng) }, Modifier.weight(1f)) { Text("Directions") }
+                            OutlinedButton({ nav.navigate("place/${place.id}") }, Modifier.weight(1f)) { Text("Place info") }
+                            GuideButton(place, Modifier.weight(1f))
                         }
                     }
                 }
@@ -120,11 +120,6 @@ fun TripScreen(nav: NavController, id: Long) {
                 Section("Cost estimate")
                 EstimateBlock(Planner.estimate(place, PlanInput(trip.departAt, trip.returnAt, trip.budget, trip.people, trip.transport,
                     trip.vibes.toSet(), Prefs.homeLat.toDouble(), Prefs.homeLng.toDouble())))
-            }
-            if (place != null) item {
-                Section("Where to stay")
-                GoogleNearby(place.lat, place.lng, "${place.name}, ${place.region}", stays = true,
-                    checkIn = trip.departAt, checkOut = trip.returnAt, people = trip.people)
             }
             if (updates.isNotEmpty()) item {
                 Section("Latest traveller updates")

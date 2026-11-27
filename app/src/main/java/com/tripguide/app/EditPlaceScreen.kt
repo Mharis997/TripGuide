@@ -61,8 +61,12 @@ fun EditPlaceScreen(nav: NavController, id: Long) {
                     else -> null
                 }
                 if (error == null) scope.launch(Dispatchers.Main) {
-                    App.dao.upsert(p.copy(name = p.name.trim(), region = p.region.trim(), lat = la!!, lng = ln!!,
-                        dailyCost = cost.toIntOrNull() ?: 0, minDays = (days.toIntOrNull() ?: 1).coerceAtLeast(1), updatedAt = System.currentTimeMillis()))
+                    val local = p.copy(name = p.name.trim(), region = p.region.trim(), lat = la!!, lng = ln!!,
+                        dailyCost = cost.toIntOrNull() ?: 0, minDays = (days.toIntOrNull() ?: 1).coerceAtLeast(1), updatedAt = System.currentTimeMillis())
+                    // My own places are shared with everyone; built-in ones stay local edits.
+                    App.dao.upsert(if (!local.userAdded) local else runCatching { Cloud.publish(ctx, local) }.getOrElse {
+                        Toast.makeText(ctx, "Saved on this phone. Sharing failed: ${it.message}", Toast.LENGTH_LONG).show(); local
+                    })
                     nav.popBackStack()
                 }
             }) { Text("Save") }
@@ -70,6 +74,11 @@ fun EditPlaceScreen(nav: NavController, id: Long) {
     }) { pad ->
         if (!loaded) return@Scaffold
         Column(Modifier.padding(pad).padding(horizontal = 16.dp).verticalScroll(rememberScrollState()).padding(bottom = 32.dp)) {
+            if (p.userAdded && Cloud.enabled) Row(verticalAlignment = Alignment.CenterVertically) {
+                Text("Shared with all TripGuide users. By saving you agree to the community rules.", Modifier.weight(1f),
+                    style = MaterialTheme.typography.labelSmall, color = MaterialTheme.colorScheme.outline)
+                TextButton({ Util.open(ctx, RULES_URL) }) { Text("Rules") }
+            }
             error?.let { Text(it, color = MaterialTheme.colorScheme.error, modifier = Modifier.padding(vertical = 8.dp)) }
             OutlinedTextField(p.name, { p = p.copy(name = it) }, Modifier.fillMaxWidth(), label = { Text("Name *") }, singleLine = true)
             OutlinedTextField(p.region, { p = p.copy(region = it) }, Modifier.fillMaxWidth(), label = { Text("Region / city *") }, singleLine = true)

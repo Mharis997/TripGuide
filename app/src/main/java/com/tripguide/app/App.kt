@@ -31,17 +31,16 @@ class App : Application(), ImageLoaderFactory {
     override fun onCreate() {
         super.onCreate()
         Prefs.init(this)
-        db = Room.databaseBuilder(this, AppDb::class.java, "tripguide.db").build()
+        db = Room.databaseBuilder(this, AppDb::class.java, "tripguide.db").addMigrations(MIGRATION_1_2).build()
         Notify.createChannels(this)
+        Cloud.init(this)
         CoroutineScope(Dispatchers.IO).launch { Seed.load(this@App, db.dao()) }
     }
 
     // Wikimedia throttles generic HTTP-client user agents; identify the app.
     override fun newImageLoader() = ImageLoader.Builder(this).okHttpClient {
         OkHttpClient.Builder().addInterceptor { chain ->
-            val req = chain.request().newBuilder().header("User-Agent", "TripGuide/${BuildConfig.VERSION_NAME} (Android)")
-            if (chain.request().url.host == "places.googleapis.com") Google.headers(this).forEach { (k, v) -> req.header(k, v) }
-            chain.proceed(req.build())
+            chain.proceed(chain.request().newBuilder().header("User-Agent", "TripGuide/${BuildConfig.VERSION_NAME} (Android)").build())
         }.build()
     }.build()
 
@@ -124,7 +123,10 @@ object Util {
     fun share(ctx: Context, text: String) =
         ctx.startActivity(Intent.createChooser(Intent(Intent.ACTION_SEND).setType("text/plain").putExtra(Intent.EXTRA_TEXT, text), null))
 
-    fun directions(ctx: Context, lat: Double, lng: Double) = open(ctx, "https://www.google.com/maps/dir/?api=1&destination=$lat,$lng")
+    /** Starts Google Maps turn-by-turn straight away; it hands over to Android Auto when the phone is connected. */
+    fun navigate(ctx: Context, lat: Double, lng: Double) = runCatching {
+        ctx.startActivity(Intent(Intent.ACTION_VIEW, "google.navigation:q=$lat,$lng&mode=d".toUri()).setPackage("com.google.android.apps.maps"))
+    }.recoverCatching { open(ctx, "https://www.google.com/maps/dir/?api=1&destination=$lat,$lng&travelmode=driving&dir_action=navigate") }
 
     fun open(ctx: Context, url: String) = runCatching { ctx.startActivity(Intent(Intent.ACTION_VIEW, url.toUri())) }
 

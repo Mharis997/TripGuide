@@ -8,6 +8,8 @@ object Catalog {
         "Parking", "Restrooms", "Restaurants", "Hotels", "Camping", "Mobile signal", "Internet", "ATM", "Fuel station",
         "Medical aid", "Wheelchair access", "Kid friendly", "Pet friendly", "Local guides", "4x4 jeep needed", "Entry ticket",
     )
+    /** Saved lists a place can be put in. */
+    val lists = listOf("Favorites", "Plan to go", "Visited")
     val transport = listOf("Car", "Bus", "Train", "Flight", "Motorbike")
     val updateTypes = listOf("Open", "Temporarily closed", "Road blocked", "Weather alert", "Crowded", "General info")
     /** Update types that change a place's visible status badge. */

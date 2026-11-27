@@ -56,9 +56,14 @@ class AppFlowTest {
         shot("2_place")
         rule.onNodeWithText("Guide & tips").performClick()
         shot("3_guide")
-        // Stays tab: live-price links work even before a Google key is configured
-        rule.onNodeWithText("Stays").performScrollTo().performClick()
-        rule.onNodeWithText("Booking.com").assertExists()
+        // Saved lists replace the single favourite flag
+        rule.onNodeWithContentDescription("Save").performClick()
+        rule.onNodeWithText("Plan to go").performClick()
+        rule.onNodeWithContentDescription("Saved: Plan to go").assertExists()
+        // Reels tab offers adding a reel and explains community setup when Firebase isn't configured
+        rule.onNodeWithText("Reels (0)").performScrollTo().performClick()
+        rule.onNodeWithText("Add a reel", substring = true).assertExists()
+        rule.onNodeWithText("Community reels need the Firebase setup", substring = true).assertExists()
         rule.onNodeWithText("Updates (0)").performScrollTo().performClick()
         rule.onNodeWithText("Post an update", substring = true).performClick()
         rule.onNodeWithText("Road blocked").performClick()

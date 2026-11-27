@@ -25,6 +25,14 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.unit.dp
 import coil.compose.AsyncImage
+import android.annotation.SuppressLint
+import android.webkit.WebView
+import android.webkit.WebViewClient
+import androidx.compose.ui.viewinterop.AndroidView
+import androidx.compose.material.icons.filled.Bookmark
+import androidx.compose.material.icons.filled.BookmarkBorder
+import androidx.compose.material.icons.filled.Navigation
+import kotlinx.coroutines.launch
 import java.time.Instant
 import java.time.LocalDateTime
 import java.time.ZoneId
@@ -158,3 +166,48 @@ fun InfoRow(label: String, value: String) = Row(Modifier.fillMaxWidth().padding(
 @Composable
 fun PlaceThumb(p: Place, modifier: Modifier = Modifier) =
     Photo(p.photos.firstOrNull(), modifier.clip(RoundedCornerShape(12.dp)))
+
+/** Bookmark that files a place under one of Catalog.lists (Favorites, Plan to go, Visited). */
+@Composable
+fun SaveButton(p: Place, tint: androidx.compose.ui.graphics.Color = androidx.compose.ui.graphics.Color.Unspecified) {
+    val scope = rememberCoroutineScope()
+    var open by remember { mutableStateOf(false) }
+    Box {
+        IconButton({ open = true }) {
+            Icon(if (p.saved.isEmpty()) Icons.Default.BookmarkBorder else Icons.Default.Bookmark,
+                if (p.saved.isEmpty()) "Save" else "Saved: ${p.saved}", tint = if (tint == androidx.compose.ui.graphics.Color.Unspecified) LocalContentColor.current else tint)
+        }
+        DropdownMenu(open, { open = false }) {
+            (Catalog.lists + "").forEach { l ->
+                DropdownMenuItem({ Text(if (l.isEmpty()) "Remove from lists" else l) }, enabled = !(l.isEmpty() && p.saved.isEmpty()),
+                    leadingIcon = { RadioButton(p.saved == l && l.isNotEmpty(), null) },
+                    onClick = { open = false; scope.launch { App.dao.upsert(p.copy(saved = l)) } })
+            }
+        }
+    }
+}
+
+/** Starts turn-by-turn navigation (Android Auto ready). */
+@Composable
+fun GuideButton(p: Place, modifier: Modifier = Modifier) {
+    val ctx = LocalContext.current
+    Button({ Util.navigate(ctx, p.lat, p.lng) }, modifier) { Icon(Icons.Default.Navigation, null); Text(" Guide") }
+}
+
+/** Plays a reel through Instagram's official embed page. */
+@SuppressLint("SetJavaScriptEnabled")
+@Composable
+fun ReelEmbed(url: String, modifier: Modifier = Modifier) = AndroidView(
+    factory = { ctx ->
+        WebView(ctx).apply {
+            settings.javaScriptEnabled = true
+            settings.mediaPlaybackRequiresUserGesture = true
+            webViewClient = WebViewClient() // keep the embed inside the app
+            setBackgroundColor(android.graphics.Color.BLACK)
+            loadUrl(embedUrl(url))
+        }
+    },
+    update = { if (it.url?.startsWith(embedUrl(url)) != true) it.loadUrl(embedUrl(url)) },
+    onRelease = { it.destroy() },
+    modifier = modifier,
+)

@@ -25,6 +25,7 @@ import kotlinx.coroutines.launch
 import java.io.File
 
 const val PRIVACY_URL = "https://mharis997.github.io/tripguide/privacy-policy.html"
+const val RULES_URL = "https://mharis997.github.io/tripguide/community-rules.html"
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -98,14 +99,12 @@ fun SettingsScreen() {
             Group("About")
             Item(Icons.Default.Star, "Rate TripGuide", null) { Util.open(ctx, "market://details?id=${ctx.packageName}") }
             Item(Icons.Default.Policy, "Privacy policy", null) { Util.open(ctx, PRIVACY_URL) }
-            // Shown so the exact fingerprint of this build can be pasted into the key's Android restriction.
-            val sha1 = remember { Google.headers(ctx).getValue("X-Android-Cert").chunked(2).joinToString(":") }
-            Item(Icons.Default.Map, "Google Maps: " + if (Google.enabled) "key installed" else "no key in this build",
-                "App SHA-1 (tap to copy): $sha1") {
-                (ctx.getSystemService(android.content.ClipboardManager::class.java))
-                    .setPrimaryClip(android.content.ClipData.newPlainText("SHA-1", sha1))
-                Toast.makeText(ctx, "SHA-1 copied", Toast.LENGTH_SHORT).show()
-            }
+            Item(Icons.Default.Gavel, "Community rules", null) { Util.open(ctx, RULES_URL) }
+            Item(Icons.Default.Groups, "Community: " + when {
+                !Cloud.enabled -> "not set up in this build"
+                Cloud.uid == null -> "connecting…"
+                else -> "connected" + if (Cloud.aiEnabled) " · AI reel reader on" else " · AI server not set"
+            }, "Reels and places you add are shared with all TripGuide users") {}
             Item(Icons.Default.Info, "Version $version", "Weather by Open-Meteo.com · Photos from Wikimedia Commons (credits on each place)") {}
         }
     }

@@ -2,6 +2,8 @@ package com.tripguide.app
 
 import android.Manifest
 import android.os.Build
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.rememberLauncherForActivityResult
@@ -27,7 +29,9 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        val deepLink = if (savedInstanceState == null) intent.getStringExtra("route") else null
+        val shared = reelLink(intent.takeIf { it.action == Intent.ACTION_SEND }?.getStringExtra(Intent.EXTRA_TEXT))
+        val deepLink = if (savedInstanceState != null) null
+            else shared?.let { "addreel?url=${Uri.encode(it)}" } ?: intent.getStringExtra("route")
         setContent { TripTheme { AppNav(deepLink) } }
     }
 }
@@ -80,7 +84,10 @@ fun AppNav(deepLink: String?) {
             }
             composable("trips") { TripsScreen(nav) }
             composable("settings") { SettingsScreen() }
-            composable("discover") { DiscoverScreen(nav) }
+            composable("addreel?url={url}&place={place}", listOf(
+                navArgument("url") { type = NavType.StringType; nullable = true; defaultValue = null },
+                navArgument("place") { type = NavType.LongType; defaultValue = -1L },
+            )) { AddReelScreen(nav, it.arguments?.getString("url"), it.arguments!!.getLong("place")) }
             composable("place/{id}", listOf(navArgument("id") { type = NavType.LongType })) { PlaceScreen(nav, it.arguments!!.getLong("id")) }
             composable("edit?id={id}", listOf(navArgument("id") { type = NavType.LongType; defaultValue = -1L })) {
                 EditPlaceScreen(nav, it.arguments!!.getLong("id"))

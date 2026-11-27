@@ -57,24 +57,21 @@ Category: **Travel & Local**. Tags: Trip planner, Travel guide.
 - **Privacy policy:** URL from step 3.
 - **Ads:** No ads.
 - **App access:** All functionality available without special access.
-- **Content rating questionnaire:** Category "Reference, News, or Educational"/"All other app types" → no violence, sexual content, gambling, drugs. Users do **not** interact or share content with other users (updates stay on-device in this version). Expected rating: Everyone / PEGI 3.
+- **Content rating questionnaire:** "All other app types" → no violence, sexual content, gambling or drugs in the app itself. **Users can share content with other users: Yes** (reels and places, with Report and auto-hide). Expected rating: Everyone / PEGI 3 with a "Users interact" notice.
 - **Target audience:** 13–15, 16–17, 18+ (do not tick under-13 to stay out of the Families programme).
 - **News app:** No.
 - **Health / financial features / government app:** No.
 - **Data safety:**
-  - Does your app collect or share any of the required user data types? **Yes** (only because Discover search text leaves the device):
-    - *App activity → In-app search history*: **Collected**, not shared, **processed ephemerally**, not required (user can skip Discover), purpose **App functionality**.
-    - Nothing else: location is read only on request and never transmitted; Google/Open-Meteo receive destination coordinates, not user data.
-  - Is data encrypted in transit? **Yes** (HTTPS only).
-  - Can users request data deletion? **Yes** — Settings → Delete all my data / uninstall.
+  - Does your app collect or share required user data types? **Yes**:
+    - *Photos and videos → Photos*: **Collected**, shared with other users only when the user adds them to a place; optional; purpose **App functionality**.
+    - *App activity → Other user-generated content* (reel links, place text, reports): **Collected**, optional, **App functionality**.
+    - *Device or other IDs* (anonymous Firebase user ID): **Collected**, required for adding content, **App functionality**, **Account management**.
+    - Location: **not collected** (used on-device only, unless the user saves it as a shared place's coordinates – disclose as *Approximate location*, optional, App functionality, if you want to be conservative).
+  - Encrypted in transit? **Yes**. Can users request deletion? **Yes** – in-app delete for own content, and the email in the privacy policy.
+- **User-generated content policy:** in-app Report, auto-hide at 3 reports, community rules link at every add screen (`docs/community-rules.html`). Check reported items in the Firebase console regularly.
 
 ## 5. Release
 Testing → Closed testing → Create release → upload `app-release.aab` → release notes from `changelogs/1.txt` → review → roll out. After the 14-day / 12-tester requirement, apply for production and promote the release.
 
-## Google Maps key for release builds
-Follow README → "Google Maps setup". Before uploading, add the **Play App Signing** SHA-1 (Play Console → App integrity) to the key's Android restrictions, otherwise Google features fail in the Play-installed app while working in your own builds.
-
-Google's terms require the "Google Maps" attribution under Places results (already shown) and forbid storing Places content – the app only displays it live.
-
-## Before adding online features
-Sharing updates between users, cloud sync or push alerts to *other* travellers needs a backend (e.g. Firebase Firestore + Cloud Messaging). When you add it, update the Data safety form (user-generated content, app activity), the content rating (users interact), the privacy policy, and add a report/block mechanism for user posts (Play's UGC policy requires moderation).
+## Community values for release builds
+Add `FIREBASE_PROJECT_ID`, `FIREBASE_APP_ID`, `FIREBASE_API_KEY`, `TRIPGUIDE_API_URL` as GitHub secrets (README → Community setup). Replace `SUPPORT_EMAIL` in `docs/privacy-policy.html` and `docs/community-rules.html`.

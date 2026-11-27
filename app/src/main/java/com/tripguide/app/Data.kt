@@ -27,10 +27,16 @@ data class Place(
     val photos: List<String> = emptyList(),
     val photoCredits: String = "",
     val status: String = "Open",
-    val favorite: Boolean = false,
+    /** Saved list name from Catalog.lists, or "" when not saved. */
+    val saved: String = "",
     val userAdded: Boolean = false,
+    /** Community document id; "" for built-in places (see [cloudKey]). */
+    val key: String = "",
     val updatedAt: Long = System.currentTimeMillis(),
 )
+
+/** Stable id shared by every install: community doc id, or a slug of the built-in place's name. */
+val Place.cloudKey get() = key.ifEmpty { "kerala-" + name.lowercase().replace(Regex("[^a-z0-9]+"), "-").trim('-') }
 
 @Entity(tableName = "updates", indices = [Index("placeId")])
 data class PlaceUpdate(
@@ -78,7 +84,9 @@ abstract class Dao {
     @Query("SELECT * FROM places WHERE id = :id") abstract suspend fun getPlace(id: Long): Place?
     @Upsert abstract suspend fun upsert(p: Place): Long
     @Insert abstract suspend fun insertPlaces(p: List<Place>)
-    @Query("DELETE FROM places WHERE userAdded = 0") abstract suspend fun deleteSeedPlaces()
+    @Query("DELETE FROM places WHERE userAdded = 0 AND `key` = ''") abstract suspend fun deleteSeedPlaces()
+    @Query("SELECT * FROM places WHERE `key` = :key") abstract suspend fun placeByKey(key: String): Place?
+    @Query("DELETE FROM places WHERE `key` = :key AND userAdded = 0") abstract suspend fun deleteCommunityPlace(key: String)
 
     @Query("SELECT * FROM updates WHERE placeId = :placeId ORDER BY createdAt DESC") abstract fun updates(placeId: Long): Flow<List<PlaceUpdate>>
     @Insert abstract suspend fun insert(u: PlaceUpdate): Long
@@ -116,10 +124,25 @@ abstract class Dao {
     @Transaction open suspend fun clearAll() { clearExpenses(); clearChecklist(); clearTrips(); clearUpdates(); clearPlaces() }
 }
 
-@Database(entities = [Place::class, PlaceUpdate::class, Trip::class, Expense::class, CheckItem::class], version = 1)
+@Database(entities = [Place::class, PlaceUpdate::class, Trip::class, Expense::class, CheckItem::class], version = 2)
 @TypeConverters(Converters::class)
 abstract class AppDb : RoomDatabase() {
     abstract fun dao(): Dao
+}
+
+// Must equal the places createSql in schemas/.../2.json (checked by MigrationTest).
+private const val PLACES_V2_SQL = "CREATE TABLE IF NOT EXISTS `places` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `name` TEXT NOT NULL, `region` TEXT NOT NULL, `lat` REAL NOT NULL, `lng` REAL NOT NULL, `category` TEXT NOT NULL, `vibes` TEXT NOT NULL, `amenities` TEXT NOT NULL, `transport` TEXT NOT NULL, `description` TEXT NOT NULL, `howToReach` TEXT NOT NULL, `guide` TEXT NOT NULL, `tips` TEXT NOT NULL, `safety` TEXT NOT NULL, `bestMonths` TEXT NOT NULL, `dailyCost` INTEGER NOT NULL, `minDays` INTEGER NOT NULL, `photos` TEXT NOT NULL, `photoCredits` TEXT NOT NULL, `status` TEXT NOT NULL, `saved` TEXT NOT NULL, `userAdded` INTEGER NOT NULL, `key` TEXT NOT NULL, `updatedAt` INTEGER NOT NULL)"
+
+/** v2: favourite flag becomes a named saved list, and places get a community key. Rebuilds the table to drop `favorite`. */
+val MIGRATION_1_2 = object : androidx.room.migration.Migration(1, 2) {
+    override fun migrate(db: androidx.sqlite.db.SupportSQLiteDatabase) {
+        val keep = "`id`, `name`, `region`, `lat`, `lng`, `category`, `vibes`, `amenities`, `transport`, `description`, `howToReach`, `guide`, " +
+            "`tips`, `safety`, `bestMonths`, `dailyCost`, `minDays`, `photos`, `photoCredits`, `status`, `userAdded`, `updatedAt`"
+        db.execSQL(PLACES_V2_SQL.replace("`places`", "`places_new`"))
+        db.execSQL("INSERT INTO `places_new` ($keep, `saved`, `key`) SELECT $keep, CASE WHEN `favorite` = 1 THEN 'Favorites' ELSE '' END, '' FROM `places`")
+        db.execSQL("DROP TABLE `places`")
+        db.execSQL("ALTER TABLE `places_new` RENAME TO `places`")
+    }
 }
 
 /** Built-in places shipped in assets/places.json. Inserts only names not already in the DB, so app updates add new places. */
