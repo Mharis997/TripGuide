@@ -95,24 +95,45 @@ async function ask<T extends z.ZodType>(env: Env, schema: T, content: Anthropic.
   return res.parsed_output as z.infer<T>;
 }
 
+const MAX_FRAMES = 8;
+
+/** Video frames from the app: base64 JPEGs, validated at the trust boundary. */
+export function frameBlocks(frames: unknown): Anthropic.Beta.BetaImageBlockParam[] | null {
+  if (frames === undefined) return [];
+  if (!Array.isArray(frames) || frames.length > MAX_FRAMES) return null;
+  if (!frames.every((f) => typeof f === "string" && f.startsWith("/9j/") && f.length <= 1_500_000 && /^[A-Za-z0-9+/=]+$/.test(f))) return null;
+  return frames.map((data) => ({ type: "image" as const, source: { type: "base64" as const, media_type: "image/jpeg" as const, data } }));
+}
+
 async function handleReel(req: Request, env: Env) {
-  const body = (await req.json().catch(() => ({}))) as { url?: string };
-  const reel = canonicalReel(body.url ?? "");
-  if (!reel) return json({ error: "Not an Instagram reel or post link." }, 400);
+  const body = (await req.json().catch(() => ({}))) as { url?: string; caption?: string; frames?: unknown };
+  const frames = frameBlocks(body.frames);
+  if (!frames) return json({ error: `Send at most ${MAX_FRAMES} JPEG frames.` }, 400);
+  const reel = body.url ? canonicalReel(body.url) : null;
+  if (body.url && !reel) return json({ error: "Not an Instagram reel or post link." }, 400);
 
   let tags: Record<string, string> = {};
-  try {
-    const page = await fetch(reel.url, { headers: { "user-agent": "TripGuideBot/1.0 (+link preview)", "accept-language": "en" } });
-    if (page.ok) tags = ogTags(await page.text());
-  } catch { /* metadata is best-effort; the embed still plays in the app */ }
-  const { caption, author } = captionAndAuthor(tags);
-  if (!caption) return json({ ...reel, caption: "", author, info: null, error: "Instagram didn't share this reel's caption (private, removed or rate-limited)." });
+  if (reel) {
+    try {
+      const page = await fetch(reel.url, { headers: { "user-agent": "TripGuideBot/1.0 (+link preview)", "accept-language": "en" } });
+      if (page.ok) tags = ogTags(await page.text());
+    } catch { /* metadata is best-effort; the embed still plays in the app */ }
+  }
+  const fromPage = captionAndAuthor(tags);
+  const caption = (fromPage.caption || (typeof body.caption === "string" ? body.caption : "")).slice(0, 6000);
+  const author = fromPage.author;
+  const out = { code: reel?.code ?? "", url: reel?.url ?? "", caption, author };
+  if (!caption && frames.length === 0) {
+    return json({ ...out, info: null, error: reel ? "Instagram didn't share this reel's caption (private, removed or rate-limited). Pick the video to analyse it instead." : "Add a reel link, a video or a caption." });
+  }
 
   const info = await ask(env, ReelInfo, [
-    ...(await imageBlock(tags["og:image"])),
-    { type: "text", text: `Reel by @${author || "unknown"}:\n<caption>\n${caption.slice(0, 6000)}\n</caption>\nExtract the travel information.` },
+    ...(frames.length ? frames : await imageBlock(tags["og:image"])),
+    { type: "text", text: (frames.length ? `The images are ${frames.length} frames from a travel video, in order. Read on-screen text, signboards, menus and price boards, and note what the place looks like.\n` : "") +
+      (caption ? `Caption by @${author || "unknown"}:\n<caption>\n${caption}\n</caption>\n` : "No caption was provided.\n") +
+      "Extract the travel information." },
   ]);
-  return json({ ...reel, caption, author, info });
+  return json({ ...out, info });
 }
 
 async function handleSummary(req: Request, env: Env) {

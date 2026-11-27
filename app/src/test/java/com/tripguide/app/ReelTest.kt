@@ -12,6 +12,14 @@ class ReelTest {
         assertNull(reelLink(null))
     }
 
+    @Test fun framesAreSpreadAcrossTheVideoAvoidingStartAndEnd() {
+        assertEquals(listOf(1_250_000L, 3_750_000L, 6_250_000L, 8_750_000L), frameTimesUs(10_000, 4))
+        val t = frameTimesUs(30_000)
+        assertEquals(8, t.size)
+        assertTrue(t.first() > 0 && t.last() < 30_000_000L && t == t.sorted())
+        assertEquals(listOf(0L), frameTimesUs(0))
+    }
+
     @Test fun embedUrlDropsQueryAndAddsEmbed() =
         assertEquals("https://www.instagram.com/reel/C9xYz_12ab/embed/", embedUrl("https://www.instagram.com/reel/C9xYz_12ab/?igsh=x"))
 

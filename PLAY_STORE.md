@@ -64,6 +64,7 @@ Category: **Travel & Local**. Tags: Trip planner, Travel guide.
 - **Data safety:**
   - Does your app collect or share required user data types? **Yes**:
     - *Photos and videos → Photos*: **Collected**, shared with other users only when the user adds them to a place; optional; purpose **App functionality**.
+    - *Photos and videos → Videos*: **Collected**, **processed ephemerally** (still frames only, for AI analysis, not stored), not shared, optional, **App functionality**.
     - *App activity → Other user-generated content* (reel links, place text, reports): **Collected**, optional, **App functionality**.
     - *Device or other IDs* (anonymous Firebase user ID): **Collected**, required for adding content, **App functionality**, **Account management**.
     - Location: **not collected** (used on-device only, unless the user saves it as a shared place's coordinates – disclose as *Approximate location*, optional, App functionality, if you want to be conservative).

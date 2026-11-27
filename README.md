@@ -7,6 +7,7 @@ A Kerala travel directory you swipe like reels. Every place shows the Instagram 
 ## Features
 - **Reels feed** – Explore opens as a vertical swipe feed: each place plays its newest reel (Instagram's official embed) or its photos, with Save, Guide and Details. Toggle to a list any time.
 - **Add a reel** – in Instagram tap **Share → TripGuide** (or paste a link). The server reads the reel's public caption and preview image, Claude extracts the place, highlights, tips, costs, timings and how to get there, and the reel is linked to the matching place (or a new place you confirm). Everyone sees it.
+- **Analyse a video** – pick a video on the phone (a saved reel, a screen recording or your own clip) or share it from the Gallery to TripGuide. The app takes 8 still frames on-device and Claude reads scenery, signboards, on-screen text and prices together with the caption, then fills in the place details. With a reel link it enriches that reel's info; without one it creates a new place.
 - **AI guide from reels** – each place's Overview shows a guide combined from all its reels: summary, highlights, how to spend the visit, tips, best time, costs mentioned, warnings.
 - **Guide button** – starts Google Maps turn-by-turn navigation to the place immediately, which carries over to **Android Auto** when the phone is connected.
 - **Saved lists** – Favorites, Plan to go, Visited; filter Explore by list.

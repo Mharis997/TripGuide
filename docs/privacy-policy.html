@@ -32,14 +32,14 @@
 <ul>
   <li><strong>Approximate location</strong> – only when you tap "Use my location" to set your home or a new place's coordinates. Your own location is never sent anywhere unless you save it as the coordinates of a place you share.</li>
   <li><strong>Notifications</strong> – trip reminders and alerts about places on your upcoming trips.</li>
-  <li><strong>Photos</strong> – through the Android photo picker; the app only sees photos you pick.</li>
+  <li><strong>Photos and videos</strong> – through the Android photo picker; the app only sees what you pick. When you analyse a video, the app takes up to 8 still frames on your phone and sends only those frames (small JPEGs) to the TripGuide server for AI analysis; they are not stored. The video itself never leaves your phone.</li>
   <li><strong>Internet</strong> – reels, photos, weather and community content.</li>
 </ul>
 
 <h2>Service providers</h2>
 <ul>
   <li><strong>Google Firebase</strong> (Cloud Firestore, Authentication) stores shared content and the anonymous ID. <a href="https://firebase.google.com/support/privacy">Firebase privacy</a>.</li>
-  <li><strong>TripGuide server on Cloudflare Workers</strong> receives the reel link you submit, reads the reel's public preview (caption and image) from Instagram, and sends that caption and image, or the captions of a place's reels, to <strong>Anthropic's Claude API</strong> to extract travel information. No personal data about you is included. <a href="https://www.anthropic.com/legal/privacy">Anthropic privacy</a> · <a href="https://www.cloudflare.com/privacypolicy/">Cloudflare privacy</a>.</li>
+  <li><strong>TripGuide server on Cloudflare Workers</strong> receives the reel link, caption and video frames you submit, reads the reel's public preview (caption and image) from Instagram, and sends that text and those images, or the captions of a place's reels, to <strong>Anthropic's Claude API</strong> to extract travel information. No personal data about you is included. <a href="https://www.anthropic.com/legal/privacy">Anthropic privacy</a> · <a href="https://www.cloudflare.com/privacypolicy/">Cloudflare privacy</a>.</li>
   <li><strong>Instagram (Meta)</strong> – reels play through Instagram's official embed inside the app; Instagram receives your IP address and may set cookies under <a href="https://privacycenter.instagram.com/policy">its own policy</a>.</li>
   <li><strong>Open-Meteo</strong> – destination coordinates for weather forecasts.</li>
   <li><strong>Wikimedia Commons</strong> – built-in place photos.</li>

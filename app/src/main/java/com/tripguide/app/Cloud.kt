@@ -43,6 +43,24 @@ data class ReelAnalysis(val code: String, val url: String, val caption: String, 
 /** First Instagram reel/post link inside shared text (Instagram's Share sends "url" or "caption url"). */
 fun reelLink(text: String?): String? = text?.let { Regex("""https://(www\.)?instagram\.com/[\w./-]*?(reel|reels|p|tv)/[A-Za-z0-9_-]+/?\S*""").find(it)?.value }
 
+/** Evenly spaced frame times (µs) across a video, skipping the very start and end (often black or titles). */
+fun frameTimesUs(durationMs: Long, n: Int = 8): List<Long> =
+    if (durationMs <= 0) listOf(0L) else List(n) { i -> durationMs * 1000 * (2 * i + 1) / (2 * n) }
+
+/** Reads [n] frames from a local video on-device as small base64 JPEGs for the AI. Nothing else of the video leaves the phone. */
+suspend fun videoFrames(ctx: Context, uri: android.net.Uri, n: Int = 8): List<String> = withContext(Dispatchers.IO) {
+    val r = android.media.MediaMetadataRetriever()
+    try {
+        r.setDataSource(ctx, uri)
+        val dur = r.extractMetadata(android.media.MediaMetadataRetriever.METADATA_KEY_DURATION)?.toLongOrNull() ?: 0
+        frameTimesUs(dur, n).mapNotNull { t -> r.getFrameAtTime(t, android.media.MediaMetadataRetriever.OPTION_CLOSEST_SYNC) }.map { raw ->
+            val scale = 768f / maxOf(raw.width, raw.height)
+            val bmp = if (scale < 1) Bitmap.createScaledBitmap(raw, (raw.width * scale).toInt(), (raw.height * scale).toInt(), true) else raw
+            Base64.encodeToString(ByteArrayOutputStream().also { bmp.compress(Bitmap.CompressFormat.JPEG, 70, it) }.toByteArray(), Base64.NO_WRAP)
+        }
+    } finally { r.release() }
+}
+
 /** Embed URL for in-app playback through Instagram's official embed. */
 fun embedUrl(reelUrl: String) = reelUrl.substringBefore('?').trimEnd('/') + "/embed/"
 
@@ -168,9 +186,10 @@ object Cloud {
     }
 
     /** Reads a reel's caption and preview image on the server and extracts travel info with Claude. */
-    suspend fun analyze(url: String): ReelAnalysis {
-        val o = api("/reel", JSONObject().put("url", url))
-        return ReelAnalysis(o.getString("code"), o.getString("url"), o.optString("caption"), o.optString("author"),
+    suspend fun analyze(url: String?, caption: String = "", frames: List<String> = emptyList()): ReelAnalysis {
+        val body = JSONObject().put("caption", caption).apply { url?.let { put("url", it) }; if (frames.isNotEmpty()) put("frames", JSONArray(frames)) }
+        val o = api("/reel", body)
+        return ReelAnalysis(o.optString("code"), o.optString("url"), o.optString("caption"), o.optString("author"),
             o.optJSONObject("info"), o.optString("error").ifEmpty { null })
     }
 
@@ -191,7 +210,11 @@ object Cloud {
     suspend fun refreshSummary(place: Place) {
         val docs = db.collection("reels").whereEqualTo("placeKey", place.cloudKey).get().await().documents.filter { reports(it) < HIDE_AT_REPORTS }
         if (docs.isEmpty()) return
-        val reels = JSONArray(docs.map { JSONObject().put("author", it.getString("author")).put("caption", it.getString("caption")) })
+        // Caption plus what the AI saw in the video when the reel was added (on-screen text, signboards).
+        val reels = JSONArray(docs.map { d ->
+            val seen = listOf(d.getString("summary").orEmpty()) + strings(d, "tips")
+            JSONObject().put("author", d.getString("author")).put("caption", d.getString("caption") + "\n[Seen in video] " + seen.filter { it.isNotBlank() }.joinToString(" | "))
+        })
         val s = api("/summarize", JSONObject().put("place", place.name).put("region", place.region).put("reels", reels))
         fun list(f: String) = s.optJSONArray(f)?.let { arr -> List(arr.length()) { arr.getString(it) } }.orEmpty()
         db.collection("summaries").document(place.cloudKey).set(mapOf(

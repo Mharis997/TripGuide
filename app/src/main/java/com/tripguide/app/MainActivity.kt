@@ -29,9 +29,14 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        val shared = reelLink(intent.takeIf { it.action == Intent.ACTION_SEND }?.getStringExtra(Intent.EXTRA_TEXT))
+        val send = intent.takeIf { it.action == Intent.ACTION_SEND }
+        val shared = reelLink(send?.getStringExtra(Intent.EXTRA_TEXT))
+        @Suppress("DEPRECATION") // typed getParcelableExtra is API 33+
+        val sharedVideo = send?.takeIf { it.type?.startsWith("video/") == true }?.getParcelableExtra<Uri>(Intent.EXTRA_STREAM)
         val deepLink = if (savedInstanceState != null) null
-            else shared?.let { "addreel?url=${Uri.encode(it)}" } ?: intent.getStringExtra("route")
+            else if (shared != null || sharedVideo != null)
+                "addreel?url=${Uri.encode(shared.orEmpty())}&video=${Uri.encode(sharedVideo?.toString().orEmpty())}"
+            else intent.getStringExtra("route")
         setContent { TripTheme { AppNav(deepLink) } }
     }
 }
@@ -84,10 +89,14 @@ fun AppNav(deepLink: String?) {
             }
             composable("trips") { TripsScreen(nav) }
             composable("settings") { SettingsScreen() }
-            composable("addreel?url={url}&place={place}", listOf(
+            composable("addreel?url={url}&place={place}&video={video}", listOf(
                 navArgument("url") { type = NavType.StringType; nullable = true; defaultValue = null },
                 navArgument("place") { type = NavType.LongType; defaultValue = -1L },
-            )) { AddReelScreen(nav, it.arguments?.getString("url"), it.arguments!!.getLong("place")) }
+                navArgument("video") { type = NavType.StringType; nullable = true; defaultValue = null },
+            )) {
+                AddReelScreen(nav, it.arguments?.getString("url")?.ifEmpty { null }, it.arguments!!.getLong("place"),
+                    it.arguments?.getString("video")?.ifEmpty { null })
+            }
             composable("place/{id}", listOf(navArgument("id") { type = NavType.LongType })) { PlaceScreen(nav, it.arguments!!.getLong("id")) }
             composable("edit?id={id}", listOf(navArgument("id") { type = NavType.LongType; defaultValue = -1L })) {
                 EditPlaceScreen(nav, it.arguments!!.getLong("id"))

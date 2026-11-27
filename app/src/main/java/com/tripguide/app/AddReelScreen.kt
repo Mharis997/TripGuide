@@ -5,6 +5,7 @@ import android.content.ClipboardManager
 import android.content.pm.PackageManager
 import android.widget.Toast
 import androidx.activity.compose.rememberLauncherForActivityResult
+import androidx.activity.result.PickVisualMediaRequest
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.rememberScrollState
@@ -27,13 +28,18 @@ import org.json.JSONObject
 
 private fun JSONObject.list(f: String) = optJSONArray(f)?.let { a -> List(a.length()) { a.getString(it) } }.orEmpty()
 
-/** Paste or share an Instagram reel → server reads it → link to a place (or create one) → guide is rebuilt. */
+/**
+ * Reel link and/or a video on the phone (+ optional caption) → frames read on-device → AI extracts details →
+ * link to a place (or create one) → guide is rebuilt.
+ */
 @Composable
-fun AddReelScreen(nav: NavController, sharedUrl: String?, placeId: Long) {
+fun AddReelScreen(nav: NavController, sharedUrl: String?, placeId: Long, sharedVideo: String? = null) {
     val ctx = LocalContext.current
     val scope = rememberCoroutineScope()
     val places by App.dao.places().collectAsState(emptyList())
     var url by rememberSaveable { mutableStateOf(sharedUrl.orEmpty()) }
+    var video by rememberSaveable { mutableStateOf(sharedVideo) }
+    var caption by rememberSaveable { mutableStateOf("") }
     var busy by remember { mutableStateOf(false) }
     var error by remember { mutableStateOf<String?>(null) }
     var result by remember { mutableStateOf<ReelAnalysis?>(null) }
@@ -47,10 +53,15 @@ fun AddReelScreen(nav: NavController, sharedUrl: String?, placeId: Long) {
     LaunchedEffect(placeId, places) { if (target == null && placeId >= 0) target = places.firstOrNull { it.id == placeId } }
 
     fun read() {
-        val link = reelLink(url) ?: run { error = "Paste an Instagram reel link (instagram.com/reel/…)."; return }
+        val link = reelLink(url)
+        if (url.isNotBlank() && link == null) { error = "That isn't an Instagram reel link (instagram.com/reel/…)."; return }
+        if (link == null && video == null && caption.isBlank()) { error = "Add a reel link, pick a video, or paste the caption."; return }
         busy = true; error = null; result = null
         scope.launch(Dispatchers.Main) {
-            runCatching { Cloud.analyze(link) }.onSuccess { a ->
+            runCatching {
+                val frames = video?.let { v -> videoFrames(ctx, android.net.Uri.parse(v)).also { if (it.isEmpty()) error("Couldn't read frames from that video.") } }
+                Cloud.analyze(link, caption.trim(), frames.orEmpty())
+            }.onSuccess { a ->
                 result = a; error = a.error
                 val info = a.info
                 if (info != null && placeId < 0) {
@@ -62,7 +73,8 @@ fun AddReelScreen(nav: NavController, sharedUrl: String?, placeId: Long) {
             busy = false
         }
     }
-    LaunchedEffect(Unit) { if (sharedUrl != null && Cloud.aiEnabled) read() }
+    LaunchedEffect(Unit) { if ((sharedUrl != null || sharedVideo != null) && Cloud.aiEnabled) read() }
+    val pickVideo = rememberLauncherForActivityResult(ActivityResultContracts.PickVisualMedia()) { uri -> uri?.let { video = it.toString(); result = null } }
 
     fun fillLocation() = Util.lastLocation(ctx)?.let { lat = "%.5f".format(it.latitude); lng = "%.5f".format(it.longitude) }
         ?: Toast.makeText(ctx, "Location not available yet – type the coordinates.", Toast.LENGTH_LONG).show()
@@ -88,20 +100,22 @@ fun AddReelScreen(nav: NavController, sharedUrl: String?, placeId: Long) {
                     val shared = Cloud.publish(ctx, draft)
                     shared.copy(id = App.dao.upsert(shared))
                 }
-                Cloud.addReel(a, place)
+                if (a.url.isNotEmpty()) Cloud.addReel(a, place)
+                else require(newPlace) { "To add this video's details to ${place.name}'s guide, also add the reel's link." }
                 place
             }.onSuccess { p ->
-                Toast.makeText(ctx, "Reel added to ${p.name}", Toast.LENGTH_SHORT).show()
-                nav.navigate("place/${p.id}") { popUpTo("addreel?url={url}&place={place}") { inclusive = true } }
+                Toast.makeText(ctx, if (result?.url.isNullOrEmpty()) "${p.name} added" else "Reel added to ${p.name}", Toast.LENGTH_SHORT).show()
+                nav.navigate("place/${p.id}") { popUpTo("addreel?url={url}&place={place}&video={video}") { inclusive = true } }
             }.onFailure { error = it.message }
             busy = false
         }
     }
 
-    Scaffold(topBar = { BackBar("Add a reel", { nav.popBackStack() }) }) { pad ->
+    Scaffold(topBar = { BackBar("Add a reel or video", { nav.popBackStack() }) }) { pad ->
         Column(Modifier.padding(pad).padding(horizontal = 16.dp).verticalScroll(rememberScrollState()).padding(bottom = 32.dp)) {
-            Text("Found a reel about a place worth visiting? Share it from Instagram to TripGuide, or paste its link. " +
-                "TripGuide reads the caption, adds the reel to the place and updates its guide for everyone.", style = MaterialTheme.typography.bodyMedium)
+            Text("Found a reel about a place worth visiting? Share it from Instagram to TripGuide or paste its link. " +
+                "Add the video too (saved reel, screen recording or your own clip) and TripGuide also analyses what's shown in it – " +
+                "scenery, signboards, on-screen text and prices.", style = MaterialTheme.typography.bodyMedium)
             if (!Cloud.aiEnabled) {
                 Text("Reel reading isn't set up in this build (README → Community setup).", Modifier.padding(top = 8.dp), color = MaterialTheme.colorScheme.error)
                 return@Column
@@ -113,12 +127,27 @@ fun AddReelScreen(nav: NavController, sharedUrl: String?, placeId: Long) {
                         Icon(Icons.Default.ContentPaste, "Paste")
                     }
                 })
-            Button(::read, Modifier.padding(top = 8.dp), enabled = !busy && url.isNotBlank()) { Icon(Icons.Default.AutoAwesome, null); Text(" Read reel") }
+            Row(verticalAlignment = Alignment.CenterVertically) {
+                OutlinedButton({ pickVideo.launch(PickVisualMediaRequest(ActivityResultContracts.PickVisualMedia.VideoOnly)) }) {
+                    Icon(Icons.Default.VideoLibrary, null); Text(if (video == null) " Pick video" else " Change video")
+                }
+                if (video != null) {
+                    Text("  Video selected", Modifier.weight(1f), style = MaterialTheme.typography.bodySmall)
+                    IconButton({ video = null; result = null }) { Icon(Icons.Default.Close, "Remove video") }
+                }
+            }
+            if (reelLink(url) == null) OutlinedTextField(caption, { caption = it }, Modifier.fillMaxWidth(), minLines = 2,
+                label = { Text("Caption (optional – paste it if you have it)") })
+            Button(::read, Modifier.padding(top = 8.dp), enabled = !busy && (url.isNotBlank() || video != null || caption.isNotBlank())) {
+                Icon(Icons.Default.AutoAwesome, null); Text(if (video != null) " Analyse video" else " Read reel")
+            }
+            Text("Only a few still frames are sent for analysis; the video itself stays on your phone.", style = MaterialTheme.typography.labelSmall,
+                color = MaterialTheme.colorScheme.outline)
             if (busy) LinearProgressIndicator(Modifier.fillMaxWidth().padding(vertical = 8.dp))
             error?.let { Text(it, Modifier.padding(vertical = 8.dp), color = MaterialTheme.colorScheme.error) }
 
             val a = result ?: return@Column
-            ReelEmbed(a.url, Modifier.fillMaxWidth().height(480.dp).padding(vertical = 8.dp))
+            if (a.url.isNotEmpty()) ReelEmbed(a.url, Modifier.fillMaxWidth().height(480.dp).padding(vertical = 8.dp))
             if (a.author.isNotBlank()) Text("@${a.author}", style = MaterialTheme.typography.labelLarge)
             a.info?.let { info ->
                 if (!info.optBoolean("isTravelPlace")) Text("⚠ This doesn't look like a reel about a specific place.", color = MaterialTheme.colorScheme.error)
@@ -152,7 +181,7 @@ fun AddReelScreen(nav: NavController, sharedUrl: String?, placeId: Long) {
                 Text("Tip: in Google Maps, long-press the spot and copy the coordinates.", style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.outline)
             }
             Button(::save, Modifier.fillMaxWidth().padding(top = 16.dp).height(52.dp), enabled = !busy && (newPlace || target != null)) {
-                Icon(Icons.Default.Check, null); Text(" Add reel to TripGuide")
+                Icon(Icons.Default.Check, null); Text(if (a.url.isNotEmpty()) " Add reel to TripGuide" else " Add place to TripGuide")
             }
             Row(Modifier.padding(top = 8.dp), verticalAlignment = Alignment.CenterVertically) {
                 Icon(Icons.Default.Public, null, Modifier.size(16.dp), MaterialTheme.colorScheme.outline)

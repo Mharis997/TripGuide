@@ -13,3 +13,13 @@ test("AI endpoints reject missing and forged tokens before any Claude call", asy
   const forged = ["eyJhbGciOiJSUzI1NiJ9", btoa(JSON.stringify({ sub: "x", aud: "demo-project" })), "sig"].join(".");
   assert.equal((await post("/summarize", { authorization: `Bearer ${forged}` })).status, 401);
 });
+
+import { frameBlocks } from "../src/index.ts";
+test("frame validation accepts up to 8 JPEGs and rejects anything else", () => {
+  assert.deepEqual(frameBlocks(undefined), []);
+  assert.equal(frameBlocks(["/9j/AAAA"])?.length, 1);
+  assert.equal(frameBlocks(Array(9).fill("/9j/AAAA")), null);
+  assert.equal(frameBlocks(["iVBORw0KGgo="]), null); // PNG
+  assert.equal(frameBlocks(["/9j/<script>"]), null);
+  assert.equal(frameBlocks("not a list"), null);
+});
