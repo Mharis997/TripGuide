@@ -31,7 +31,7 @@ For every update: bump `versionCode` (+1) and `versionName` in `app/build.gradle
 
 ## 3. Host the privacy policy
 
-1. Replace `SUPPORT_EMAIL` in `docs/privacy-policy.html` with your support address.
+1. Support email is set to harism1407@gmail.com in `docs/privacy-policy.html` and `docs/community-rules.html` (also enter it as the Play Console contact email).
 2. GitHub repo → Settings → Pages → Source: `main` branch, `/docs` folder.
 3. Policy URL: `https://mharis997.github.io/tripguide/privacy-policy.html` (already linked from the app's Settings → Privacy policy; change `PRIVACY_URL` in `SettingsScreen.kt` if you host elsewhere).
 
@@ -74,4 +74,4 @@ Category: **Travel & Local**. Tags: Trip planner, Travel guide.
 Testing → Closed testing → Create release → upload `app-release.aab` → release notes from `changelogs/1.txt` → review → roll out. After the 14-day / 12-tester requirement, apply for production and promote the release.
 
 ## Community values for release builds
-Add `FIREBASE_PROJECT_ID`, `FIREBASE_APP_ID`, `FIREBASE_API_KEY`, `TRIPGUIDE_API_URL` as GitHub secrets (README → Community setup). Replace `SUPPORT_EMAIL` in `docs/privacy-policy.html` and `docs/community-rules.html`.
+Add `FIREBASE_PROJECT_ID`, `FIREBASE_APP_ID`, `FIREBASE_API_KEY`, `TRIPGUIDE_API_URL` as GitHub secrets (README → Community setup).
