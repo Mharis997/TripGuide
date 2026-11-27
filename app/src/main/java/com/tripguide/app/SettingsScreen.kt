@@ -83,6 +83,23 @@ fun SettingsScreen() {
                 ctx.startActivity(Intent(Settings.ACTION_APP_NOTIFICATION_SETTINGS).putExtra(Settings.EXTRA_APP_PACKAGE, ctx.packageName))
             }
 
+            Group("Reading Indian languages")
+            Text("Packs used to read on-screen text in videos and photos (offline). Captions and speech in any of these languages are recognised automatically.",
+                Modifier.padding(horizontal = 16.dp), style = MaterialTheme.typography.bodySmall)
+            var packsVersion by remember { mutableIntStateOf(0) } // re-read install state after downloads
+            Extract.scripts.forEach { sc ->
+                val on = sc.ocr in Prefs.ocrLangs.split(',')
+                val have = remember(packsVersion) { Ocr.installed(ctx, sc.ocr) }
+                Toggle(Icons.Default.Translate, sc.language, if (have) "Downloaded" else "Downloads when first needed (1–15 MB)", on) { enable ->
+                    Prefs.ocrLangs = (Prefs.ocrLangs.split(',').filter { it.isNotBlank() && it != sc.ocr } + if (enable) listOf(sc.ocr) else emptyList()).joinToString(",")
+                    if (enable && !have) scope.launch {
+                        runCatching { Ocr.download(ctx, sc.ocr) }.onFailure { Toast.makeText(ctx, "Download failed: ${it.message}", Toast.LENGTH_LONG).show() }
+                        packsVersion++
+                    }
+                    if (!enable) { Ocr.delete(ctx, sc.ocr); packsVersion++ }
+                }
+            }
+
             Group("Data")
             Item(Icons.Default.Restore, "Restore built-in places", "Reloads the original guides. Your own places are kept.") {
                 confirm = "Restore built-in places? Favourites and reported statuses on them will reset." to {
@@ -103,7 +120,7 @@ fun SettingsScreen() {
             Item(Icons.Default.Groups, "Community: " + when {
                 !Cloud.enabled -> "not set up in this build"
                 Cloud.uid == null -> "connecting…"
-                else -> "connected" + if (Cloud.aiEnabled) " · AI reel reader on" else " · AI server not set"
+                else -> "connected"
             }, "Reels and places you add are shared with all TripGuide users") {}
             Item(Icons.Default.Info, "Version $version", "Weather by Open-Meteo.com · Photos from Wikimedia Commons (credits on each place)") {}
         }

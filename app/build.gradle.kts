@@ -25,7 +25,7 @@ android {
         versionName = "2.0.0"
         // Community backend: from local.properties or the environment (CI secrets). Empty = community features off.
         val localProps = Properties().apply { rootProject.file("local.properties").takeIf { it.exists() }?.inputStream()?.use { load(it) } }
-        for (name in listOf("FIREBASE_PROJECT_ID", "FIREBASE_APP_ID", "FIREBASE_API_KEY", "TRIPGUIDE_API_URL")) {
+        for (name in listOf("FIREBASE_PROJECT_ID", "FIREBASE_APP_ID", "FIREBASE_API_KEY")) {
             buildConfigField("String", name, "\"${localProps.getProperty(name) ?: System.getenv(name) ?: ""}\"")
         }
     }
@@ -77,6 +77,7 @@ dependencies {
     implementation("com.google.firebase:firebase-firestore")
     implementation("com.google.firebase:firebase-auth")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.10.2")
+    implementation("cz.adaptech.tesseract4android:tesseract4android:4.8.0")
     testImplementation("junit:junit:4.13.2")
     // Screenshot tests (Robolectric + Roborazzi): ./gradlew recordRoborazziDebug
     testImplementation("org.robolectric:robolectric:4.14.1")

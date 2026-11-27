@@ -23,6 +23,8 @@ object Prefs {
     var notifyTrips by pref("notifyTrips", true)
     var reminderHours by pref("reminderHours", 24)
     var askedNotifications by pref("askedNotifications", false)
+    /** Tesseract packs used for on-screen text, comma-separated (eng, mal, tam, hin…). */
+    var ocrLangs by pref("ocrLangs", "eng,mal")
 
     @Suppress("UNCHECKED_CAST")
     private fun <T> pref(key: String, def: T) = object : ReadWriteProperty<Any?, T> {

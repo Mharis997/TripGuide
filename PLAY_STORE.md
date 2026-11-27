@@ -64,7 +64,8 @@ Category: **Travel & Local**. Tags: Trip planner, Travel guide.
 - **Data safety:**
   - Does your app collect or share required user data types? **Yes**:
     - *Photos and videos → Photos*: **Collected**, shared with other users only when the user adds them to a place; optional; purpose **App functionality**.
-    - *Photos and videos → Videos*: **Collected**, **processed ephemerally** (still frames only, for AI analysis, not stored), not shared, optional, **App functionality**.
+    - Videos: **not collected** (read on-device; never uploaded).
+    - *Audio*: **not collected** by the developer – the video's sound is passed to the phone's speech recognition service; declare RECORD_AUDIO usage as "speech-to-text of user-selected videos" in the permission declaration if asked.
     - *App activity → Other user-generated content* (reel links, place text, reports): **Collected**, optional, **App functionality**.
     - *Device or other IDs* (anonymous Firebase user ID): **Collected**, required for adding content, **App functionality**, **Account management**.
     - Location: **not collected** (used on-device only, unless the user saves it as a shared place's coordinates – disclose as *Approximate location*, optional, App functionality, if you want to be conservative).
@@ -75,4 +76,4 @@ Category: **Travel & Local**. Tags: Trip planner, Travel guide.
 Testing → Closed testing → Create release → upload `app-release.aab` → release notes from `changelogs/1.txt` → review → roll out. After the 14-day / 12-tester requirement, apply for production and promote the release.
 
 ## Community values for release builds
-Add `FIREBASE_PROJECT_ID`, `FIREBASE_APP_ID`, `FIREBASE_API_KEY`, `TRIPGUIDE_API_URL` as GitHub secrets (README → Community setup).
+Add `FIREBASE_PROJECT_ID`, `FIREBASE_APP_ID`, `FIREBASE_API_KEY` as GitHub secrets (README → Community setup).

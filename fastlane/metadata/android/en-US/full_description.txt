@@ -4,10 +4,13 @@ SWIPE PLACES LIKE REELS
 Explore opens as a vertical feed. Each place plays the newest Instagram reel travellers shared about it. Save it, tap Guide to navigate, or open the details.
 
 GUIDES BUILT FROM REAL REELS
-Every place gets an AI guide combined from its reels: what it's like, highlights, how to spend the visit, tips, best time, prices people mentioned and warnings – so you arrive fully prepared.
+Every place collects what travellers' reels say: the most repeated tips, prices, timings and best months – so you arrive fully prepared.
+
+READS MALAYALAM AND OTHER INDIAN LANGUAGES
+TripGuide reads captions, text on screen and speech in Malayalam, Tamil, Telugu, Kannada, Hindi, Bengali and more – right on your phone, no account or AI needed. Tap Translate for English, or Ask my AI to send it to the AI app you already use.
 
 SHARE A REEL, HELP EVERYONE
-Saw a great Kerala reel? Tap Share in Instagram → TripGuide. TripGuide reads it, links it to the right place (or adds a new one) and updates the guide for every traveller.
+Saw a great Kerala reel? Tap Share in Instagram → TripGuide, or pick a saved video or photo. TripGuide reads it, links it to the right place (or adds a new one) and updates the guide for every traveller.
 
 DON'T KNOW WHERE TO GO?
 Tell TripGuide your departure and return time, budget, group size, transport and vibe – escape, mountains, beaches, party, chill, nature, culture, food and more. It ranks places that fit, with travel time, cost estimates, season fit and warnings.

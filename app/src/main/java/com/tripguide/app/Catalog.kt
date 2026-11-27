@@ -8,6 +8,25 @@ object Catalog {
         "Parking", "Restrooms", "Restaurants", "Hotels", "Camping", "Mobile signal", "Internet", "ATM", "Fuel station",
         "Medical aid", "Wheelchair access", "Kid friendly", "Pet friendly", "Local guides", "4x4 jeep needed", "Entry ticket",
     )
+    /** Malayalam names of built-in places, so Malayalam captions and searches find them. */
+    val localNames = mapOf(
+        "Munnar" to listOf("മൂന്നാർ"), "Alappuzha Backwaters" to listOf("ആലപ്പുഴ", "Alleppey"), "Kumarakom" to listOf("കുമരകം"),
+        "Fort Kochi & Mattancherry" to listOf("ഫോർട്ട് കൊച്ചി", "മട്ടാഞ്ചേരി", "Fort Cochin"), "Varkala" to listOf("വർക്കല"),
+        "Kovalam" to listOf("കോവളം"), "Thekkady (Periyar)" to listOf("തേക്കടി", "പെരിയാർ", "Kumily", "കുമളി"), "Wayanad" to listOf("വയനാട്"),
+        "Athirappilly & Vazhachal Falls" to listOf("അതിരപ്പിള്ളി", "വാഴച്ചാൽ", "Athirapally"), "Vagamon" to listOf("വാഗമൺ"),
+        "Guruvayur" to listOf("ഗുരുവായൂർ"), "Bekal Fort" to listOf("ബേക്കൽ"), "Kozhikode" to listOf("കോഴിക്കോട്", "Calicut"),
+        "Kannur" to listOf("കണ്ണൂർ"), "Thiruvananthapuram" to listOf("തിരുവനന്തപുരം", "Trivandrum"), "Ponmudi" to listOf("പൊന്മുടി"),
+        "Jatayu Earth's Center" to listOf("ജടായു", "Jatayupara", "Chadayamangalam"), "Silent Valley National Park" to listOf("സൈലന്റ് വാലി"),
+        "Marari Beach" to listOf("മാരാരി", "Mararikulam"), "Cherai Beach" to listOf("ചെറായി"), "Poovar Island" to listOf("പൂവാർ"),
+        "Munroe Island" to listOf("മൺറോ തുരുത്ത്", "Mundrothuruth"), "Thenmala Eco-tourism" to listOf("തെന്മല"), "Gavi" to listOf("ഗവി"),
+        "Ilaveezhapoonchira" to listOf("ഇലവീഴാപൂഞ്ചിറ"), "Ramakkalmedu" to listOf("രാമക്കൽമേട്"), "Marayoor" to listOf("മറയൂർ"),
+        "Nelliyampathy" to listOf("നെല്ലിയാമ്പതി", "Nelliampathy"), "Malampuzha Dam & Gardens" to listOf("മലമ്പുഴ"),
+        "Thusharagiri Falls" to listOf("തുഷാരഗിരി"), "Hill Palace Museum" to listOf("ഹിൽ പാലസ്", "Tripunithura", "തൃപ്പൂണിത്തുറ"),
+        "Kuruva Island" to listOf("കുറുവ ദ്വീപ്", "Kuruvadweep"), "Paithalmala" to listOf("പൈതൽമല"),
+        "Thattekad Bird Sanctuary" to listOf("തട്ടേക്കാട്"), "Kerala Kalamandalam" to listOf("കലാമണ്ഡലം", "Cheruthuruthy"),
+        "Thrissur" to listOf("തൃശ്ശൂർ", "Trichur"),
+    )
+
     /** Saved lists a place can be put in. */
     val lists = listOf("Favorites", "Plan to go", "Visited")
     val transport = listOf("Car", "Bus", "Train", "Flight", "Motorbike")

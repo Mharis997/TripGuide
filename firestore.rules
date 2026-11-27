@@ -35,17 +35,10 @@ service cloud.firestore {
       allow create: if signedIn() && request.resource.data.addedBy == request.auth.uid
         && request.resource.data.reportedBy == []
         && request.resource.data.url in ['https://www.instagram.com/reel/' + code + '/', 'https://www.instagram.com/p/' + code + '/']
-        && str(request.resource.data.caption, 5000) && str(request.resource.data.placeKey, 100);
+        && str(request.resource.data.caption, 5000) && str(request.resource.data.placeKey, 100)
+        && str(request.resource.data.get('seen', ''), 5000) && str(request.resource.data.get('summary', ''), 1000);
       allow update: if signedIn() && reportOnly();
       allow delete: if signedIn() && resource.data.addedBy == request.auth.uid;
-    }
-
-    // AI guide per place, rebuilt by whichever signed-in user adds a reel.
-    // shortcut: any signed-in user can overwrite it; move the write into the AI server (service account) if abused.
-    match /summaries/{key} {
-      allow read: if true;
-      allow write: if signedIn() && request.resource.data.updatedBy == request.auth.uid
-        && str(request.resource.data.summary, 4000) && request.resource.data.reelCount is int;
     }
   }
 }

@@ -23,14 +23,22 @@ class ReelTest {
     @Test fun embedUrlDropsQueryAndAddsEmbed() =
         assertEquals("https://www.instagram.com/reel/C9xYz_12ab/embed/", embedUrl("https://www.instagram.com/reel/C9xYz_12ab/?igsh=x"))
 
-    @Test fun matchesPlacesByNameLoosely() {
-        val places = listOf("Munnar", "Fort Kochi & Mattancherry", "Thekkady (Periyar)", "Varkala").map { Place(name = it) }
-        assertEquals("Munnar", bestMatch(places, "munnar")?.name)
-        assertEquals("Thekkady (Periyar)", bestMatch(places, "Thekkady")?.name)
-        assertEquals("Fort Kochi & Mattancherry", bestMatch(places, "Mattancherry Jew Town")?.name)
-        assertEquals("Varkala", bestMatch(places, "Varkala Cliff Beach")?.name)
-        assertNull(bestMatch(places, "Kanthalloor"))
-        assertNull(bestMatch(places, ""))
+    @Test fun canonicalReelLinks() {
+        assertEquals("C9xYz_12ab" to "https://www.instagram.com/reel/C9xYz_12ab/", ReelPage.canonical("https://www.instagram.com/reel/C9xYz_12ab/?igsh=abc"))
+        assertEquals("https://www.instagram.com/reel/C9xYz_12ab/", ReelPage.canonical("https://instagram.com/reels/C9xYz_12ab")?.second)
+        assertEquals("https://www.instagram.com/p/Cabcde12/", ReelPage.canonical("https://www.instagram.com/p/Cabcde12/")?.second)
+        assertEquals("C9xYz_12ab", ReelPage.canonical("https://www.instagram.com/kerala.trips/reel/C9xYz_12ab/")?.first)
+        for (bad in listOf("http://www.instagram.com/reel/C9xYz_12ab/", "https://evil.com/reel/C9xYz_12ab/",
+            "https://www.instagram.com.evil.com/reel/C9xYz_12ab/", "https://www.instagram.com/explore/", "not a url", "")) assertNull(bad, ReelPage.canonical(bad))
+    }
+
+    @Test fun readsCaptionAndAuthorFromPageTags() {
+        val html = """<meta property="og:image" content="https://cdn/x.jpg?a=1&amp;b=2" />
+            <meta content="Kerala Trips on Instagram: &quot;Munnar&quot;" property="og:title" />
+            <meta property="og:description" content="1,234 likes, 56 comments - kerala.trips on May 1, 2026: &quot;കൊളുക്കുമല &#x1F305; Jeep ₹2,500&quot;." />"""
+        val tags = ReelPage.tags(html)
+        assertEquals("https://cdn/x.jpg?a=1&b=2", tags["og:image"])
+        assertEquals("കൊളുക്കുമല 🌅 Jeep ₹2,500" to "kerala.trips", ReelPage.captionAndAuthor(tags))
     }
 
     @Test fun builtInKeysAreStableSlugsAndCommunityKeysWin() {

@@ -34,7 +34,6 @@ fun PlaceScreen(nav: NavController, id: Long) {
     var tab by rememberSaveable { mutableIntStateOf(0) }
     var posting by remember { mutableStateOf(false) }
     val reels = Cloud.reels.collectAsState().value.filter { it.placeKey == place.cloudKey }
-    val summary by remember(place.cloudKey) { Cloud.summary(place.cloudKey) }.collectAsState(null)
     var confirmDelete by remember { mutableStateOf(false) }
 
     Scaffold(topBar = {
@@ -75,11 +74,11 @@ fun PlaceScreen(nav: NavController, id: Long) {
                 }
             }
             when (tab) {
-                0 -> item { Overview(place, summary) }
+                0 -> item { Overview(place, reels) }
                 1 -> {
                     item {
                         Column(Modifier.padding(16.dp)) {
-                            Text("Reels travellers shared about ${place.name}. Their captions build the guide on the Overview tab.", style = MaterialTheme.typography.bodyMedium)
+                            Text("Reels travellers shared about ${place.name}. Tips, prices and timings read from them appear on the Overview tab.", style = MaterialTheme.typography.bodyMedium)
                             Button({ nav.navigate("addreel?place=${place.id}") }, Modifier.padding(top = 8.dp)) { Icon(Icons.Default.AddLink, null); Text(" Add a reel") }
                             if (!Cloud.enabled) Text("Community reels need the Firebase setup (README → Community setup).", style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.outline)
                             else if (reels.isEmpty()) Text("No reels yet – be the first to add one.", Modifier.padding(top = 8.dp))
@@ -113,12 +112,12 @@ fun PlaceScreen(nav: NavController, id: Long) {
 
 @OptIn(ExperimentalLayoutApi::class)
 @Composable
-private fun Overview(p: Place, s: PlaceSummary?) = Column(Modifier.padding(16.dp)) {
+private fun Overview(p: Place, reels: List<Reel>) = Column(Modifier.padding(16.dp)) {
     Text(p.description, style = MaterialTheme.typography.bodyLarge)
     FlowRow(Modifier.padding(top = 8.dp), horizontalArrangement = Arrangement.spacedBy(6.dp)) {
         p.vibes.forEach { AssistChip({}, { Text(it) }) }
     }
-    if (s != null) ReelGuide(s)
+    reelGuide(reels)?.let { ReelGuideCard(p, it, reels) }
     Section("Quick facts")
     val km = Planner.km(Prefs.homeLat.toDouble(), Prefs.homeLng.toDouble(), p.lat, p.lng).toInt()
     InfoRow("Distance from ${Prefs.homeName}", "${Prefs.distance(km)} (straight line)")
@@ -201,19 +200,25 @@ private fun PostUpdateDialog(place: Place, onDone: () -> Unit) {
     }
 }
 
-/** AI guide combined from every reel linked to the place. */
+/** What travellers' reels say, combined on the phone (most repeated tips first). */
 @Composable
-private fun ReelGuide(s: PlaceSummary) = ElevatedCard(Modifier.fillMaxWidth().padding(top = 12.dp)) {
+private fun ReelGuideCard(p: Place, g: ReelGuide, reels: List<Reel>) = ElevatedCard(Modifier.fillMaxWidth().padding(top = 12.dp)) {
+    val ctx = LocalContext.current
+    val scope = rememberCoroutineScope()
     Column(Modifier.padding(14.dp)) {
-        Text("From ${s.reelCount} traveller reel${if (s.reelCount == 1) "" else "s"}", style = MaterialTheme.typography.labelLarge, color = MaterialTheme.colorScheme.primary)
-        Text(s.summary, Modifier.padding(vertical = 6.dp), style = MaterialTheme.typography.bodyMedium)
-        s.warnings.forEach { Text("⚠ $it", color = MaterialTheme.colorScheme.error, style = MaterialTheme.typography.bodySmall) }
-        if (s.highlights.isNotEmpty()) { Section("Highlights"); s.highlights.forEach { Text("• $it") } }
-        if (s.guide.isNotBlank()) { Section("How to spend the visit"); Text(s.guide) }
-        if (s.tips.isNotEmpty()) { Section("Tips from reels"); s.tips.forEach { Text("• $it") } }
-        listOf("Getting there" to s.howToReach, "Best time" to s.bestTime, "Costs mentioned" to s.costNotes).filter { it.second.isNotBlank() }
-            .forEach { (k, v) -> InfoRow(k, v) }
-        Text("AI summary of reel captions – verify timings and prices before you go.", Modifier.padding(top = 8.dp),
+        Text("From ${g.count} traveller reel${if (g.count == 1) "" else "s"}" + if (g.languages.isNotEmpty()) " · ${g.languages.joinToString()}" else "",
+            style = MaterialTheme.typography.labelLarge, color = MaterialTheme.colorScheme.primary)
+        g.quotes.forEach { (who, what) -> Text("“$what” – @$who", Modifier.padding(vertical = 3.dp), style = MaterialTheme.typography.bodyMedium) }
+        if (g.tips.isNotEmpty()) { Section("Tips from reels"); g.tips.forEach { Text("• $it") } }
+        listOf("Prices mentioned" to g.prices.joinToString(), "Timings mentioned" to g.times.joinToString(),
+            "Months mentioned" to g.months.joinToString { Catalog.months[it - 1] }).filter { it.second.isNotBlank() }.forEach { (k, v) -> InfoRow(k, v) }
+        Row {
+            TextButton({ Share.translate(ctx, (g.quotes.map { it.second } + g.tips).joinToString("\n")) }) { Icon(Icons.Default.Translate, null); Text(" Translate") }
+            TextButton({ scope.launch {
+                Share.toAi(ctx, aiPrompt(p.name, "", reels.joinToString("\n\n") { it.caption }, reels.joinToString("\n") { it.seen }, ""), emptyList())
+            } }) { Icon(Icons.Default.AutoAwesome, null); Text(" Ask my AI") }
+        }
+        Text("Collected from reel captions and on-screen text – check timings and prices before you go.",
             style = MaterialTheme.typography.labelSmall, color = MaterialTheme.colorScheme.outline)
     }
 }
@@ -227,9 +232,11 @@ private fun ReelCard(r: Reel) {
         ReelEmbed(r.url, Modifier.fillMaxWidth().height(560.dp))
         Column(Modifier.padding(12.dp)) {
             if (r.author.isNotBlank()) Text("@${r.author}", style = MaterialTheme.typography.labelLarge)
+            if (r.languages.isNotEmpty()) Text(r.languages.joinToString(), style = MaterialTheme.typography.labelSmall, color = MaterialTheme.colorScheme.primary)
             if (r.summary.isNotBlank()) Text(r.summary, style = MaterialTheme.typography.bodyMedium)
             r.tips.take(3).forEach { Text("• $it", style = MaterialTheme.typography.bodySmall) }
             Row {
+                TextButton({ Share.translate(ctx, listOf(r.caption, r.seen).filter { it.isNotBlank() }.joinToString("\n\n")) }) { Text("Translate") }
                 TextButton({ Util.open(ctx, r.url) }) { Text("Open in Instagram") }
                 TextButton(enabled = !reported, onClick = {
                     scope.launch {

@@ -41,7 +41,7 @@ fun ExploreScreen(nav: NavController) {
 
     fun dist(p: Place) = Planner.km(Prefs.homeLat.toDouble(), Prefs.homeLng.toDouble(), p.lat, p.lng).toInt()
     val shown = places.orEmpty().filter { p ->
-        (query.isBlank() || listOf(p.name, p.region, p.description, p.category).any { it.contains(query.trim(), true) }) &&
+        (query.isBlank() || (listOf(p.name, p.region, p.description, p.category) + Catalog.localNames[p.name].orEmpty()).any { it.contains(query.trim(), true) }) &&
             (category == null || p.category == category) &&
             (vibes.isEmpty() || vibes.any { it in p.vibes }) &&
             p.amenities.containsAll(amenities) &&

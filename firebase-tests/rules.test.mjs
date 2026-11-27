@@ -48,9 +48,8 @@ test("places: validated, owner-only edits, max 3 photos, reports can't be cleare
   await assertSucceeds(updateDoc(doc(alice(), "places/p1"), { description: "better" }));
 });
 
-test("summaries must be attributed to the writer", async () => {
-  const s = { summary: "x", reelCount: 1, updatedBy: "alice" };
-  await assertSucceeds(setDoc(doc(alice(), "summaries/kerala-munnar"), s));
-  await assertFails(setDoc(doc(bob(), "summaries/kerala-munnar"), s));
-  await assertFails(setDoc(doc(anon(), "summaries/kerala-munnar"), { ...s, updatedBy: "x" }));
+test("seen text is size-limited and the old summaries collection is closed", async () => {
+  await assertFails(setDoc(doc(alice(), "reels/C9xYz_12ab"), { ...reel("alice"), seen: "x".repeat(5001) }));
+  await assertSucceeds(setDoc(doc(alice(), "reels/C9xYz_12ab"), { ...reel("alice"), seen: "ജീപ്പ് ചാർജ് ₹2500" }));
+  await assertFails(setDoc(doc(alice(), "summaries/kerala-munnar"), { summary: "x", reelCount: 1, updatedBy: "alice" }));
 });
