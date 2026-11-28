@@ -49,7 +49,8 @@ object Cloud {
     private const val HIDE_AT_REPORTS = 3
 
     fun init(ctx: Context) {
-        if (BuildConfig.FIREBASE_PROJECT_ID.isBlank() || app != null) return
+        // Unit tests (Robolectric) must never sign in to or write to the real project.
+        if (BuildConfig.FIREBASE_PROJECT_ID.isBlank() || app != null || android.os.Build.FINGERPRINT == "robolectric") return
         app = FirebaseApp.initializeApp(ctx, FirebaseOptions.Builder().setProjectId(BuildConfig.FIREBASE_PROJECT_ID)
             .setApplicationId(BuildConfig.FIREBASE_APP_ID).setApiKey(BuildConfig.FIREBASE_API_KEY).build(), "tripguide")
         val scope = CoroutineScope(SupervisorJob() + Dispatchers.Main)
