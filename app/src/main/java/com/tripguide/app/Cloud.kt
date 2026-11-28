@@ -147,14 +147,29 @@ object Cloud {
         )).await()
     }
 
-    /** Reads a public reel's caption and author from its page, on the phone. Empty when Instagram withholds it. */
+    /**
+     * Reads a public reel's caption and author on the phone: first from Instagram's official embed page (no login needed),
+     * then from the reel page's preview tags. Empty when the reel is private or removed.
+     */
     suspend fun fetchCaption(url: String): Pair<String, String> = withContext(Dispatchers.IO) {
+        fun page(u: String) = runCatching {
+            val c = open(u)
+            // A redirect means "log in to see this"; that page's text is not the reel's caption.
+            if (c.responseCode == 200) c.inputStream.bufferedReader().use { it.readText() } else null
+        }.getOrNull()
+        page(url.trimEnd('/') + "/embed/captioned/")?.let(ReelPage::embedCaption)
+            ?: page(url)?.let { ReelPage.captionAndAuthor(ReelPage.tags(it)) }?.takeIf { it.first.isNotBlank() }
+            ?: ("" to "")
+    }
+
+    /** Coordinates and region for a place name found in a reel, via Android's built-in geocoder (no key). */
+    @Suppress("DEPRECATION") // the blocking call works on all API levels; we're already on a background thread
+    suspend fun locate(ctx: Context, name: String, hint: String): android.location.Address? = withContext(Dispatchers.IO) {
+        if (name.isBlank() || !android.location.Geocoder.isPresent()) return@withContext null
         runCatching {
-            val c = open(url)
-            // A redirect here means "log in to see this"; its page text is not the reel's caption.
-            if (c.responseCode != 200) return@runCatching "" to ""
-            ReelPage.captionAndAuthor(ReelPage.tags(c.inputStream.bufferedReader().use { it.readText() }))
-        }.getOrDefault("" to "")
+            android.location.Geocoder(ctx, java.util.Locale("en", "IN")).getFromLocationName(listOf(name, hint, "India").filter { it.isNotBlank() }.joinToString(", "), 1)
+                ?.firstOrNull()
+        }.getOrNull()
     }
 
     private fun open(url: String) = (URL(url).openConnection() as HttpURLConnection).apply {

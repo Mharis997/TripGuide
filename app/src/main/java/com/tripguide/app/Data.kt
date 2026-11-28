@@ -1,9 +1,7 @@
 package com.tripguide.app
 
-import android.content.Context
 import androidx.room.*
 import kotlinx.coroutines.flow.Flow
-import org.json.JSONArray
 
 @Entity(tableName = "places")
 data class Place(
@@ -84,6 +82,7 @@ abstract class Dao {
     @Query("SELECT * FROM places WHERE id = :id") abstract suspend fun getPlace(id: Long): Place?
     @Upsert abstract suspend fun upsert(p: Place): Long
     @Insert abstract suspend fun insertPlaces(p: List<Place>)
+    /** Built-in places shipped by versions before 1.0.1 (not mine, not from the community). */
     @Query("DELETE FROM places WHERE userAdded = 0 AND `key` = ''") abstract suspend fun deleteSeedPlaces()
     @Query("SELECT * FROM places WHERE `key` = :key") abstract suspend fun placeByKey(key: String): Place?
     @Query("DELETE FROM places WHERE `key` = :key AND userAdded = 0") abstract suspend fun deleteCommunityPlace(key: String)
@@ -142,28 +141,5 @@ val MIGRATION_1_2 = object : androidx.room.migration.Migration(1, 2) {
         db.execSQL("INSERT INTO `places_new` ($keep, `saved`, `key`) SELECT $keep, CASE WHEN `favorite` = 1 THEN 'Favorites' ELSE '' END, '' FROM `places`")
         db.execSQL("DROP TABLE `places`")
         db.execSQL("ALTER TABLE `places_new` RENAME TO `places`")
-    }
-}
-
-/** Built-in places shipped in assets/places.json. Inserts only names not already in the DB, so app updates add new places. */
-object Seed {
-    suspend fun load(ctx: Context, dao: Dao) {
-        val have = dao.allPlaces().map { it.name }.toSet()
-        val arr = JSONArray(ctx.assets.open("places.json").bufferedReader().use { it.readText() })
-        fun JSONArray.strings() = List(length()) { getString(it) }
-        dao.insertPlaces(List(arr.length()) { i ->
-            val o = arr.getJSONObject(i)
-            Place(
-                name = o.getString("name"), region = o.getString("region"),
-                lat = o.getDouble("lat"), lng = o.getDouble("lng"), category = o.getString("category"),
-                vibes = o.getJSONArray("vibes").strings(), amenities = o.getJSONArray("amenities").strings(),
-                transport = o.getJSONArray("transport").strings(),
-                description = o.getString("description"), howToReach = o.getString("howToReach"),
-                guide = o.getString("guide"), tips = o.getString("tips"), safety = o.getString("safety"),
-                bestMonths = o.getJSONArray("bestMonths").let { a -> List(a.length()) { a.getInt(it) } },
-                dailyCost = o.getInt("dailyCost"), minDays = o.getInt("minDays"),
-                photos = o.getJSONArray("photos").strings(), photoCredits = o.optString("photoCredits"),
-            )
-        }.filter { it.name !in have })
     }
 }

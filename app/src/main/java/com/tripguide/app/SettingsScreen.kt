@@ -101,15 +101,10 @@ fun SettingsScreen() {
             }
 
             Group("Data")
-            Item(Icons.Default.Restore, "Restore built-in places", "Reloads the original guides. Your own places are kept.") {
-                confirm = "Restore built-in places? Favourites and reported statuses on them will reset." to {
-                    App.dao.deleteSeedPlaces(); Seed.load(ctx, App.dao)
-                }
-            }
             Item(Icons.Default.DeleteForever, "Delete all my data", "Trips, places, updates and photos") {
                 confirm = "Delete everything? This cannot be undone." to {
                     App.dao.trips().first().forEach { Notify.cancelTrip(ctx, it.id) }
-                    App.dao.clearAll(); File(ctx.filesDir, "photos").deleteRecursively(); Seed.load(ctx, App.dao)
+                    App.dao.clearAll(); File(ctx.filesDir, "photos").deleteRecursively()
                 }
             }
 
@@ -122,7 +117,7 @@ fun SettingsScreen() {
                 Cloud.uid == null -> "connecting…"
                 else -> "connected"
             }, "Reels and places you add are shared with all TripGuide users") {}
-            Item(Icons.Default.Info, "Version $version", "Weather by Open-Meteo.com · Photos from Wikimedia Commons (credits on each place)") {}
+            Item(Icons.Default.Info, "Version $version", "Weather by Open-Meteo.com · Reels © their creators, shown via Instagram's embed") {}
         }
     }
 

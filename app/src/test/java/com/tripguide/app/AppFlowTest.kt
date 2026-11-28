@@ -37,21 +37,36 @@ class AppFlowTest {
         Prefs.dynamicColor = false // brand colours in store screenshots
     }
 
+    /** Places as they arrive from reels (community key set, so the old built-in cleanup leaves them alone). */
+    private val fixtures = listOf(
+        Place(key = "t-munnar", name = "Munnar", region = "Idukki, Kerala", lat = 10.0889, lng = 77.0595, category = "Mountains",
+            vibes = listOf("Mountains", "Chill", "Nature"), amenities = listOf("Parking", "4x4 jeep needed"), transport = listOf("Car", "Bus"),
+            description = "Tea hills and misty peaks.", bestMonths = (1..12).toList(), dailyCost = 3500, minDays = 1),
+        Place(key = "t-alappuzha", name = "Alappuzha", region = "Alappuzha, Kerala", lat = 9.4981, lng = 76.3388, category = "Backwaters",
+            vibes = listOf("Chill", "Romantic"), amenities = listOf("Parking", "Hotels"), transport = listOf("Car", "Bus", "Train"),
+            description = "Houseboats on palm-lined canals.", bestMonths = (1..12).toList(), dailyCost = 4500, minDays = 1),
+        Place(key = "t-varkala", name = "Varkala", region = "Thiruvananthapuram, Kerala", lat = 8.7379, lng = 76.7163, category = "Beach",
+            vibes = listOf("Beaches", "Chill"), amenities = listOf("Restaurants"), transport = listOf("Car", "Train"),
+            description = "Cliff-top beach cafés.", bestMonths = listOf(10, 11, 12, 1, 2, 3), dailyCost = 3000, minDays = 1),
+    )
+
     @Test fun mainFlows() {
-        waitFor("36 places")
+        waitFor("No places yet") // places come only from reels
+        kotlinx.coroutines.runBlocking { App.dao.insertPlaces(fixtures) }
+        waitFor("3 places")
         shot("1_explore")
 
         // Filtering by amenity checkbox narrows the list
         rule.onNodeWithText("Filters", substring = true).performClick()
         rule.onNodeWithText("4x4 jeep needed").performClick()
-        waitFor("4 places")
+        waitFor("1 places")
         rule.onNodeWithText("Clear all").performClick()
-        waitFor("36 places")
+        waitFor("3 places")
         androidx.test.espresso.Espresso.pressBack()
 
         // Place detail, guide, community update
         rule.onNodeWithText("Search places, regions…").performTextInput("Munnar")
-        rule.onAllNodesWithText("Munnar")[1].performClick()
+        rule.onAllNodesWithText("Munnar").onLast().performClick()
         waitFor("Quick facts")
         shot("2_place")
         rule.onNodeWithText("Guide & tips").performClick()

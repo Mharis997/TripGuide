@@ -76,6 +76,7 @@ fun PlanScreen(nav: NavController, placeId: Long) {
                     Text("${Planner.days(input)} days · $people ${if (people == 1) "person" else "people"} · $transport · budget ${Prefs.money(input.budget)}",
                         style = MaterialTheme.typography.labelLarge)
                 }
+                if (ranked.isEmpty()) item { Text("No places yet – add reels from Instagram first, then TripGuide can suggest where to go.") }
                 items(ranked, key = { it.place.id }) { s -> SuggestionCard(s, onView = { nav.navigate("place/${s.place.id}") }, onChoose = { createTrip(s.place) }) }
             }
             return@Scaffold

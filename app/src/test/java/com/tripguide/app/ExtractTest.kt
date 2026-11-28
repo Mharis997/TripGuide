@@ -4,7 +4,7 @@ import org.junit.Assert.*
 import org.junit.Test
 
 class ExtractTest {
-    private val places = listOf("Munnar", "Fort Kochi & Mattancherry", "Thekkady (Periyar)", "Athirappilly & Vazhachal Falls", "Varkala")
+    private val places = listOf("Munnar", "Fort Kochi & Mattancherry", "Thekkady (തേക്കടി)", "Athirappilly & Vazhachal Falls", "Varkala")
         .map { Place(name = it) }
 
     @Test fun detectsIndianScriptsMostUsedFirst() {
@@ -66,7 +66,7 @@ class ExtractTest {
     @Test fun malayalamNegationAndNamesFindPlaces() {
         assertFalse("Parking" in Extract.from("ഇവിടെ പാർക്കിംഗ് ഇല്ല", places).amenities)
         assertTrue("Parking" in Extract.from("പാർക്കിംഗ് സൗകര്യം ഉണ്ട്", places).amenities)
-        assertEquals("Thekkady (Periyar)", Extract.matchPlace(places, "തേക്കടിയിൽ ബോട്ടിംഗ്")?.name)
+        assertEquals("Thekkady (തേക്കടി)", Extract.matchPlace(places, "തേക്കടിയിൽ ബോട്ടിംഗ്")?.name) // Malayalam part of a reel-added name
         assertEquals("Fort Kochi & Mattancherry", Extract.matchPlace(places, "", listOf("FortKochi"))?.name)
         assertEquals("Fort Kochi & Mattancherry", Extract.matchPlace(places, "walk around mattancherry jew town")?.name)
         assertNull(Extract.matchPlace(places, "Kanthalloor apple farms"))
@@ -101,6 +101,21 @@ class ExtractTest {
 
     @Test fun oldStyleMalayalamSpellingMatchesModernKeywords() =
         assertTrue("Parking" in Extract.from("പാര്\u200dക്കിംഗ്\u200c ഉണ്ട്").amenities)
+
+    /** Real embed markup saved from instagram.com/reel/DQW4z-zDw8B/embed/captioned/ (2026-11-28). */
+    @Test fun readsCaptionFromOfficialEmbedPage() {
+        val html = javaClass.getResource("/embed_captioned.html")!!.readText()
+        val (caption, author) = ReelPage.embedCaption(html)!!
+        assertEquals("travel.big.with.a.tiny.budget", author)
+        assertTrue(caption.startsWith("A hidden wonder of South India 🔥"))
+        assertTrue(caption.contains("📍Badami") && caption.contains("#karnataka"))
+        assertFalse(caption.contains("View all") || caption.contains("<") || caption.contains("&#064;"))
+        val x = Extract.from(caption)
+        assertEquals("Badami", x.placeName)
+        assertEquals("Karnataka", x.region)
+        assertEquals("Religious", x.category)
+        assertNull(ReelPage.embedCaption("<html>login</html>"))
+    }
 
     @Test fun mergeKeepsFirstSummaryAndUnionsLists() {
         val m = Extract.merge(listOf(Extract.from("Great sunrise spot. Entry ₹100."), Extract.from("Parking available. Entry ₹100, jeep ₹2000")))

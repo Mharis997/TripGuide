@@ -21,8 +21,8 @@ android {
         applicationId = "com.tripguide.app"
         minSdk = 26
         targetSdk = 36
-        versionCode = 4
-        versionName = "1.0.0" // bump the last number (+0.0.1) for every new version unless told otherwise
+        versionCode = 5
+        versionName = "1.0.1" // bump the last number (+0.0.1) for every new version unless told otherwise
         // Community backend: from local.properties or the environment (CI secrets). Empty = community features off.
         val localProps = Properties().apply { rootProject.file("local.properties").takeIf { it.exists() }?.inputStream()?.use { load(it) } }
         for (name in listOf("FIREBASE_PROJECT_ID", "FIREBASE_APP_ID", "FIREBASE_API_KEY")) {

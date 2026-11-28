@@ -6,7 +6,7 @@ A Kerala travel directory you swipe like reels. Every place shows the Instagram 
 
 ## Features
 - **Reels feed** – Explore opens as a vertical swipe feed: each place plays its newest reel (Instagram's official embed) or its photos, with Save, Guide and Details. Toggle to a list any time.
-- **Add a reel** – in Instagram tap **Share → TripGuide** (or paste a link). The phone reads the reel's public caption, finds the place (by English or Malayalam name or hashtag), prices, timings, phone numbers, distances, months, category, vibes, amenities and tip lines with built-in rules, and links the reel to the place for everyone.
+- **Add a reel** – in Instagram tap **Share → TripGuide** (or paste a link, including `instagram.com/share/…` links). The phone reads the reel through Instagram's official embed page (no login, no caption pasting), finds the place (📍 line, hashtag or a known place name) and the state, puts it on the map with Android's geocoder, and extracts prices, timings, phone numbers, distances, months, category, vibes, amenities and tips. **Places exist only from reels** – there is no manual "add place" and no built-in list.
 - **Read a video or photo** – pick a saved reel, screen recording, your own clip or a photo (or share it from the Gallery). Offline OCR (Tesseract) reads on-screen text and signboards in English and 10 Indian scripts; Android's speech recognition (Android 13+) transcribes what is said. Without a reel link it creates a new place.
 - **Indian languages** – detects Malayalam, Tamil, Telugu, Kannada, Hindi/Marathi, Bengali, Gujarati, Punjabi, Odia and Urdu; keeps the original text with a **Translate** button (Google Translate app or website); search finds places by Malayalam name (മൂന്നാർ → Munnar).
 - **Ask my AI (optional)** – sends the caption, extracted text and a few frames to whatever AI app the user has (Gemini, ChatGPT, Claude…) via the share sheet; the user can paste the answer back to fill in more details. No keys, no cost to you.
@@ -14,13 +14,12 @@ A Kerala travel directory you swipe like reels. Every place shows the Instagram 
 - **Guide button** – starts Google Maps turn-by-turn navigation to the place immediately, which carries over to **Android Auto** when the phone is connected.
 - **Saved lists** – Favorites, Plan to go, Visited; filter Explore by list.
 - **Trip planner** – departure/return time from home, budget, people, transport, vibes → ranked suggestions with cost and travel-time estimates.
-- **Add places manually** – photos, coordinates, category, vibes, amenities, transport, best months, costs, guide, tips, safety. Shared with all users.
 - **Filtering** – category chips, vibe chips, must-have amenity checkboxes, hide closed places, sort by name / nearest / cheapest.
 - **Trips** – countdown, reminder, packing checklist, budget tracker, notes, share.
 - **Moderation** – Report on any reel or community place; 3 reports hide it for everyone. Rules: `docs/community-rules.html`.
 - **Settings** – Light / Dark / System theme, dynamic colour, home city or location, currency, km/miles, notifications, data reset.
 
-Built-in content: 36 Kerala destinations in `app/src/main/assets/places.json` (photos from Wikimedia Commons with credits). Works offline without the community backend; reels and sharing need it.
+No built-in places: the directory starts empty and grows from reels. Versions before 1.0.1 shipped 36 built-in places; they are removed on update (trips to them show "Place removed").
 
 ## Stack
 - **App:** Kotlin · Jetpack Compose (Material 3) · Room · WorkManager · Coil · Firebase (Firestore + Anonymous Auth) · Tesseract OCR.

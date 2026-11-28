@@ -41,7 +41,7 @@ fun ExploreScreen(nav: NavController) {
 
     fun dist(p: Place) = Planner.km(Prefs.homeLat.toDouble(), Prefs.homeLng.toDouble(), p.lat, p.lng).toInt()
     val shown = places.orEmpty().filter { p ->
-        (query.isBlank() || (listOf(p.name, p.region, p.description, p.category) + Catalog.localNames[p.name].orEmpty()).any { it.contains(query.trim(), true) }) &&
+        (query.isBlank() || listOf(p.name, p.region, p.description, p.category).any { it.contains(query.trim(), true) }) &&
             (category == null || p.category == category) &&
             (vibes.isEmpty() || vibes.any { it in p.vibes }) &&
             p.amenities.containsAll(amenities) &&
@@ -73,7 +73,7 @@ fun ExploreScreen(nav: NavController) {
             })
         },
         floatingActionButton = {
-            if (!reelsMode) ExtendedFloatingActionButton(onClick = { nav.navigate("edit") }, icon = { Icon(Icons.Default.AddLocationAlt, null) }, text = { Text("Add place") })
+            if (!reelsMode) ExtendedFloatingActionButton(onClick = { nav.navigate("addreel") }, icon = { Icon(Icons.Default.AddLink, null) }, text = { Text("Add reel") })
         },
     ) { pad ->
         Column(Modifier.padding(pad)) {
@@ -98,7 +98,12 @@ fun ExploreScreen(nav: NavController) {
                     }
                 }
             if (places != null && shown.isEmpty()) {
-                Text("No places match. Clear some filters or add a new place.", Modifier.padding(32.dp), style = MaterialTheme.typography.bodyLarge)
+                if (places!!.isEmpty()) Column(Modifier.fillMaxWidth().padding(32.dp), horizontalAlignment = Alignment.CenterHorizontally) {
+                    Text("No places yet", style = MaterialTheme.typography.titleLarge)
+                    Text("Places come from reels. Share a Kerala travel reel from Instagram to TripGuide to add the first one.",
+                        Modifier.padding(vertical = 8.dp), style = MaterialTheme.typography.bodyLarge)
+                    Button({ nav.navigate("addreel") }) { Icon(Icons.Default.AddLink, null); Text(" Add a reel") }
+                } else Text("No places match. Clear some filters.", Modifier.padding(32.dp), style = MaterialTheme.typography.bodyLarge)
             } else if (reelsMode) {
                 val pager = rememberPagerState { shown.size }
                 VerticalPager(pager, Modifier.fillMaxSize(), key = { shown[it].id }) { i ->

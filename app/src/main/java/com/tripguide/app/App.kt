@@ -34,7 +34,8 @@ class App : Application(), ImageLoaderFactory {
         db = Room.databaseBuilder(this, AppDb::class.java, "tripguide.db").addMigrations(MIGRATION_1_2).build()
         Notify.createChannels(this)
         Cloud.init(this)
-        CoroutineScope(Dispatchers.IO).launch { Seed.load(this@App, db.dao()) }
+        // Places come only from reels now; remove the built-in guides older versions installed.
+        CoroutineScope(Dispatchers.IO).launch { db.dao().deleteSeedPlaces() }
     }
 
     // Wikimedia throttles generic HTTP-client user agents; identify the app.

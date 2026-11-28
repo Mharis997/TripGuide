@@ -7,6 +7,8 @@ data class Script(val language: String, val range: IntRange, val ocr: String, va
 data class Extracted(
     val languages: List<String> = emptyList(),
     val placeName: String = "",
+    /** Indian state mentioned (text or hashtag), e.g. "Karnataka"; helps place the name on the map. */
+    val region: String = "",
     val category: String? = null,
     val vibes: List<String> = emptyList(),
     val amenities: List<String> = emptyList(),
@@ -113,7 +115,11 @@ object Extract {
         "4x4 jeep needed" to listOf("jeep", "4x4", "offroad", "off-road", "ജീപ്പ്"),
         "Entry ticket" to listOf("ticket", "entry fee", "entrance fee", "ടിക്കറ്റ്", "प्रवेश शुल्क", "टिकट"),
     )
-    private val genericTags = setOf("kerala", "keralatourism", "godsowncountry", "travel", "travelgram", "india", "incredibleindia", "reels",
+    val states = listOf("Kerala", "Karnataka", "Tamil Nadu", "Goa", "Maharashtra", "Andhra Pradesh", "Telangana", "Odisha", "West Bengal",
+        "Gujarat", "Rajasthan", "Punjab", "Haryana", "Himachal Pradesh", "Uttarakhand", "Uttar Pradesh", "Madhya Pradesh", "Chhattisgarh",
+        "Jharkhand", "Bihar", "Assam", "Meghalaya", "Sikkim", "Arunachal Pradesh", "Nagaland", "Manipur", "Mizoram", "Tripura",
+        "Jammu and Kashmir", "Ladakh", "Puducherry", "Andaman and Nicobar", "Lakshadweep", "Delhi")
+    private val genericTags = states.map { it.lowercase().replace(" ", "") }.toSet() + setOf("kerala", "keralatourism", "godsowncountry", "travel", "travelgram", "india", "incredibleindia", "reels",
         "reelsinstagram", "explore", "explorepage", "instagood", "trending", "viral", "nature", "naturelovers", "photography", "mallu", "keralagram")
 
     private fun ascii(s: String) = s.all { it.code < 128 }
@@ -186,6 +192,7 @@ object Extract {
         val pin = ls.firstOrNull { it.startsWith("📍") }?.removePrefix("📍")?.trim()?.take(80)
         return Extracted(
             languages = scriptsIn(clean).map { it.language },
+            region = states.firstOrNull { st -> mentions(clean, st) || st.lowercase().replace(" ", "") in tags.map { it.lowercase() } }.orEmpty(),
             placeName = matched?.name ?: pin ?: tags.firstOrNull { it.lowercase() !in genericTags && ascii(it) }?.let(::fromTag).orEmpty(),
             category = catScores.maxByOrNull { it.value }?.key,
             vibes = pick(vibeWords),
@@ -209,7 +216,7 @@ object Extract {
     fun matchPlace(places: List<Place>, text: String, tags: List<String> = emptyList()): Place? {
         val lower = text.lowercase()
         val tagSet = tags.map { it.lowercase() }.toSet()
-        fun names(p: Place) = (listOf(p.name) + p.name.split(" & ", " (", ", ").map { it.trim(')', ' ') } + Catalog.localNames[p.name].orEmpty())
+        fun names(p: Place) = (listOf(p.name) + p.name.split(" & ", " (", ", ").map { it.trim(')', ' ') })
             .filter { it.length >= 4 }.distinct()
         return places.flatMap { p -> names(p).map { n -> p to n } }
             .filter { (_, n) -> lower.contains(n.lowercase()) || n.lowercase().replace(" ", "") in tagSet }
@@ -221,6 +228,7 @@ object Extract {
         fun <T> all(f: (Extracted) -> List<T>) = parts.flatMap(f).distinct()
         return Extracted(
             languages = all { it.languages }, placeName = parts.firstOrNull { it.placeName.isNotBlank() }?.placeName.orEmpty(),
+            region = parts.firstOrNull { it.region.isNotBlank() }?.region.orEmpty(),
             category = parts.firstNotNullOfOrNull { it.category }, vibes = all { it.vibes }, amenities = all { it.amenities },
             summary = parts.firstOrNull { it.summary.isNotBlank() }?.summary.orEmpty(), tips = all { it.tips }.take(15),
             prices = all { it.prices }, times = all { it.times }, phones = all { it.phones }, distances = all { it.distances },
@@ -275,6 +283,18 @@ object ReelPage {
         Regex("""<meta\s+[^>]*?content="([^"]*)"[^>]*?(?:property|name)="(og:[\w:]+|description)"""", RegexOption.IGNORE_CASE).findAll(html)
             .forEach { out.putIfAbsent(it.groupValues[2].lowercase(), decode(it.groupValues[1])) }
         return out
+    }
+
+    /** Caption and author from the reel's official embed page (instagram.com/reel/ID/embed/captioned/), which needs no login. */
+    fun embedCaption(html: String): Pair<String, String>? {
+        val start = html.indexOf("<div class=\"Caption\">").takeIf { it >= 0 } ?: return null
+        val end = html.indexOf("<div class=\"CaptionComments\">", start).takeIf { it >= 0 } ?: html.indexOf("</div>", start).takeIf { it >= 0 } ?: return null
+        val block = html.substring(start, end)
+        val author = Regex("""<a class="CaptionUsername"[^>]*>([^<]*)</a>""").find(block)?.groupValues?.get(1).orEmpty()
+        val text = block.replace(Regex("""<a class="CaptionUsername"[^>]*>[^<]*</a>"""), "").replace(Regex("""<br\s*/?>"""), "\n")
+            .replace(Regex("<[^>]+>"), "")
+        val caption = decode(text).lines().joinToString("\n") { it.trim() }.replace(Regex("\n{3,}"), "\n\n").trim()
+        return (caption to decode(author)).takeIf { caption.isNotEmpty() }
     }
 
     fun isShareLink(raw: String) = Regex("""^https://(www\.)?instagram\.com/share/(reel/|p/)?[A-Za-z0-9_-]+/?(\?.*)?$""").matches(raw.trim())
