@@ -27,7 +27,7 @@ Back up the `.jks` and passwords outside the repo. With Play App Signing (defaul
 # → app/build/outputs/bundle/release/app-release.aab
 ```
 
-For every update: bump `versionCode` (+1) and `versionName` in `app/build.gradle.kts`, and add `fastlane/metadata/android/en-US/changelogs/<versionCode>.txt`.
+For every update: bump `versionCode` (+1) and `versionName` by 0.0.1 (1.0.0 → 1.0.1 → 1.0.2 …) in `app/build.gradle.kts` unless told otherwise, and add `fastlane/metadata/android/en-US/changelogs/<versionCode>.txt`.
 
 ## 3. Host the privacy policy
 

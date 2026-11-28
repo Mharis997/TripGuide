@@ -29,7 +29,8 @@ data class Reel(
 )
 
 /** First Instagram reel/post link inside shared text (Instagram's Share sends "url" or "caption url"). */
-fun reelLink(text: String?): String? = text?.let { Regex("""https://(www\.)?instagram\.com/[\w./-]*?(reel|reels|p|tv)/[A-Za-z0-9_-]+/?\S*""").find(it)?.value }
+// Covers /reel/ID, /p/ID, /user/reel/ID and Instagram's Share links /share/ID, /share/reel/ID.
+fun reelLink(text: String?): String? = text?.let { Regex("""https://(www\.)?instagram\.com/[\w./-]*?(reel|reels|p|tv|share)/[A-Za-z0-9_-]+/?\S*""").find(it)?.value }
 
 /** Embed URL for in-app playback through Instagram's official embed. */
 fun embedUrl(reelUrl: String) = reelUrl.substringBefore('?').trimEnd('/') + "/embed/"
@@ -149,13 +150,28 @@ object Cloud {
     /** Reads a public reel's caption and author from its page, on the phone. Empty when Instagram withholds it. */
     suspend fun fetchCaption(url: String): Pair<String, String> = withContext(Dispatchers.IO) {
         runCatching {
-            val c = URL(url).openConnection() as HttpURLConnection
-            c.connectTimeout = 15_000; c.readTimeout = 15_000
-            c.setRequestProperty("User-Agent", "TripGuide/${BuildConfig.VERSION_NAME} (link preview)")
-            c.setRequestProperty("Accept-Language", "en")
+            val c = open(url)
+            // A redirect here means "log in to see this"; its page text is not the reel's caption.
             if (c.responseCode != 200) return@runCatching "" to ""
             ReelPage.captionAndAuthor(ReelPage.tags(c.inputStream.bufferedReader().use { it.readText() }))
         }.getOrDefault("" to "")
+    }
+
+    private fun open(url: String) = (URL(url).openConnection() as HttpURLConnection).apply {
+        connectTimeout = 15_000; readTimeout = 15_000; instanceFollowRedirects = false
+        setRequestProperty("User-Agent", "TripGuide/${BuildConfig.VERSION_NAME} (link preview)")
+        setRequestProperty("Accept-Language", "en")
+    }
+
+    /** Instagram Share links (instagram.com/share/…) redirect to the reel; follows up to 3 hops to its canonical address. */
+    suspend fun resolveReel(link: String): Pair<String, String>? = withContext(Dispatchers.IO) {
+        var url = link
+        repeat(4) {
+            ReelPage.canonical(url)?.let { return@withContext it }
+            if (!ReelPage.isShareLink(url)) return@withContext null
+            url = runCatching { open(url).run { getHeaderField("Location")?.let { URL(URL(url), it).toString() } } }.getOrNull() ?: return@withContext null
+        }
+        null
     }
 
     /** One report per user; content with 3+ reports is hidden for everyone. */

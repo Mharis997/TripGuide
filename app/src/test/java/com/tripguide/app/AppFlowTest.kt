@@ -59,7 +59,7 @@ class AppFlowTest {
         // Saved lists replace the single favourite flag
         rule.onNodeWithContentDescription("Save").performClick()
         rule.onNodeWithText("Plan to go").performClick()
-        rule.onNodeWithContentDescription("Saved: Plan to go").assertExists()
+        rule.waitUntil(10_000) { rule.onAllNodesWithContentDescription("Saved: Plan to go").fetchSemanticsNodes().isNotEmpty() } // DB write is async
         // Reels tab offers adding a reel and explains community setup when Firebase isn't configured
         rule.onNodeWithText("Reels (0)").performScrollTo().performClick()
         rule.onNodeWithText("Add a reel", substring = true).assertExists()

@@ -277,6 +277,8 @@ object ReelPage {
         return out
     }
 
+    fun isShareLink(raw: String) = Regex("""^https://(www\.)?instagram\.com/share/(reel/|p/)?[A-Za-z0-9_-]+/?(\?.*)?$""").matches(raw.trim())
+
     /** Instagram's og:description: `1,234 likes, 56 comments - user on May 1, 2026: "caption"`. */
     fun captionAndAuthor(tags: Map<String, String>): Pair<String, String> {
         val desc = tags["og:description"] ?: tags["description"] ?: ""

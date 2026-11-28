@@ -20,6 +20,17 @@ class ReelTest {
         assertEquals(listOf(0L), frameTimesUs(0))
     }
 
+    @Test fun shareLinksAreRecognised() {
+        assertEquals("https://www.instagram.com/share/_xqcwgKq6", reelLink("Check this https://www.instagram.com/share/_xqcwgKq6"))
+        assertEquals("https://www.instagram.com/share/reel/BAabc123/", reelLink("https://www.instagram.com/share/reel/BAabc123/"))
+        assertTrue(ReelPage.isShareLink("https://www.instagram.com/share/_xqcwgKq6"))
+        assertTrue(ReelPage.isShareLink("https://instagram.com/share/p/BAabc123/?igsh=x"))
+        assertFalse(ReelPage.isShareLink("https://evil.com/share/_xqcwgKq6"))
+        assertNull(ReelPage.canonical("https://www.instagram.com/share/_xqcwgKq6")) // must be resolved first
+        // Where Instagram's share redirect points (observed live): the resolved reel is canonical.
+        assertEquals("DQW4z-zDw8B" to "https://www.instagram.com/reel/DQW4z-zDw8B/", ReelPage.canonical("https://www.instagram.com/reel/DQW4z-zDw8B/?lqvp=OW50ZWkwaGMyMWg3"))
+    }
+
     @Test fun embedUrlDropsQueryAndAddsEmbed() =
         assertEquals("https://www.instagram.com/reel/C9xYz_12ab/embed/", embedUrl("https://www.instagram.com/reel/C9xYz_12ab/?igsh=x"))
 

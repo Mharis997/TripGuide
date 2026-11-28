@@ -65,18 +65,21 @@ fun AddReelScreen(nav: NavController, sharedUrl: String?, placeId: Long, sharedV
     LaunchedEffect(placeId, places) { if (target == null && placeId >= 0) target = places.firstOrNull { it.id == placeId } }
 
     fun analyse() {
-        val canon = reelLink(url)?.let(ReelPage::canonical)
-        if (url.isNotBlank() && canon == null) { error = "That isn't an Instagram reel link (instagram.com/reel/…)."; return }
-        if (canon == null && media == null && caption.isBlank()) { error = "Add a reel link, pick a video or photo, or paste the caption."; return }
+        val link = reelLink(url)
+        if (url.isNotBlank() && link == null) { error = "That isn't an Instagram reel link (instagram.com/reel/… or /share/…)."; return }
+        if (link == null && media == null && caption.isBlank()) { error = "Add a reel link, pick a video or photo, or paste the caption."; return }
         busy = true; error = null; found = null
         scope.launch(Dispatchers.Main) {
             runCatching {
                 val notes = mutableListOf<String>()
+                val canon = link?.let { status = "Opening the link…"; Cloud.resolveReel(it) }
+                if (link != null && canon == null) error("Couldn't open that Instagram link. Check your internet connection, or open the reel in Instagram and use Share → TripGuide.")
                 var cap = caption.trim(); var author = ""
                 if (canon != null) {
                     status = "Reading the reel's caption…"
                     val (c, a) = Cloud.fetchCaption(canon.second)
-                    if (c.isNotBlank()) { cap = c; author = a } else if (cap.isBlank()) notes += "Instagram didn't share this reel's caption – paste it below or add the video."
+                    if (c.isNotBlank()) { cap = c; author = a }
+                    else if (cap.isBlank()) notes += "Instagram didn't share this reel's caption. In Instagram, long-press the caption → Copy, paste it below and tap Read details again (or add the video)."
                 }
                 val uri = media?.toUri()
                 val frames = uri?.let { status = "Taking frames…"; mediaFrames(ctx, it) }.orEmpty()
